@@ -58,7 +58,7 @@ mailer.extend(app, {
 
 // Mongoose configuration
 // Use your own configuration
-mongoose.connect('mongodb://william:root@localhost:27017/sleepear');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27017/sleepear');
 
 /**
  * Routes
