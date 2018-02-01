@@ -10,7 +10,7 @@ define([
   sleepear.config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider
           .state('breathing', angularAMD.route({
-                  url: '/',
+                  url: '/breaths',
                   templateUrl: 'partials/breaths/index.html',
                   controller: 'breathsController',
                   data: {
