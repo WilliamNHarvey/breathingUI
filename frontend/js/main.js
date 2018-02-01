@@ -2,7 +2,7 @@ require.config({
     baseUrl : 'js',
     paths : {
         // AngularJS
-        'angular'               : '//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min',
+        'angular'               : '//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular',
         'angular.resource'    : '//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-resource.min',
         'angular.animate'     : '//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-animate.min',
         'angular.sanitize'    : '//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-sanitize.min',
