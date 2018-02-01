@@ -25,6 +25,8 @@ console.log('Running app');
 // all environments
 app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
