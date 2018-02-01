@@ -1,5 +1,88 @@
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="sleepear" ng-controller="NavCtrl">
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>William Harvey &middot; BME Student</title>
+    <meta property="og:image" content="http://www.williamnharvey.com/assets/images/sol.jpg"/>
+    <META name="description" content="Candidate for Bachelor of Applied Science in Biomedical Engineering. University of Waterloo Graduating Class of 2020.">
+    <META name="keywords" content="BME, engineering student, BME student, biomedical engineering student, William Harvey, william harvey, william n harvey, william norman harvey, William Norman Harvey, University of Waterloo student, UW student, University of Waterloo, UW">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="William Norman Harvey">
+
+
+
+
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/jquery-extensions.js"></script>
+    <!-- ionic/angularjs js
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/keyboard.css" rel="stylesheet">
+    <link href="css/rhyme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="/assets/css/grayscale.css" rel="stylesheet">
+    <link href="/assets/css/scrollable-style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-mfizz.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,100' rel='stylesheet' type='text/css'>
+
+    <!-- Animations -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css" rel="stylesheet" type="text/css">
+    <script src="//code.angularjs.org/1.4.2/angular.js"></script>
+    <script src="//code.angularjs.org/1.4.2/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.4.2/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.4.2/angular-animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.2/angular-resource.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <style>
+        #video-background {
+            /*  making the video fullscreen  */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            height: auto;
+            z-index:-100;
+        }
+        video { display: block; }
+        @media screen and (max-device-width: 800px) {
+            #item1 {
+                background-url: url(/assets/images/sol-static.png);
+            }
+            #video-background {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="sleepear">
 <div class="page-container ng-cloak">
   <div id="page-view" ui-view class="page-view" ng-class="pageAnimationClass"></div>
 </div>
 </body>
+
+</html>
