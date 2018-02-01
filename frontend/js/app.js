@@ -32,7 +32,10 @@ define([
     // App Config
     app.config(function ($provide, $locationProvider, $stateProvider, $urlRouterProvider, flashProvider, $rootScope, $window, $location) {
 
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
 
 
         $provide.decorator('$state', function($delegate) {
@@ -57,31 +60,7 @@ define([
         flashProvider.successClassnames.push('alert-success');
 
 
-        $rootScope.removeSlideLeft = false;
-        $rootScope.switchPage = function (path, pageAnimationClass) {
 
-            if (typeof(pageAnimationClass) === 'undefined') { // Use a default, your choice
-                $rootScope.pageAnimationClass = 'crossFade';
-            }
-
-            else { // Use the specified animation
-                $rootScope.pageAnimationClass = pageAnimationClass;
-                if(pageAnimationClass === 'slideLeft') {
-                    $rootScope.removeSlideLeft = true;
-                }
-                if(pageAnimationClass === 'slideRight') {
-                    $rootScope.removeSlideRight = true;
-                }
-            }
-
-            if (path === 'back') { // Allow a 'back' keyword to go to previous page
-                $window.history.back();
-            }
-
-            else { // Go to the specified path
-                $location.path(path);
-            }
-        };
 
     });
 
