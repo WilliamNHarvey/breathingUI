@@ -7,7 +7,8 @@ define([
     'checklist-model',
     'ngProgress',
     'angular-ui-router',
-    'angular-flash'
+    'angular-flash',
+    'sleepear/sleepear'
 ], function (angularAMD) {
     'use strict';
 
