@@ -36,6 +36,8 @@
     "gulp-util": "^2.2.14",
     "gulp-watch": "~0.6.9",
     "imagemin-gifsicle": "^5.2.0",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-pngquant": "^5.0.1",
     "jade": "~0.31.2",
     "jshint-stylish": "^0.2.0",
     "method-override": "^1.0.0",
