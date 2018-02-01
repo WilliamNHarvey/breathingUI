@@ -74,7 +74,7 @@ define([
         $rootScope.project = projectDefaults;
 
         // Set progressbar events
-        ngProgress.color('#18bc9c');
+        /*ngProgress.color('#18bc9c');
         $rootScope.$on("$stateChangeStart", function (event, next, current) {
             ngProgress.reset();
             ngProgress.start();
@@ -85,7 +85,7 @@ define([
         $rootScope.$on("$stateChangeError", function (event, current, previous, rejection) {
             flash.error = "Could not complete the request.";
             ngProgress.complete();
-        });
+        });*/
     });
 
     return angularAMD.bootstrap(app);
