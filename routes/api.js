@@ -6,9 +6,9 @@ var router = express.Router();
 var app = require('../app');
 
 // API modules
-var beers = require('./api/beers');
+var breaths = require('./api/breaths');
 
 // Register all modules here
-router.use(beers);
+router.use(breaths);
 
 module.exports = router;

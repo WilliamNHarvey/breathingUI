@@ -25,7 +25,6 @@ var app = module.exports = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -59,7 +58,7 @@ mailer.extend(app, {
 
 // Mongoose configuration
 // Use your own configuration
-mongoose.connect('mongodb://<user>:<pass>@<host>:<port>/<db>');
+mongoose.connect('mongodb://william:root@localhost:27017/sleepear');
 
 /**
  * Routes

@@ -9,7 +9,7 @@ define([
 
       this.resource = function() {
           return $resource(
-            'api/beers/:_id',
+            'api/breaths/:_id',
             { _id: '@_id' },
             {
               update: {
