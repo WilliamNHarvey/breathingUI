@@ -43,8 +43,9 @@
     "jpegtran-bin": "^3.2.0",
     "jshint-stylish": "^0.2.0",
     "method-override": "^1.0.0",
-    "mongoose": "3.8",
+    "mongoose": "~4.4",
     "morgan": "^1.0.0",
+    "underscore": "^1.8.3",
     "walk": "^2.3.9"
   },
   "devDependencies": {
@@ -55,7 +56,7 @@
     "method-override": "^1.0.0",
     "morgan": "^1.0.0",
     "express-mailer": "^0.2.3",
-    "mongoose": "3.8",
+    "mongoose": "~4.4",
     "bower": "^1.3.9",
     "connect": "^2.15.0",
     "gulp": "^3.9.1",
