@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app",
-    "postinstall": "gulp default"
+    "postinstall": "gulp"
   },
   "dependencies": {
     "body-parser": "^1.0.2",
