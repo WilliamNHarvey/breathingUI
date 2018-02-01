@@ -25,7 +25,6 @@ var app = module.exports = express();
 // all environments
 app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
