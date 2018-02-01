@@ -44,7 +44,7 @@ define([
 
         $stateProvider
             .state('index', angularAMD.route({
-                    url: '/',
+                    url: '/index',
                     templateUrl: 'partials/index.html',
                     controller: function($scope) {}
                 })

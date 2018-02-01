@@ -1,45 +1,4 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="sleepear" ng-controller="NavCtrl">
-<!-- Navigation -->
-<nav id="navbar" class="navbar navbar-custom navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" id="menuButton" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse" onclick="toggleMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div><div class="bar3"></div>
-      </button>
-
-      <a class="navbar-brand page-scroll" id="logo" href="/">williamnharvey.com</a>
-
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-      <ul class="nav navbar-nav">
-        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-        <li class="hidden">
-          <a href="#page-top"></a>
-        </li>
-        <li>
-          <a class="" href="mailto:williamnharvey@gmail.com">Contact</a>
-        </li>
-        <li>
-          <a class="" onclick="window.location = 'williamnharvey.com/assets/files/WHarveyResume.pdf'">Resume</a>
-        </li>
-        <li>
-          <a class="" href="https://www.github.com/WilliamNHarvey">GitHub</a>
-        </li>
-        <li>
-          <a class="" href="https://www.linkedin.com/in/william-harvey-b47006121/">LinkedIn</a>
-        </li>
-
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-    <!-- settings button -->
-    <div class="navbar-settings ng-cloak" data-toggle="collapse" ng-click="settingsToggle()" ng-show="location=='keyboard'"></div>
-  </div>
-  <!-- /.container -->
-</nav>
 <div class="page-container ng-cloak">
   <div id="page-view" ui-view class="page-view" ng-class="pageAnimationClass"></div>
 </div>

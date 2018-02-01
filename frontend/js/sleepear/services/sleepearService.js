@@ -3,7 +3,7 @@ define([
 ], function(angularAMD) {
   'use strict';
 
-  angularAMD.factory('beerService', [
+  angularAMD.factory('sleepearService', [
     '$resource',
     function($resource) {
 
