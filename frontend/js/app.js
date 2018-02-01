@@ -31,7 +31,7 @@ define([
     });
 
     // App Config
-    app.config(function ($provide, $locationProvider, $stateProvider, $urlRouterProvider, flashProvider, $rootScope, $window, $location) {
+    app.config(function ($provide, $locationProvider, $stateProvider, $urlRouterProvider, flashProvider) {
 
         $locationProvider.html5Mode({
             enabled: true,
