@@ -55,7 +55,7 @@ require.config({
             deps : ['angular']
         },
         'angularAMD': {
-            deps : ['angular'],
+            deps : ['angular']
         },
         'ngload': {
             deps : ['angularAMD']
