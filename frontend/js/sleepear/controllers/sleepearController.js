@@ -9,7 +9,7 @@ define([
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
       function bounce() {
-          $('.circle-1').animate({
+          $('#circle-1').animate({
 
               'width': "-=20",
               'height': "-=20"/*,
@@ -17,7 +17,7 @@ define([
               'left': parseInt($('.circle-1').css('left')) + 10*/
 
           }, 150);
-          $('.circle-1').animate({
+          $('#circle-1').animate({
 
               'width': "+=30",
               'height': "+=30"/*,
@@ -25,7 +25,7 @@ define([
               'left': "-=15"*/
 
           }, 150);
-          $('.circle-1').animate({
+          $('#circle-1').animate({
 
               'width': "-=20",
               'height': "-=20"/*,
@@ -33,7 +33,7 @@ define([
               'left': parseInt($('.circle-1').css('left')) + 5*/
 
           }, 150);
-          $('.circle-1').animate({
+          $('#circle-1').animate({
 
               'width': "+=10",
               'height': "+=10"/*,
@@ -57,7 +57,7 @@ define([
                   intervalId = setInterval(function() {
                       //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
                       if(down) {
-                          newSize = $('#circle-1').height() * 1.01 + 1;
+                          newSize = $('#circle-1').height() + 1;
                           $('#circle-1').height(newSize);
                           $('#circle-1').width(newSize);
                       }
@@ -65,11 +65,10 @@ define([
                        'height': newSize,
                        'width': newSize
                        });*/
-                  }, 300);
+                  }, 400);
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && down) {
-                  console.log(intervalId);
                   clearInterval(intervalId);
                   down = false;
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
