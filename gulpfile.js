@@ -30,7 +30,7 @@ var DIST = "public",
 // Compile app/sass sources in CSS, auto-prefix the CSS and minify
 gulp.task("compile:sass", function() {
   return gulp.src(path.join(SRC_SASS_BASE, 'app.sass'))
-    .pipe(require("gulp-ruby-sass")())
+    .pipe(require("gulp-sass")())
     .on('error', function (err) { console.log(err.message); })
     .pipe(require("gulp-autoprefixer")("last 2 version", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"))
     .pipe(rename({ suffix: ".min" }))
