@@ -32,9 +32,6 @@ var DIST = "public",
 gulp.task("compile:sass", function() {
   return gulp.src(path.join(SRC_SASS_BASE, 'app.sass'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(require("gulp-autoprefixer")("last 2 version", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"))
-    .pipe(rename({ suffix: ".min" }))
-    .pipe(require('gulp-minify-css')())
     .pipe(gulp.dest(DIST_SASS));
 });
 
