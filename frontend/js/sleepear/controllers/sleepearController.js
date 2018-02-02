@@ -47,14 +47,14 @@ define([
 
       var max = Math.min($(window).height(), $(window).width());
       var increaseSize = function() {
-          newSize = $('#circle-1').height() + 1;
+          newSize = $('#circle-1').height() * 1.01 + 1;
           console.log(newSize);
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       }
       var intervalId;
       function start() {
-          intervalId = setInterval(increaseSize, 400);
+          intervalId = setInterval(increaseSize, 300);
       }
       function stop() {
           clearInterval(intervalId);
