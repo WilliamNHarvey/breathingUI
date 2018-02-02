@@ -45,7 +45,7 @@ define([
 
       var down = false;
 
-      var max = min($(window).height(), $(window).width());
+      var max = Math.min($(window).height(), $(window).width());
 
       var grower;
       $('body').keydown(function(e) {
