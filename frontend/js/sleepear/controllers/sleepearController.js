@@ -48,6 +48,7 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       function increaseSize() {
           newSize = $('#circle-1').height() + 1;
+          console.log(newSize);
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       }
@@ -62,7 +63,7 @@ define([
       $(document).ready(function(){
           $('body').keydown(function(e) {
               if(e.keyCode === 32){
-                  if(!down) stop();
+                  //if(!down) stop();
                   down = true;
 
                   start();
