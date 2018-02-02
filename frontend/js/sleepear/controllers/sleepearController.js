@@ -12,33 +12,33 @@ define([
           $('.circle-1').animate({
 
               'width': "-=20",
-              'height': "-=20",
+              'height': "-=20"/*,
               'top': parseInt($('.circle-1').css('top')) + 10,
-              'left': parseInt($('.circle-1').css('left')) + 10
+              'left': parseInt($('.circle-1').css('left')) + 10*/
 
           }, 150);
           $('.circle-1').animate({
 
               'width': "+=30",
-              'height': "+=30",
+              'height': "+=30"/*,
               'top': "-=15",
-              'left': "-=15"
+              'left': "-=15"*/
 
           }, 150);
           $('.circle-1').animate({
 
               'width': "-=20",
-              'height': "-=20",
+              'height': "-=20"/*,
               'top': parseInt($('.circle-1').css('top')) + 5,
-              'left': parseInt($('.circle-1').css('left')) + 5
+              'left': parseInt($('.circle-1').css('left')) + 5*/
 
           }, 150);
           $('.circle-1').animate({
 
               'width': "+=10",
-              'height': "+=10",
+              'height': "+=10"/*,
               'top': "-=5",
-              'left': "-=5"
+              'left': "-=5"*/
 
           }, 150);
       }
@@ -52,7 +52,7 @@ define([
           if(e.keyCode == 32){
               down = true;
 
-              grower = setTimeout(function() {
+              grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
                   var newSize = $('.circle-1').height() * 1.02;
 
@@ -64,7 +64,7 @@ define([
 
               $('body').keyup(function(u) {
                   if(e.keyCode == 32 && down) {
-                      clearTimeout(grower);
+                      clearInterval(grower);
                       down = false;
                       $('body').unbind("keyup");
                       $('.circle-1').animate({width:'25px', height:'25px'}, 150, function(){
