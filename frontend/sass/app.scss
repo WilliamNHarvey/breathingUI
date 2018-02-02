@@ -75,6 +75,8 @@ body {
   border-radius: 50%;
   width: 25px;
   height: 25px;
+  max-width: 90vmin;
+  max-height: 90vmin;
   background-color: #00E676;
   position: fixed;
   top: 50vh;
