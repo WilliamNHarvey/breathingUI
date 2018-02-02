@@ -67,7 +67,7 @@ define([
                   if(u.keyCode === 32 && down) {
                       console.log(clearInterval(grower));
                       down = false;
-                      $('body').unbind("keyup");
+                      $('document').unbind("keyup");
                       $('.circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
                           bounce();
                       });
