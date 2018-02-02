@@ -48,24 +48,29 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       function increaseSize() {
           newSize = $('#circle-1').height() + 1;
-          console.log(newSize);
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       }
       var intervalId;
+      function start() {
+          intervalId = setInterval(increaseSize, 400);
+      }
+      function stop() {
+          clearInterval(intervalId);
+      }
       var newSize;
       $(document).ready(function(){
           $('body').keydown(function(e) {
               if(e.keyCode === 32){
-                  if(!down) clearInterval(intervalId);
+                  if(!down) stop();
                   down = true;
 
-                  intervalId = setInterval(increaseSize, 400);
+                  start();
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && down) {
 
-                  clearInterval(intervalId);
+                  stop();
                   down = false;
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
