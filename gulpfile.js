@@ -15,7 +15,7 @@ var SRC  = "frontend",
     SRC_IMAGES_BASE  = path.join(SRC, "img"),
     SRC_LIB_BASE  = path.join(SRC, "lib"),
     SRC_ALL  = path.join(SRC, "**"),
-    SRC_SASS_ALL  = path.join(SRC_SASS_BASE, "**", "*.sass"),
+    SRC_SASS_ALL  = path.join(SRC_SASS_BASE, "**", "*.scss"),
     SRC_JAVASCRIPT_ALL  = path.join(SRC_JAVASCRIPT_BASE, "**", "*.js"),
     SRC_IMAGES_ALL  = path.join(SRC_IMAGES_BASE, "**", "*");
 
@@ -30,7 +30,7 @@ var DIST = "public",
 // SASS
 // Compile app/sass sources in CSS, auto-prefix the CSS and minify
 gulp.task("compile:sass", function() {
-  return gulp.src(path.join(SRC_SASS_BASE))
+  return gulp.src(path.join(SRC_SASS_BASE, 'app.scss'))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(DIST_SASS));
 });
