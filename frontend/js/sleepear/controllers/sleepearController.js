@@ -55,10 +55,12 @@ define([
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
                   var newSize = $('.circle-1').height() * 1.02;
-                  $('.circle-1').css({
+                  $('.circle-1').height(newSize);
+                  $('.circle-1').width(newSize);
+                  /*$('.circle-1').css({
                       'height': newSize,
                       'width': newSize
-                  });
+                  });*/
               }, 100);
 
               $('body').keyup(function(u) {
