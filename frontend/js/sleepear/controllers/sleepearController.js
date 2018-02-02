@@ -48,13 +48,12 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       var increaseSize = function() {
           newSize = $('#circle-1').height() * 1.02 + 1;
-          console.log(newSize);
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       }
       var intervalId;
       function start() {
-          intervalId = setInterval(increaseSize, 100);
+          intervalId = setInterval(increaseSize, 50);
       }
       function stop() {
           clearInterval(intervalId);
@@ -74,8 +73,19 @@ define([
                   stop();
                   down = false;
 
-                  $('#circle-1').animate({'width':'25px', 'height':'26px'}, 150, function() {
+                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       bounce();
+                  });
+                  $('#circle-2').animate({
+                      'opacity' : 0,
+                      'width': newSize,
+                      'height': newSize
+                  }, 300, function() {
+                      $('#circle-2').css({
+                          'opacity' : 1,
+                          'width': 0,
+                          'height': 0
+                      })
                   });
               }
           });

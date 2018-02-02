@@ -84,3 +84,17 @@ body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+#circle-2 {
+  border-radius: 50%;
+  width: 0px;
+  height: 0px;
+  max-width: 90vmin;
+  max-height: 90vmin;
+  background-color: #00c961;
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
