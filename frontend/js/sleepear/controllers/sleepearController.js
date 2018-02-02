@@ -54,7 +54,8 @@ define([
 
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newSize = $('#circle-1').height() * 1.02;
+                  var newSize = $('#circle-1').height() * 1.05;
+                  console.log(newSize);
                   console.log($('#circle-1').height());
                   $('#circle-1').height(newSize);
                   $('#circle-1').width(newSize);
@@ -62,11 +63,12 @@ define([
                       'height': newSize,
                       'width': newSize
                   });*/
-              }, 100);
-              console.log(grower);
+              }, 200);
+
               $(this).keyup(function(u) {
                   if(u.keyCode === 32 && down) {
-                      console.log(clearInterval(grower));
+                      console.log(grower);
+                      clearInterval(grower);
                       down = false;
                       $(this).unbind("keyup");
                       $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
