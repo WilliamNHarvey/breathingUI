@@ -55,6 +55,7 @@ define([
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
                   var newSize = $('#circle-1').height() * 1.02;
+                  console.log($('#circle-1').height());
                   $('#circle-1').height(newSize);
                   $('#circle-1').width(newSize);
                   /*$('.circle-1').css({
@@ -62,7 +63,6 @@ define([
                       'width': newSize
                   });*/
               }, 100);
-
               console.log(grower);
               $(this).keyup(function(u) {
                   if(u.keyCode === 32 && down) {
