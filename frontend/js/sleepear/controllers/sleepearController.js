@@ -54,12 +54,13 @@ define([
 
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newSize = $('.circle-1').height() * 1.02;
 
+                  var newSize = $('.circle-1').height() * 1.02;
+                  console.log(newSize);
                   $('.circle-1').css({
                       height: newSize,
                       width: newSize
-                  })
+                  });
               }, 100);
 
               $('body').keyup(function(u) {
