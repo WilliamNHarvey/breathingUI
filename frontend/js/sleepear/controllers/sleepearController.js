@@ -46,7 +46,12 @@ define([
       var down = false;
 
       var max = Math.min($(window).height(), $(window).width());
-
+      function increaseSize() {
+          newSize = $('#circle-1').height() + 1;
+          console.log(newSize);
+          $('#circle-1').height(newSize);
+          $('#circle-1').width(newSize);
+      }
       var intervalId;
       var newSize;
       $(document).ready(function(){
@@ -55,19 +60,7 @@ define([
                   if(!down) clearInterval(intervalId);
                   down = true;
 
-                  intervalId = setInterval(function() {
-                      //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                      if(down) {
-                          newSize = $('#circle-1').height() + 1;
-                          console.log(newSize);
-                          $('#circle-1').height(newSize);
-                          $('#circle-1').width(newSize);
-                      }
-                      /*$('.circle-1').css({
-                       'height': newSize,
-                       'width': newSize
-                       });*/
-                  }, 400);
+                  intervalId = setInterval(increaseSize, 400);
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && down) {
