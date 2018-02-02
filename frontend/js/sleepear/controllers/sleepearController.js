@@ -19,9 +19,9 @@ define([
 
               grower = setTimeout(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newheight = max/(1 + 2.718^(-0.02 * ($('circle-1').height() - max/2)));
+                  var newheight = max/(1 + 2.718^(-0.02 * ($('.circle-1').height() - max/2)));
                   console.log(newheight);
-                  console.log($('circle-1').height());
+                  console.log($('.circle-1').height());
                   $('.circle-1').css({
                       height: newheight,
                       width: newheight
@@ -33,7 +33,7 @@ define([
                       clearTimeout(grower);
                       down = false;
                       $('body').unbind("keyup")
-                      $('circle-1').css({
+                      $('.circle-1').css({
                           height: "25px",
                           width: "25px"
                       })
