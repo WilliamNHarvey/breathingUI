@@ -6,7 +6,8 @@ var gulp = require("gulp"),
     gutil = require("gulp-util"),
     rename = require("gulp-rename"),
     changed = require("gulp-changed"),
-    livereload = require("gulp-livereload");
+    livereload = require("gulp-livereload"),
+    sass = require('gulp-sass');
 
 var SRC  = "frontend",
     SRC_SASS_BASE  = path.join(SRC, "sass"),
@@ -30,8 +31,7 @@ var DIST = "public",
 // Compile app/sass sources in CSS, auto-prefix the CSS and minify
 gulp.task("compile:sass", function() {
   return gulp.src(path.join(SRC_SASS_BASE, 'app.sass'))
-    .pipe(require("gulp-sass")())
-    .on('error', function (err) { console.log(err.message); })
+    .pipe(sass().on('error', sass.logError))
     .pipe(require("gulp-autoprefixer")("last 2 version", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(require('gulp-minify-css')())
