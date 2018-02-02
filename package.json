@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app",
-    "postinstall": "npm install gulp-sass; gulp"
+    "postinstall": "gulp"
   },
   "engines": {
     "node": "8.1.4"
