@@ -54,21 +54,22 @@ define([
 
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newSize = $('.circle-1').height() + $('.circle-1').height() * 0.02;
-                  $('.circle-1').height(newSize);
-                  $('.circle-1').width(newSize);
+                  var newSize = $('#circle-1').height() * 1.02;
+                  $('#circle-1').height(newSize);
+                  $('#circle-1').width(newSize);
                   /*$('.circle-1').css({
                       'height': newSize,
                       'width': newSize
                   });*/
               }, 100);
 
+              console.log(grower);
               $(this).keyup(function(u) {
                   if(u.keyCode === 32 && down) {
                       console.log(clearInterval(grower));
                       down = false;
                       $(this).unbind("keyup");
-                      $('.circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
+                      $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
                           bounce();
                       });
                       /*$('.circle-1').css({
