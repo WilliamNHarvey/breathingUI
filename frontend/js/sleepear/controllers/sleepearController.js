@@ -19,8 +19,9 @@ define([
 
               grower = setTimeout(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newheight = max/(1 + 2.718^(-0.02 * ($('circle-1').height())));
+                  var newheight = max/(1 + 2.718^(-0.02 * ($('circle-1').height() - max/2)));
                   console.log(newheight);
+                  console.log($('circle-1').height());
                   $('.circle-1').css({
                       height: newheight,
                       width: newheight
