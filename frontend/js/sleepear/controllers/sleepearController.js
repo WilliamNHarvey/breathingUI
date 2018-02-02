@@ -48,41 +48,32 @@ define([
       var max = Math.min($(window).height(), $(window).width());
 
       var grower;
-      $('body').keydown(function(e) {
-          if(e.keyCode === 32){
-              down = true;
+      $(document).ready(function(){
+          $('body').keydown(function(e) {
+              if(e.keyCode === 32){
+                  down = true;
 
-              grower = setInterval(function() {
-                  //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newSize = $('#circle-1').height() + 5;
-                  $('#circle-1').height(newSize);
-                  $('#circle-1').width(newSize);
-                  /*$('.circle-1').css({
-                      'height': newSize,
-                      'width': newSize
-                  });*/
-              }, 200);
-
-              $(this).keyup(function(u) {
-                  if(u.keyCode === 32 && down) {
-                      console.log(grower);
-                      clearInterval(grower);
-                      down = false;
-                      $(this).unbind("keyup");
-                      $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
-                          bounce();
-                      });
+                  grower = setInterval(function() {
+                      //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
+                      var newSize = $('#circle-1').height() * 1.01 + 1;
+                      $('#circle-1').height(newSize);
+                      $('#circle-1').width(newSize);
                       /*$('.circle-1').css({
-                          height: "25px",
-                          width: "25px"
-                      })*/
-                  }
-
-                  else if (!down) {
-                      $('body').unbind("keyup")
-                  }
-              });
-          }
+                       'height': newSize,
+                       'width': newSize
+                       });*/
+                  }, 300);
+              }
+          }).keyup(function(u) {
+              if(u.keyCode === 32 && down) {
+                  clearInterval(grower);
+                  down = false;
+                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
+                      bounce();
+                  });
+              }
+          });
       });
+
   });
 });
