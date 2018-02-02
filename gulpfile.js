@@ -30,7 +30,7 @@ var DIST = "public",
 // SASS
 // Compile app/sass sources in CSS, auto-prefix the CSS and minify
 gulp.task("compile:sass", function() {
-  return gulp.src(path.join(SRC_SASS_BASE, 'app.sass'))
+  return gulp.src(path.join(SRC_SASS_BASE))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(DIST_SASS));
 });
