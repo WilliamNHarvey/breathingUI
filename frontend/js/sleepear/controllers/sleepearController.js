@@ -46,6 +46,7 @@ define([
       var down = false;
 
       var max = Math.min($(window).height(), $(window).width());
+      var newSize;
       var increaseSize = function() {
           newSize = $('#circle-1').height() * 1.02 + 1;
           $('#circle-1').height(newSize);
@@ -58,7 +59,7 @@ define([
       function stop() {
           clearInterval(intervalId);
       }
-      var newSize;
+
       $(document).ready(function(){
           $('body').keydown(function(e) {
               if(e.keyCode === 32 && !down){
