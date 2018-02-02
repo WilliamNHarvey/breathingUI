@@ -54,18 +54,16 @@ define([
 
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  console.log($('.circle-1').height());
                   var newSize = $('.circle-1').height() * 1.02;
-                  console.log(newSize);
                   $('.circle-1').css({
-                      height: newSize,
-                      width: newSize
+                      'height': newSize,
+                      'width': newSize
                   });
               }, 100);
 
               $('body').keyup(function(u) {
                   if(u.keyCode == 32 && down) {
-                      clearInterval(grower);
+                      console.log(clearInterval(grower));
                       down = false;
                       $('body').unbind("keyup");
                       $('.circle-1').animate({width:'25px', height:'25px'}, 150, function(){
