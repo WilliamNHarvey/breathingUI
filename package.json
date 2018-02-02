@@ -17,6 +17,7 @@
     "errorhandler": "^1.1.1",
     "express": "~4.1.1",
     "express-mailer": "^0.2.3",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^0.0.7",
     "gulp-bower": "0.0.6",
     "gulp-changed": "^0.4.1",
