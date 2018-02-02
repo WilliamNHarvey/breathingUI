@@ -66,3 +66,19 @@
   -o-perspective: 1000;
   perspective: 1000;
 }
+
+body {
+  margin: 0;
+}
+
+.circle-1 {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
