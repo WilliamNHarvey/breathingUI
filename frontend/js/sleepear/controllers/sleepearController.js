@@ -54,9 +54,7 @@ define([
 
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-                  var newSize = $('#circle-1').height() * 1.05;
-                  console.log(newSize);
-                  console.log($('#circle-1').height());
+                  var newSize = $('#circle-1').height() + 5;
                   $('#circle-1').height(newSize);
                   $('#circle-1').width(newSize);
                   /*$('.circle-1').css({
