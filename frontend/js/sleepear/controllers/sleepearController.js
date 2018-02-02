@@ -58,6 +58,7 @@ define([
                       //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
                       if(down) {
                           newSize = $('#circle-1').height() + 1;
+                          console.log(newSize);
                           $('#circle-1').height(newSize);
                           $('#circle-1').width(newSize);
                       }
@@ -69,9 +70,11 @@ define([
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && down) {
+
                   clearInterval(intervalId);
                   down = false;
-                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
+
+                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       bounce();
                   });
               }
