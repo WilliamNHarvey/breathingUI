@@ -52,6 +52,7 @@ define([
       $(document).ready(function(){
           $('body').keydown(function(e) {
               if(e.keyCode === 32){
+                  if(!down) clearInterval(intervalId);
                   down = true;
 
                   intervalId = setInterval(function() {
