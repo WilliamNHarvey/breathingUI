@@ -54,7 +54,7 @@ define([
 
               grower = setInterval(function() {
                   //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
-
+                  console.log($('.circle-1').height());
                   var newSize = $('.circle-1').height() * 1.02;
                   console.log(newSize);
                   $('.circle-1').css({
@@ -64,7 +64,7 @@ define([
               }, 100);
 
               $('body').keyup(function(u) {
-                  if(e.keyCode == 32 && down) {
+                  if(u.keyCode == 32 && down) {
                       clearInterval(grower);
                       down = false;
                       $('body').unbind("keyup");
