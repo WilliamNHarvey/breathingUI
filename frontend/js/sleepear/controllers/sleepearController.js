@@ -47,13 +47,13 @@ define([
 
       var max = Math.min($(window).height(), $(window).width());
 
-      var grower;
+      var intervalId;
       $(document).ready(function(){
           $('body').keydown(function(e) {
               if(e.keyCode === 32){
                   down = true;
 
-                  grower = setInterval(function() {
+                  intervalId = setInterval(function() {
                       //var newheight = $('circle-1').height() + $('circle-1').height() * 0.02
                       var newSize = $('#circle-1').height() * 1.01 + 1;
                       $('#circle-1').height(newSize);
@@ -66,7 +66,8 @@ define([
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && down) {
-                  clearInterval(grower);
+                  console.log(intervalId);
+                  clearInterval(intervalId);
                   down = false;
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
                       bounce();
