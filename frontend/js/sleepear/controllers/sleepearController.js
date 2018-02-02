@@ -48,7 +48,7 @@ define([
       var max = Math.min($(window).height(), $(window).width());
 
       var grower;
-      $('.circle-parent').keydown(function(e) {
+      $('body').keydown(function(e) {
           if(e.keyCode === 32){
               down = true;
 
@@ -63,11 +63,11 @@ define([
                   });*/
               }, 100);
 
-              $('.circle-parent').keyup(function(u) {
+              $(this).keyup(function(u) {
                   if(u.keyCode === 32 && down) {
                       console.log(clearInterval(grower));
                       down = false;
-                      $('.circle-parent').unbind("keyup");
+                      $(this).unbind("keyup");
                       $('.circle-1').animate({'width':'25px', 'height':'25px'}, 150, function(){
                           bounce();
                       });
