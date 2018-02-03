@@ -8,7 +8,9 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
+      var bouncing;
       function bounce() {
+          bouncing = true;
           $('#circle-1').animate({
 
               'width': "-=20",
@@ -41,6 +43,7 @@ define([
               'left': "-=5"*/
 
           }, 150);
+          bouncing = false;
       }
 
       var down = false;
@@ -48,7 +51,7 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       var newSize;
       var increaseSize = function() {
-          newSize = $('#circle-1').height() * 1.02 + 1;
+          newSize = $('#circle-1').height() * 1.04 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       }
@@ -75,7 +78,9 @@ define([
                   down = false;
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
-                      bounce();
+                      if(!bouncing) {
+                          bounce();
+                      }
                   });
                   $('#circle-2').animate({
                       'opacity' : 0,
