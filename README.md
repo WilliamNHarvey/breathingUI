@@ -6,7 +6,7 @@
 
 Clone this repo:
 
-    git clone git@github.com:igorprado/angular-requirejs-gulp-express-mongodb-seed.git
+    git clone git@github.com:WilliamNHarvey/breathingUI.git
 
 Run `npm install` to install the dependencies:
 
