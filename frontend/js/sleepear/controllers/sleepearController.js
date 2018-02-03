@@ -77,10 +77,8 @@ define([
                   stop();
                   down = false;
 
-                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, {
-                      queue       : false,
-                      duration    : 150,
-                      complete    : function() {
+                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
+                      if(!bouncing) {
                           bounce();
                       }
                   });
@@ -95,6 +93,8 @@ define([
                           'height': 0
                       })
                   });
+
+                  $("#circle-1", "#circle-2").clearQueue();
               }
           });
       });
