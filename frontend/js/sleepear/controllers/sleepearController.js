@@ -69,7 +69,7 @@ define([
                   //if(!down) stop();
                   $('#circle-1').stop(true);
                   $("#circle-2").stop(true, true);
-                  if($('#circle-1').width() != 25) {
+                  if($('#circle-1').width() !== 25) {
                       $('#circle-1').css({'width':'25px', 'height':'25px'});
                   }
                   down = true;
