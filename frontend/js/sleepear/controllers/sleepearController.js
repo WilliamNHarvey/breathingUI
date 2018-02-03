@@ -67,13 +67,17 @@ define([
           $('body').keydown(function(e) {
               if(e.keyCode === 32 && !down){
                   //if(!down) stop();
+                  $('#circle-1').stop(true);
+                  $("#circle-2").stop(true, true);
+                  if($('#circle-1').width() != 25) {
+                      $('#circle-1').css({'width':'25px', 'height':'25px'});
+                  }
                   down = true;
 
                   start();
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && down) {
-
                   stop();
                   down = false;
 
@@ -93,8 +97,6 @@ define([
                           'height': 0
                       })
                   });
-
-                  $("#circle-1", "#circle-2").stop(true, false);
               }
           });
       });
