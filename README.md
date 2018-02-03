@@ -1,25 +1,6 @@
-# AngularJS / RequireJS / Gulp / Express / MongoDB Seed
+# SleepEar
 
-## Demo
-
-Demo available: http://beer-project.herokuapp.com/beers
-
-## About
-
-I wanted to learn about:
-* [NodeJS](http://nodejs.org/)
-* [Express](http://expressjs.com/)
-* [AngularJS](https://angularjs.org/)
-* [MongoDB](https://www.mongodb.com/)
-* [Gulp](http://gulpjs.com/)
-
-So I started this seed! This seed is based on [Angular Express Seed](https://github.com/btford/angular-express-seed).
-
-Express is used to serve the static files, templates to AngularJS and provide a RESTful API to manipulate MongoDB collections.
-
-Gulp is used to build our frontend files (CSS, JS and optimize images).
-
-## How to use this seed
+## Build
 
 ### Install
 
@@ -72,10 +53,10 @@ I have to learn more about tests. So, it's on my roadmap for this seed.
       js/               --> Javascript files
         app.js          --> Declare top-level app module
         main.js         --> Default config for RequireJS
-        beers/          --> Our app is divided by modules. This is an example module
+        sleepear/       --> SleepEar module
           controllers/  --> All controllers of our module
           services/     --> All services of our module
-          beers.js      --> Declare our module and routes config
+          sleepear.js   --> Declare module and routes config
         directives/     --> Define our application directives
       lib/              --> Our bower dependencies are installed here
     public/             --> Our genereted files will be placed here (after run gulp)
@@ -83,23 +64,11 @@ I have to learn more about tests. So, it's on my roadmap for this seed.
       api.js            --> Top-level route config
       index.js          --> Route for serving HTML pages and partials (AngularJS templates)
       api/              --> All route configs of our modules will be here
-        beers.js        --> Our example module route config.
+        sleepear.js     --> Route config.
     views/
       index.jade        --> Main page for app, where the top-level ui-view is defined
       layout.jade       --> Doctype, title, head boilerplate
       partials/         --> Angular view partials (partial jade templates)
-        index.jade      --> The default state (for UI Router)
-        beers/          --> All the templates for our module are listed here
+        index.html      --> The default state (for UI Router)
+        sleepear/       --> All the templates for our module are listed here
 
-
-
-## Example App
-
-A simple [beer management app](http://beer-project.herokuapp.com/beers) is running and using this seed.
-
-## Support
-
-Feel free to comment, fork or upgrade this code.
-
-## License
-MIT
