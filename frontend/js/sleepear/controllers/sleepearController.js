@@ -51,7 +51,7 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       var newSize;
       var increaseSize = function() {
-          newSize = $('#circle-1').height() * 1.04 + 1;
+          newSize = $('#circle-1').height() * 1.05 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       }
@@ -94,7 +94,7 @@ define([
                       })
                   });
 
-                  $("#circle-1", "#circle-2").clearQueue();
+                  $("#circle-1", "#circle-2").stop(true, false);
               }
           });
       });
