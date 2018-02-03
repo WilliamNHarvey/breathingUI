@@ -1,6 +1,6 @@
 # SleepEar
 
-https://sleepear.herokuapp.com/
+https://sleepear.herokuapp.com/breaths
 
 ## Build
 
