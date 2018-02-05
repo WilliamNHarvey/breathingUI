@@ -47,6 +47,12 @@ require.config({
         'ngProgress': {
             deps : ['angular']
         },
+        'chart.js': {
+            deps: ['angular']
+        },
+        'angular-chart' : {
+            deps : ['chart.js']
+        },
         'angular-ui-router': {
             deps : ['angular']
         },
