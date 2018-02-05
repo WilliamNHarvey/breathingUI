@@ -43,6 +43,7 @@
     "jpegtran-bin": "^3.2.0",
     "jshint-stylish": "^0.2.0",
     "method-override": "^1.0.0",
+    "mongoose": "^5.0.3",
     "morgan": "^1.0.0",
     "mpromise": "^0.5.5",
     "regexp-clone": "0.0.1",
