@@ -44,6 +44,7 @@
     "jshint-stylish": "^0.2.0",
     "method-override": "^1.0.0",
     "morgan": "^1.0.0",
+    "mpromise": "^0.5.5",
     "regexp-clone": "0.0.1",
     "require_optional": "^1.0.1",
     "send": "^0.16.1",
