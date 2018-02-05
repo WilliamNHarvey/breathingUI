@@ -17,8 +17,8 @@ require.config({
         'angular-ui-router'   : '../lib/angular-ui-router/release/angular-ui-router.min',
         'checklist-model'     : '../lib/checklist-model/checklist-model',
         'angular-flash'       : '../lib/angular-flash/dist/angular-flash.min',
-        /*'chart.js'            : '../../node_modules/chart.js/Chart.min.js',
-        'angular-chart'       : '../../node_modules/angular-chart.js/dist/angular-chart.min.js',*/
+        'chart.js'            : '../lib/chart.js/Chart.min.js',
+        'angular-chart'       : '../lib/angular-chart.js/dist/angular-chart.min.js',
 
         // jQuery
         'jquery'              : '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
