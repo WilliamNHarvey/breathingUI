@@ -45,6 +45,7 @@
     "method-override": "^1.0.0",
     "morgan": "^1.0.0",
     "regexp-clone": "0.0.1",
+    "require_optional": "^1.0.1",
     "underscore": "^1.8.3",
     "walk": "^2.3.9"
   },
