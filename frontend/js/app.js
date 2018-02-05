@@ -20,7 +20,8 @@ define([
         'ui.router',
         'App.sleepear',
         'angular-flash.service',
-        'angular-flash.flash-alert-directive'
+        'angular-flash.flash-alert-directive',
+        'chart.js'
     ]);
 
     // Constants
