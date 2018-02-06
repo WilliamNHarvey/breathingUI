@@ -124,7 +124,8 @@ define([
               yAxis: {
                   axisLabel: '%',
                   axisLabelDistance: -10
-              }
+              },
+              color: ["#D32F2F", "#42A5F5"]
           }
       };
 
