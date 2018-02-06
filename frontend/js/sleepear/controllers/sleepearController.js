@@ -119,12 +119,13 @@ define([
               },
               duration: 500,
               xAxis: {
-                  axisLabel: 'Oxy/Deoxyhemoglobin'
+                  axisLabel: 'Oxy/Deoxyhemoglobin',
+                  axisLabelDistance: -10
               },
               yAxis: {
                   axisLabel: '%',
                   axisLabelDistance: -10,
-                  ticks: 10
+                  ticks: 6
               },
               color: ["#D32F2F", "#42A5F5"]
           }
