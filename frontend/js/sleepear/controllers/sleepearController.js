@@ -104,7 +104,7 @@ define([
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
-              height: 450,
+              height: 200,
               margin : {
                   top: 20,
                   right: 20,
@@ -133,12 +133,14 @@ define([
               key: "Cumulative Return",
               values: [
                   {
-                      "label" : "+O2" ,
-                      "value" : 48
+                      "label" : "+O²",
+                      "value" : 48,
+                      "fill": "#D32F2F"
                   },
                   {
-                      "label" : "-O2" ,
-                      "value" : 52
+                      "label" : "-O²",
+                      "value" : 52,
+                      "fill": "#42A5F5"
                   }
               ]
           }

@@ -1,6 +1,6 @@
 <div class="page">
     <div class="graphs-parent">
-        <nvd3 data="barData" options="barOptions"></nvd3>
+        <nvd3 data="barData" options="barOptions" config="{extended: params.mode === 'extended', visible: params.visible, disabled: params.disabled }"></nvd3>
     </div>
     <div class="circle-parent">
         <div id="circle-1"></div>
