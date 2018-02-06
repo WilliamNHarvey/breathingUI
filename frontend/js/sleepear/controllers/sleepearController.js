@@ -100,9 +100,6 @@ define([
           newSize = $('#circle-1').height() * 1.03 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
-          $scope.barData[0].values[0].value = $scope.barData[0].values[0].value + 1;
-          $scope.barData[0].values[1].value = $scope.barData[0].values[1].value - 1;
-          $scope.barApi.refresh();
       };
       var increaseOxygen = function() {
           $scope.barData[0].values[0].value = $scope.barData[0].values[0].value + 1;
