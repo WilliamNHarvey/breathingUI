@@ -108,8 +108,38 @@ define([
               $scope.barApi.update();
           }
       };
+      var cycle = 0;
+      var changePressure = function() {
+          var topel = parseInt($('.top').text());
+          var botel = parseInt($('.bot').text());
+          switch(cycle) {
+              case 0:
+                  $('.top').text(topel+1);
+                  $('.bot').text(botel+1);
+                  break;
+              case 1:
+                  $('.top').text(topel-1);
+                  $('.bot').text(botel-1);
+                  break;
+              case 2:
+                  $('.top').text(topel-1);
+                  $('.bot').text(botel-1);
+                  break;
+              case 3:
+                  $('.top').text(topel+1);
+                  $('.bot').text(botel+1);
+                  cycle = -1;
+                  break;
+              default:
+                  $('.top').text(topel+1);
+                  $('.bot').text(botel+1);
+          }
+          cycle++;
+      };
       var intervalId;
       var barInterval;
+      var pressureInterval;
+      pressureInterval = setInterval(changePressure, 1000);
       function start() {
           intervalId = setInterval(increaseSize, 30);
           barInterval = setInterval(increaseOxygen, 250);
