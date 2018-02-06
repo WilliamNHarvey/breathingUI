@@ -200,13 +200,7 @@ define([
 
           var now = new Date().getTime();
 
-          function produceRestData() {
-              data.push(produceValue());
 
-              while (data.length > 62) {
-                  data.shift();
-              }
-          }
 
           var lastProducedValue;
 
@@ -236,6 +230,14 @@ define([
               return [now, lastProducedValue];
           }
 
+          function produceRestData() {
+              data.push(produceValue());
+
+              while (data.length > 62) {
+                  data.shift();
+              }
+          }
+          
           for (var i = 62; i > 0; i--) {
               data.push(produceValue(now - i * 1000))
           }
