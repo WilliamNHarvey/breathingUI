@@ -290,7 +290,7 @@ define([
           .range([0, width]);
 
       var y = d3.scale.linear()
-          .domain([-10, 10])
+          .domain([-5, 5])
           .range([height, 0]);
 
       var xAxis = d3.svg.axis()
