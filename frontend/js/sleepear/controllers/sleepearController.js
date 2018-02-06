@@ -125,11 +125,12 @@ define([
               yAxis: {
                   axisLabel: '%',
                   axisLabelDistance: -10,
-                  ticks: 6
-
+                  ticks: 6,
+                  rotateYLabel: true,
+                  orient: 'left',
+                  css:{ 'transform':'rotate(45deg)' }
               },
-              color: ["#D32F2F", "#42A5F5"],
-              rotateYLabel: true
+              color: ["#D32F2F", "#42A5F5"]
           }
       };
 
