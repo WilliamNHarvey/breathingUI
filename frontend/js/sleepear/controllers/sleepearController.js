@@ -22,7 +22,7 @@ define([
               y: function(d){return d.value;},
               showValues: true,
               valueFormat: function(d){
-                  return $window.d3.format(',.4f')(d);
+                  return $window.d3.format(',.1f')(d);
               },
               duration: 500,
               xAxis: {
