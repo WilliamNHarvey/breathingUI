@@ -199,14 +199,6 @@ define([
           var data = [];
 
           var now = new Date().getTime();
-          for (var i = 62; i > 0; i--) {
-              data.push(produceValue(now - i * 1000))
-          }
-
-          setInterval(function() {
-              produceRestData();
-          }, 1000);
-
 
           function produceRestData() {
               data.push(produceValue());
@@ -243,6 +235,17 @@ define([
 
               return [now, lastProducedValue];
           }
+
+          for (var i = 62; i > 0; i--) {
+              data.push(produceValue(now - i * 1000))
+          }
+
+          setInterval(function() {
+              produceRestData();
+          }, 1000);
+
+
+
 
 
           function getData() {
