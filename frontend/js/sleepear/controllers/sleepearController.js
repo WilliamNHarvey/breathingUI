@@ -57,7 +57,7 @@ define([
       };
       var intervalId;
       function start() {
-          intervalId = setInterval(increaseSize, 50);
+          intervalId = setInterval(increaseSize, 30);
       }
       function stop() {
           clearInterval(intervalId);
@@ -104,7 +104,7 @@ define([
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
-              height: 200,
+              height: 250,
               margin : {
                   top: 20,
                   right: 20,
@@ -123,7 +123,8 @@ define([
               },
               yAxis: {
                   axisLabel: '%',
-                  axisLabelDistance: -10
+                  axisLabelDistance: -10,
+                  ticks: 10
               },
               color: ["#D32F2F", "#42A5F5"]
           }
@@ -135,13 +136,11 @@ define([
               values: [
                   {
                       "label" : "+O²",
-                      "value" : 48,
-                      "fill": "#D32F2F"
+                      "value" : 40
                   },
                   {
                       "label" : "-O²",
-                      "value" : 52,
-                      "fill": "#42A5F5"
+                      "value" : 60
                   }
               ]
           }
