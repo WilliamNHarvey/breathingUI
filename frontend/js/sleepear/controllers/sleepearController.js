@@ -269,7 +269,7 @@ define([
               bottom: 30,
               left: 50
           },
-          height = 160 - margin.top - margin.bottom,
+          height = 200 - margin.top - margin.bottom,
           width = 650 - margin.left - margin.right;
 
 
