@@ -9,6 +9,7 @@ define([
     'angular-ui-router',
     'angular-flash',
     'sleepear/sleepear',
+    'd3',
     'angular-nvd3'
 ], function (angularAMD) {
     'use strict';
@@ -22,7 +23,7 @@ define([
         'App.sleepear',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
-        'angular-nvd3'
+        'nvd3'
     ]);
 
     // Constants
