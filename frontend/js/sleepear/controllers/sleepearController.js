@@ -107,9 +107,9 @@ define([
               height: 220,
               margin : {
                   top: 20,
-                  right: 10,
-                  bottom: 40,
-                  left: 55
+                  right: 0,
+                  bottom: 30,
+                  left: 65
               },
               x: function(d){return d.label;},
               y: function(d){return d.value;},
@@ -125,7 +125,8 @@ define([
               yAxis: {
                   axisLabel: '%',
                   axisLabelDistance: -10,
-                  ticks: 6
+                  ticks: 6,
+                  rotateYLabel: true
               },
               color: ["#D32F2F", "#42A5F5"]
           }
