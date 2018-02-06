@@ -8,7 +8,8 @@ define([
     'ngProgress',
     'angular-ui-router',
     'angular-flash',
-    'sleepear/sleepear'
+    'sleepear/sleepear',
+    'angular-nvd3'
 ], function (angularAMD) {
     'use strict';
 
