@@ -17,7 +17,7 @@ require.config({
         'angular-ui-router'   : '../lib/angular-ui-router/release/angular-ui-router.min',
         'checklist-model'     : '../lib/checklist-model/checklist-model',
         'angular-flash'       : '../lib/angular-flash/dist/angular-flash.min',
-        'd3'                  : '../lib/d3/d3',
+        'd3'                  : '../lib/d3/d3.min',
         'nvd3'                : '../lib/nvd3/build/nv.d3',
         'angular-nvd3'        : '../lib/angular-nvd3/dist/angular-nvd3.min',
 
