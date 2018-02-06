@@ -68,14 +68,14 @@ define([
 
     });
 
-    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash) {
+    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, d3) {
         // Expose $state and $stateParams to $rootScope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
         // Project defaults
         $rootScope.project = projectDefaults;
-
+        window.d3 = d3;
         // Set progressbar events
         /*ngProgress.color('#18bc9c');
         $rootScope.$on("$stateChangeStart", function (event, next, current) {

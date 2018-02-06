@@ -79,6 +79,3 @@ require.config({
     },
     deps: ['app']
 });
-require(["../lib/d3/d3.min"], function (d3) {
-    window.d3 = d3;
-});
