@@ -64,8 +64,8 @@ require.config({
             exports: 'd3'
         },
         'nvd3': {
-            exports: 'nv',
-            deps : ['d3']
+            deps : ['d3'],
+            exports: 'nv'
         },
         'angular-nvd3': {
             deps : ['angular', 'd3', 'nvd3']
@@ -78,4 +78,10 @@ require.config({
         }
     },
     deps: ['app']
+});
+require(['d3js'], function(d3) {
+    window.d3 = d3;
+    require(['nvd3'], function(nvd3) {
+        console.log(nvd3);
+    });
 });

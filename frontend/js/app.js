@@ -23,7 +23,6 @@ define([
         'App.sleepear',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
-        'd3',
         'nvd3'
     ]);
 
@@ -69,14 +68,13 @@ define([
 
     });
 
-    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, d3) {
+    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash) {
         // Expose $state and $stateParams to $rootScope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
         // Project defaults
         $rootScope.project = projectDefaults;
-        window.d3 = d3;
         // Set progressbar events
         /*ngProgress.color('#18bc9c');
         $rootScope.$on("$stateChangeStart", function (event, next, current) {
