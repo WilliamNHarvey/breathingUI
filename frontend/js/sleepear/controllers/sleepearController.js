@@ -128,7 +128,7 @@ define([
                   ticks: 6,
                   rotateYLabel: true,
                   orient: 'left',
-                  css:{ 'transform':'rotate(45deg)' }
+                  css:{ 'transform':'rotate(90deg)' }
               },
               color: ["#D32F2F", "#42A5F5"]
           }
