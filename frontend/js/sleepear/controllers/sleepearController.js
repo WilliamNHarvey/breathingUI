@@ -217,9 +217,9 @@ define([
                   lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
               } else {
                   if (lastProducedValue > 4) {
-                      lastProducedValue -= Math.random() * 2 - 1;
+                      lastProducedValue -= Math.random() * 2;
                   } else if (lastProducedValue < -4) {
-                      lastProducedValue += Math.random() * 2 - 1;
+                      lastProducedValue += Math.random() * 2;
                   } else {
                       lastProducedValue += Math.random() * 3 - 1.5;
                   }
