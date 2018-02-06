@@ -104,11 +104,11 @@ define([
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
-              height: 200,
+              height: 220,
               margin : {
                   top: 20,
                   right: 10,
-                  bottom: 30,
+                  bottom: 40,
                   left: 55
               },
               x: function(d){return d.label;},
