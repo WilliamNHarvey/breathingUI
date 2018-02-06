@@ -7,7 +7,7 @@ define([
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
-
+      var d3 = $window.d3;
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
@@ -264,8 +264,8 @@ define([
               bottom: 30,
               left: 50
           },
-          height = 300 - margin.top - margin.bottom;
-      width = 470 - margin.left - margin.right;
+          height = 300 - margin.top - margin.bottom,
+          width = 470 - margin.left - margin.right;
 
 
       $(function() {
