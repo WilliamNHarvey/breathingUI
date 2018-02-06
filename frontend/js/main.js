@@ -60,6 +60,9 @@ require.config({
         'angularAMD': {
             deps : ['angular']
         },
+        'nvd3': {
+            deps : ['d3']
+        },
         'angular-nvd3': {
             deps : ['angular', 'd3', 'nvd3']
         },
