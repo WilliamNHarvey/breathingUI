@@ -79,9 +79,9 @@ require.config({
     },
     deps: ['app']
 });
-require(["../lib/d3/d3.min"], function (d3) {
+/*require(["../lib/d3/d3.min"], function (d3) {
     window.d3 = d3;
     require(["../lib/angular-nvd3/dist/angular-nvd3.min"], function (angularnvd3) {
         console.log("angular-nvd3 loaded");
     });
-});
+});*/
