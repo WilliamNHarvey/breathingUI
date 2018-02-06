@@ -225,7 +225,7 @@ define([
                   }
 
               }
-
+              console.log(lastProducedValue);
 
               return [now, lastProducedValue];
           }
@@ -269,7 +269,7 @@ define([
               bottom: 30,
               left: 50
           },
-          height = 180 - margin.top - margin.bottom,
+          height = 160 - margin.top - margin.bottom,
           width = 650 - margin.left - margin.right;
 
 
