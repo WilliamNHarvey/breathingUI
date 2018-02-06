@@ -23,6 +23,7 @@ define([
         'App.sleepear',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
+        'd3',
         'nvd3'
     ]);
 
