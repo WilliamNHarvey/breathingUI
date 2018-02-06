@@ -216,9 +216,9 @@ define([
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 4) {
+                  if (lastProducedValue > 3.5) {
                       lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue < -4) {
+                  } else if (lastProducedValue < -3.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
                       lastProducedValue += Math.random() * 3 - 1.5;
@@ -269,7 +269,7 @@ define([
               bottom: 50,
               left: 50
           },
-          height = 180 - margin.top - margin.bottom,
+          height = 200 - margin.top - margin.bottom,
           width = 650 - margin.left - margin.right;
 
 
