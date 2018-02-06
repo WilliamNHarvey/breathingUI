@@ -214,14 +214,14 @@ define([
 
               var newNumber;
               if (!lastProducedValue) {
-                  lastProducedValue = (Math.floor((Math.random() - 0.5) * 2) + 1) * 10;//Math.random() * 10;
+                  lastProducedValue = (Math.floor((Math.random() - 0.5)) + 1) * 10;//Math.random() * 10;
               } else {
                   if (lastProducedValue > 9) {
-                      lastProducedValue -= (Math.floor((Math.random() - 0.5) * 2) + 1) * 2;
+                      lastProducedValue -= (Math.floor((Math.random() - 0.5)) + 1) * 2;
                   } else if (lastProducedValue < 1) {
-                      lastProducedValue += (Math.floor((Math.random() - 0.5) * 2) + 1) * 2;
+                      lastProducedValue += (Math.floor((Math.random() - 0.5)) + 1) * 2;
                   } else {
-                      lastProducedValue += (Math.floor((Math.random() - 0.5) * 2) + 1) * 3 - 1.5;
+                      lastProducedValue += (Math.floor((Math.random() - 0.5)) + 1) * 3 - 1.5;
                   }
 
               }
@@ -269,8 +269,8 @@ define([
               bottom: 30,
               left: 50
           },
-          height = 220 - margin.top - margin.bottom,
-          width = 600 - margin.left - margin.right;
+          height = 200 - margin.top - margin.bottom,
+          width = 650 - margin.left - margin.right;
 
 
 
