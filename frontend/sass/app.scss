@@ -1,5 +1,6 @@
 @import 'includes/alerts';
 @import 'includes/ngAnimations';
+@import 'includes/nv.d3';
 
 html {
   height: 100%;
@@ -135,7 +136,7 @@ body {
   background: white;
   border: 1px solid black;
   flex-direction: row;
-  padding-bottom: 100%;
+  padding: 5px;
 }
 
 #barChart {
@@ -143,4 +144,9 @@ body {
   border-style: solid;
   border-width: 2px;
   border-color: #2c3e50;
+  margin: 5px;
+  max-height: calc(50% - 55px);
+  flex-basis: calc(50% - 53px);
+  overflow-x: auto;
+  display: flex;
 }

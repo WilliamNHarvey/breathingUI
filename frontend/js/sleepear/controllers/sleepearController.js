@@ -104,7 +104,7 @@ define([
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
-              height: 250,
+              height: 200,
               margin : {
                   top: 20,
                   right: 20,
