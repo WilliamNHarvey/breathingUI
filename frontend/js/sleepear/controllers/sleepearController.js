@@ -394,6 +394,7 @@ define([
               .call(xAxis);
       }
 
+      update();
       setInterval(update, 1100);
 
 
