@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="" />
+    <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/main.js" afterPath="$PROJECT_DIR$/frontend/js/main.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+            <state relative-caret-position="521">
+              <caret line="75" column="19" lean-forward="true" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -106,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nv.d3.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nv.d3.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/lib/nvd3/build/nv.d3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="-561">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1517876922711" expanded="true" signature="243567:243575" ph="..." />
@@ -140,6 +142,7 @@
       <find>send</find>
       <find>main</find>
       <find>chart</find>
+      <find>d3</find>
     </findStrings>
     <replaceStrings>
       <replace>breaths</replace>
@@ -186,8 +189,8 @@
         <option value="$PROJECT_DIR$/frontend/lib/angular-ui-router/release/angular-ui-router.js" />
         <option value="$PROJECT_DIR$/frontend/js/app.js" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/frontend/js/main.js" />
         <option value="$PROJECT_DIR$/frontend/lib/nvd3/build/nv.d3.js" />
+        <option value="$PROJECT_DIR$/frontend/js/main.js" />
       </list>
     </option>
   </component>
@@ -692,12 +695,12 @@
       <workItem from="1517587710264" duration="6949000" />
       <workItem from="1517624156188" duration="2703000" />
       <workItem from="1517674128254" duration="524000" />
-      <workItem from="1517861866425" duration="10067000" />
+      <workItem from="1517861866425" duration="10411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43074000" />
+    <option name="totallyTimeSpent" value="43418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1541,14 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/lib/angular-nvd3/dist/angular-nvd3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
@@ -1569,14 +1564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1611,8 +1598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/lib/nvd3/build/nv.d3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="-561">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1517876922711" expanded="true" signature="243567:243575" ph="..." />
@@ -1620,6 +1607,22 @@
             <marker date="1517876922711" expanded="true" signature="457131:457148" ph="..." />
             <marker date="1517876922711" expanded="true" signature="457493:457510" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/angular-nvd3/dist/angular-nvd3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="75" column="19" lean-forward="true" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
