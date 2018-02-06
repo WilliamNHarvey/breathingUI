@@ -51,10 +51,10 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       var newSize;
       var increaseSize = function() {
-          newSize = $('#circle-1').height() * 1.02 + 1;
+          newSize = $('#circle-1').height() * 1.03 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
-      }
+      };
       var intervalId;
       function start() {
           intervalId = setInterval(increaseSize, 50);
@@ -100,6 +100,49 @@ define([
               }
           });
       });
+
+      $scope.barOptions = {
+          chart: {
+              type: 'discreteBarChart',
+              height: 450,
+              margin : {
+                  top: 20,
+                  right: 20,
+                  bottom: 50,
+                  left: 55
+              },
+              x: function(d){return d.label;},
+              y: function(d){return d.value;},
+              showValues: true,
+              valueFormat: function(d){
+                  return d3.format(',.4f')(d);
+              },
+              duration: 500,
+              xAxis: {
+                  axisLabel: 'Oxy/Deoxyhemoglobin'
+              },
+              yAxis: {
+                  axisLabel: '%',
+                  axisLabelDistance: -10
+              }
+          }
+      };
+
+      $scope.barData = [
+          {
+              key: "Cumulative Return",
+              values: [
+                  {
+                      "label" : "+O2" ,
+                      "value" : 48
+                  },
+                  {
+                      "label" : "-O2" ,
+                      "value" : 52
+                  }
+              ]
+          }
+      ]
 
   });
 });
