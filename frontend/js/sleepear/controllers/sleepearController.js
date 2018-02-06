@@ -8,6 +8,52 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
+      $scope.barOptions = {
+          chart: {
+              type: 'discreteBarChart',
+              height: 220,
+              margin : {
+                  top: 20,
+                  right: 0,
+                  bottom: 30,
+                  left: 65
+              },
+              x: function(d){return d.label;},
+              y: function(d){return d.value;},
+              showValues: true,
+              valueFormat: function(d){
+                  return $window.d3.format(',.4f')(d);
+              },
+              duration: 500,
+              xAxis: {
+                  axisLabel: 'Oxy/Deoxyhemoglobin',
+                  axisLabelDistance: -10
+              },
+              yAxis: {
+                  axisLabel: '% Abundance',
+                  axisLabelDistance: -10,
+                  ticks: 6
+              },
+              color: ["#D32F2F", "#42A5F5"]
+          }
+      };
+
+      $scope.barData = [
+          {
+              key: "Cumulative Return",
+              values: [
+                  {
+                      "label" : "+O²",
+                      "value" : 40
+                  },
+                  {
+                      "label" : "-O²",
+                      "value" : 60
+                  }
+              ]
+          }
+      ];
+
       var bouncing;
       function bounce() {
           bouncing = true;
@@ -54,6 +100,8 @@ define([
           newSize = $('#circle-1').height() * 1.03 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
+          $scope.barData.values[0].value++;
+          $scope.barData.values[1].value--;
       };
       var intervalId;
       function start() {
@@ -81,6 +129,9 @@ define([
                   stop();
                   down = false;
 
+                  $scope.barData.values[0].value = 40;
+                  $scope.barData.values[0].value = 60;
+
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       if(!bouncing) {
                           bounce();
@@ -101,54 +152,7 @@ define([
           });
       });
 
-      $scope.barOptions = {
-          chart: {
-              type: 'discreteBarChart',
-              height: 220,
-              margin : {
-                  top: 20,
-                  right: 0,
-                  bottom: 30,
-                  left: 65
-              },
-              x: function(d){return d.label;},
-              y: function(d){return d.value;},
-              showValues: true,
-              valueFormat: function(d){
-                  return $window.d3.format(',.4f')(d);
-              },
-              duration: 500,
-              xAxis: {
-                  axisLabel: 'Oxy/Deoxyhemoglobin',
-                  axisLabelDistance: -10
-              },
-              yAxis: {
-                  axisLabel: '%',
-                  axisLabelDistance: -10,
-                  ticks: 6,
-                  rotateYLabel: true,
-                  orient: 'left',
-                  css:{ 'transform':'rotate(90deg)' }
-              },
-              color: ["#D32F2F", "#42A5F5"]
-          }
-      };
 
-      $scope.barData = [
-          {
-              key: "Cumulative Return",
-              values: [
-                  {
-                      "label" : "+O²",
-                      "value" : 40
-                  },
-                  {
-                      "label" : "-O²",
-                      "value" : 60
-                  }
-              ]
-          }
-      ]
 
   });
 });
