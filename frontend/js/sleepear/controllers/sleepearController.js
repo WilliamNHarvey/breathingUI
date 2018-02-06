@@ -97,7 +97,7 @@ define([
       var max = Math.min($(window).height(), $(window).width());
       var newSize;
       var increaseSize = function() {
-          newSize = $('#circle-1').height() * 1.03 + 1;
+          newSize = $('#circle-1').height() * 1.02 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       };
@@ -214,14 +214,14 @@ define([
 
               var newNumber;
               if (!lastProducedValue) {
-                  lastProducedValue = Math.random() * 10;
+                  lastProducedValue = (Math.floor((Math.random() - 0.5) * 2) + 1) * 10;//Math.random() * 10;
               } else {
                   if (lastProducedValue > 9) {
-                      lastProducedValue -= Math.random() * 2;
+                      lastProducedValue -= (Math.floor((Math.random() - 0.5) * 2) + 1) * 2;
                   } else if (lastProducedValue < 1) {
-                      lastProducedValue += Math.random() * 2;
+                      lastProducedValue += (Math.floor((Math.random() - 0.5) * 2) + 1) * 2;
                   } else {
-                      lastProducedValue += Math.random() * 3 - 1.5;
+                      lastProducedValue += (Math.floor((Math.random() - 0.5) * 2) + 1) * 3 - 1.5;
                   }
 
               }
@@ -279,7 +279,7 @@ define([
           if ((time.getSeconds() % 10) != 0) {
               return "";
           }
-          return d3.time.format('%H:%M:%S')(time);
+          return d3.time.format('%m:%S')(time);
       }
 
       var data = restData.getData();
@@ -349,13 +349,26 @@ define([
           .attr("class", "line")
           .attr("d", line(data));
 
+      //x
+      svg.append("text")
+          .attr("transform",
+              "translate(" + (width/2) + " ," +
+              (height + margin.top + 20) + ")")
+          .style("text-anchor", "middle")
+          .text("Time (m:s)");
+
+      //y
+      svg.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - margin.left)
+          .attr("x",0 - (height / 2))
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+          .text("Voltage (mv)");
 
       function update() {
-          console.log('test');
           data = restData.getData();
           //var svg = d3.select("svg");
-
-          console.log(svg);
 
           //move the graph left
           svg.select(".line")
