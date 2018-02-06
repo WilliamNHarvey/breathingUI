@@ -102,7 +102,7 @@ define([
           $('#circle-1').width(newSize);
           $scope.barData[0].values[0].value++;
           $scope.barData[0].values[1].value--;
-          $window.nv.utils.windowResize(barChart.update);
+          console.log($window.nv.utils.windowResize(barChart.update));
       };
       var intervalId;
       function start() {
