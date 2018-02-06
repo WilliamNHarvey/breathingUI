@@ -24,7 +24,7 @@ define([
               valueFormat: function(d){
                   return $window.d3.format(',.1f')(d);
               },
-              duration: 500,
+              duration: 250,
               xAxis: {
                   axisLabel: 'Oxy/Deoxyhemoglobin',
                   axisLabelDistance: -10
@@ -102,15 +102,17 @@ define([
           $('#circle-1').width(newSize);
       };
       var increaseOxygen = function() {
-          $scope.barData[0].values[0].value = $scope.barData[0].values[0].value + 1;
-          $scope.barData[0].values[1].value = $scope.barData[0].values[1].value - 1;
-          $scope.barApi.update();
+          if($scope.barData[0].values[0].value < 100 && $scope.barData[0].values[1].value > 0) {
+              $scope.barData[0].values[0].value++;
+              $scope.barData[0].values[1].value--;
+              $scope.barApi.update();
+          }
       };
       var intervalId;
       var barInterval;
       function start() {
           intervalId = setInterval(increaseSize, 30);
-          barInterval = setInterval(increaseOxygen, 500);
+          barInterval = setInterval(increaseOxygen, 250);
       }
       function stop() {
           clearInterval(intervalId);

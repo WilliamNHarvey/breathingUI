@@ -133,7 +133,7 @@ body {
   flex-wrap: wrap;
   position: absolute;
   width: 45vw;
-  height: 32vw;
+  height: calc(32vw - 10px);
   left: 50vw;
   top: 10vw;
   background: white;
