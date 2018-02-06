@@ -107,8 +107,8 @@ define([
               height: 200,
               margin : {
                   top: 20,
-                  right: 20,
-                  bottom: 50,
+                  right: 10,
+                  bottom: 30,
                   left: 55
               },
               x: function(d){return d.label;},
