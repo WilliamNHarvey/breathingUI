@@ -100,8 +100,8 @@ define([
           newSize = $('#circle-1').height() * 1.03 + 1;
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
-          $scope.barData.values[0].value++;
-          $scope.barData.values[1].value--;
+          $scope.barData[0].values[0].value++;
+          $scope.barData[0].values[1].value--;
       };
       var intervalId;
       function start() {
@@ -129,8 +129,8 @@ define([
                   stop();
                   down = false;
 
-                  $scope.barData.values[0].value = 40;
-                  $scope.barData.values[0].value = 60;
+                  $scope.barData[0].values[0].value = 40;
+                  $scope.barData[0].values[0].value = 60;
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       if(!bouncing) {
