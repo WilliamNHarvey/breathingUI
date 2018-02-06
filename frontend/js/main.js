@@ -17,7 +17,9 @@ require.config({
         'angular-ui-router'   : '../lib/angular-ui-router/release/angular-ui-router.min',
         'checklist-model'     : '../lib/checklist-model/checklist-model',
         'angular-flash'       : '../lib/angular-flash/dist/angular-flash.min',
-        'nvd3'                : '//cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min',
+        'd3'                  : '../lib/d3/d3',
+        'nvd3'                : '../lib/nvd3/build/nv.d3',
+        'angular-nvd3'        : '../lib/angular-nvd3/dist/angular-nvd3.min',
 
         // jQuery
         'jquery'              : '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
@@ -58,8 +60,8 @@ require.config({
         'angularAMD': {
             deps : ['angular']
         },
-        'nvd3': {
-            deps : ['angular']
+        'angular-nvd3': {
+            deps : ['angular', 'd3', 'nvd3']
         },
         'ngload': {
             deps : ['angularAMD']

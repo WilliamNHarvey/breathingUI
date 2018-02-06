@@ -21,7 +21,7 @@ define([
         'App.sleepear',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
-        'nvd3'
+        'angular-nvd3'
     ]);
 
     // Constants
