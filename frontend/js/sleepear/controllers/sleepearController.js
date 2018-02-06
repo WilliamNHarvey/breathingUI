@@ -217,11 +217,11 @@ define([
                   lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
               } else {
                   if (lastProducedValue > 4) {
-                      lastProducedValue -= Math.random() * 2 - 5;
+                      lastProducedValue -= Math.random() * 2 - 1;
                   } else if (lastProducedValue < -4) {
-                      lastProducedValue += Math.random() * 2 - 5;
+                      lastProducedValue += Math.random() * 2 - 1;
                   } else {
-                      lastProducedValue += Math.random() * 3 - 1.5 - 5;
+                      lastProducedValue += Math.random() * 3 - 1.5;
                   }
 
               }
@@ -266,10 +266,10 @@ define([
       var margin = {
               top: 20,
               right: 20,
-              bottom: 30,
+              bottom: 50,
               left: 50
           },
-          height = 200 - margin.top - margin.bottom,
+          height = 180 - margin.top - margin.bottom,
           width = 650 - margin.left - margin.right;
 
 
@@ -290,7 +290,7 @@ define([
           .range([0, width]);
 
       var y = d3.scale.linear()
-          .domain([-5, 5])
+          .domain([-10, 10])
           .range([height, 0]);
 
       var xAxis = d3.svg.axis()
