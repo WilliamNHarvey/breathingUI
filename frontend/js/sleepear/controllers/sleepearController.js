@@ -116,25 +116,25 @@ define([
           var botel = parseInt(bottom.text());
           switch(cycle) {
               case 0:
-                  top.text(topel+Math.floor(Math.random() * 2) + 1);
-                  bottom.text(botel+Math.floor(Math.random() * 2) + 1);
+                  top.text(topel + (Math.floor(Math.random() * 2) + 1));
+                  bottom.text(botel + (Math.floor(Math.random() * 2) + 1));
                   break;
               case 1:
-                  top.text(topel-Math.floor(Math.random() * 2) + 1);
-                  bottom.text(botel-Math.floor(Math.random() * 2) + 1);
+                  top.text(topel - (Math.floor(Math.random() * 2) + 1));
+                  bottom.text(botel - (Math.floor(Math.random() * 2) + 1));
                   break;
               case 2:
-                  top.text(topel-Math.floor(Math.random() * 2) + 1);
-                  bottom.text(botel-Math.floor(Math.random() * 2) + 1);
+                  top.text(topel - (Math.floor(Math.random() * 2) + 1));
+                  bottom.text(botel - (Math.floor(Math.random() * 2) + 1));
                   break;
               case 3:
-                  top.text(topel+Math.floor(Math.random() * 2) + 1);
-                  bottom.text(botel+Math.floor(Math.random() * 2) + 1);
+                  top.text(topel + (Math.floor(Math.random() * 2) + 1));
+                  bottom.text(botel + (Math.floor(Math.random() * 2) + 1));
                   cycle = -1;
                   break;
               default:
-                  top.text(topel+1);
-                  bottom.text(botel+1);
+                  top.text(topel + (Math.floor(Math.random() * 2) + 1));
+                  bottom.text(botel + (Math.floor(Math.random() * 2) + 1));
           }
           cycle++;
       };
