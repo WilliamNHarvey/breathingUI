@@ -353,7 +353,7 @@ define([
       function update() {
           console.log('test');
           data = restData.getData();
-          var svg = d3.select("svg");
+          //var svg = d3.select("svg");
 
           console.log(svg);
 
