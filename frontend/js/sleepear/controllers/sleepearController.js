@@ -237,7 +237,7 @@ define([
                   data.shift();
               }
           }
-          
+
           for (var i = 62; i > 0; i--) {
               data.push(produceValue(now - i * 1000))
           }
@@ -351,8 +351,11 @@ define([
 
 
       function update() {
+          console.log('test');
           data = restData.getData();
           var svg = d3.select("svg");
+
+          console.log(svg);
 
           //move the graph left
           svg.select(".line")
