@@ -3,7 +3,7 @@ define([
   ], function(app) {
   'use strict';
 
-  app.controller('breathsController', function($rootScope, $scope, $location, $window, d3) {
+  app.controller('breathsController', function($rootScope, $scope, $location, $window) {
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
@@ -115,7 +115,7 @@ define([
               y: function(d){return d.value;},
               showValues: true,
               valueFormat: function(d){
-                  return d3.format(',.4f')(d);
+                  return $window.d3.format(',.4f')(d);
               },
               duration: 500,
               xAxis: {
