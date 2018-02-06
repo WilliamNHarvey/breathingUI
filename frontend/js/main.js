@@ -79,7 +79,7 @@ require.config({
     },
     deps: ['app']
 });
-require(['d3js'], function(d3) {
+require(['d3'], function(d3) {
     window.d3 = d3;
     require(['nvd3'], function(nvd3) {
         console.log(nvd3);
