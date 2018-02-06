@@ -93,7 +93,7 @@ define([
       }
 
       var down = false;
-
+      var barChart = $scope.barOptions.chart;
       var max = Math.min($(window).height(), $(window).width());
       var newSize;
       var increaseSize = function() {
@@ -102,6 +102,7 @@ define([
           $('#circle-1').width(newSize);
           $scope.barData[0].values[0].value++;
           $scope.barData[0].values[1].value--;
+          $window.nv.utils.windowResize(barChart.update);
       };
       var intervalId;
       function start() {
@@ -130,7 +131,8 @@ define([
                   down = false;
 
                   $scope.barData[0].values[0].value = 40;
-                  $scope.barData[0].values[0].value = 60;
+                  $scope.barData[0].values[1].value = 60;
+                  $window.nv.utils.windowResize(barChart.update);
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       if(!bouncing) {
