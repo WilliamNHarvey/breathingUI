@@ -214,14 +214,14 @@ define([
 
               var newNumber;
               if (!lastProducedValue) {
-                  lastProducedValue = (Math.floor((Math.random() - 0.5)) + 1) * 10;//Math.random() * 10;
+                  lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 9) {
-                      lastProducedValue -= (Math.floor((Math.random() - 0.5)) + 1) * 2;
-                  } else if (lastProducedValue < 1) {
-                      lastProducedValue += (Math.floor((Math.random() - 0.5)) + 1) * 2;
+                  if (lastProducedValue > 4) {
+                      lastProducedValue -= Math.random() * 2 - 5;
+                  } else if (lastProducedValue < -4) {
+                      lastProducedValue += Math.random() * 2 - 5;
                   } else {
-                      lastProducedValue += (Math.floor((Math.random() - 0.5)) + 1) * 3 - 1.5;
+                      lastProducedValue += Math.random() * 3 - 1.5 - 5;
                   }
 
               }
@@ -290,7 +290,7 @@ define([
           .range([0, width]);
 
       var y = d3.scale.linear()
-          .domain([0, 10])
+          .domain([-5, 5])
           .range([height, 0]);
 
       var xAxis = d3.svg.axis()
