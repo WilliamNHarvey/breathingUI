@@ -203,13 +203,17 @@ define([
                   $circle.animate({'opacity': 1}, 150, function() {
                       recording = false;
                   });
-                  $text.fadeOut('slow').text('Record').fadeIn('slow');
+                  $text.fadeOut('slow', function() {
+                      $text.text('Record').fadeIn('slow');
+                  });
               }
               else {
                   $circle.animate({'opacity': 0}, 150, function() {
                       recording = true;
                   });
-                  $text.fadeOut('slow').text('Pause').fadeIn('slow');
+                  $text.fadeOut('slow', function() {
+                      $text.text('Pause').fadeIn('slow');
+                  });
               }
           });
       });
