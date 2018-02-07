@@ -3,12 +3,12 @@ define([
   ], function(app) {
   'use strict';
 
-  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathService) {
+  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathsService) {
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
-      var breathModel = breathService;
+      var breathModel = breathsService;
       $scope = breathModel.model;
 
       if(typeof($window.breathSet) == "undefined") {
