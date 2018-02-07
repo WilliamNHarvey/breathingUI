@@ -206,6 +206,7 @@ define([
                   $scope.barData[0].values[0].value = 40;
                   $scope.barData[0].values[1].value = 60;
                   $scope.barApi.update();
+                  $scope.$apply()
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       if(!bouncing) {
