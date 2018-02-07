@@ -155,6 +155,8 @@ define([
       function start() {
           t = 0;
           intervalId = setInterval(increaseSize, 30);
+      }
+      function startBar() {
           barInterval = setInterval(increaseOxygen, 700);
       }
       function stop() {
@@ -164,6 +166,19 @@ define([
 
       $(document).ready(function() {
           if($window.breathSet) {
+              $('body').keydown(function(e) {
+                  if(e.keyCode === 32 && !$window.down){
+                      startBar();
+                  }
+
+              }).keyup(function(u) {
+                  if (u.keyCode === 32 && $window.down) {
+                      stopBar();
+                      $scope.barData[0].values[0].value = 40;
+                      $scope.barData[0].values[1].value = 60;
+                      $scope.barApi.update();
+                  }
+              });
               return;
           }
           $('body').keydown(function(e) {
@@ -177,10 +192,12 @@ define([
                   $window.down = true;
 
                   start();
+                  startBar();
               }
           }).keyup(function(u) {
               if(u.keyCode === 32 && $window.down) {
                   stop();
+                  stopBar();
                   $window.down = false;
 
                   $scope.barData[0].values[0].value = 40;
