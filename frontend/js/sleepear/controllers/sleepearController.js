@@ -15,6 +15,7 @@ define([
           $window.breathSet = true;
       }
       var d3 = $window.d3;
+      console.log($scope.barOptions, $scope.barData);
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
