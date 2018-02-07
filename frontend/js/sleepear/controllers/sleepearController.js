@@ -99,7 +99,7 @@ define([
           bouncing = false;
       }
 
-      var down = false;
+      $window.down = false;
       var barChart = $scope.barOptions.chart;
       var max = Math.min($('#circle-1').parent().height() * 0.9, $('#circle-1').parent().width() * 0.9) - 26;
       var newSize;
@@ -167,21 +167,21 @@ define([
               return;
           }
           $('body').keydown(function(e) {
-              if(e.keyCode === 32 && !down){
+              if(e.keyCode === 32 && !$window.down){
                   //if(!down) stop();
                   $('#circle-1').stop(true);
                   $("#circle-2").stop(true, true);
                   if($('#circle-1').width() !== 25) {
                       $('#circle-1').css({'width':'25px', 'height':'25px'});
                   }
-                  down = true;
+                  $window.down = true;
 
                   start();
               }
           }).keyup(function(u) {
-              if(u.keyCode === 32 && down) {
+              if(u.keyCode === 32 && $window.down) {
                   stop();
-                  down = false;
+                  $window.down = false;
 
                   $scope.barData[0].values[0].value = 40;
                   $scope.barData[0].values[1].value = 60;
@@ -255,16 +255,16 @@ define([
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 2 - 1;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 0.5 && !down) {
+                  if (lastProducedValue > 0.5 && !$window.down) {
                       lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue > 4 && down) {
+                  } else if (lastProducedValue > 4 && $window.down) {
                       lastProducedValue -= Math.random() * 1;
-                  } else if (lastProducedValue > 3 && down) {
+                  } else if (lastProducedValue > 3 && $window.down) {
                       lastProducedValue += Math.random() * 1;
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
-                      if(down) {
+                      if($window.down) {
                           lastProducedValue += Math.random() * 2;
                       }
                       else {
