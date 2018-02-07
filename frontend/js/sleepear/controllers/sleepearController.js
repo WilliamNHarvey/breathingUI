@@ -243,10 +243,10 @@ define([
               } else {
                   if (lastProducedValue > 0.5 && !down) {
                       lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue > 3 && down) {
-                      lastProducedValue += Math.random() * 1;
                   } else if (lastProducedValue > 4 && down) {
                       lastProducedValue -= Math.random() * 1;
+                  } else if (lastProducedValue > 3 && down) {
+                      lastProducedValue += Math.random() * 1;
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
