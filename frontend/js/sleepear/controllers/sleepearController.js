@@ -107,6 +107,7 @@ define([
       var max = Math.min($('#circle-1').parent().height() * 0.9, $('#circle-1').parent().width() * 0.9) - 26;
       var newSize;
       var t;
+      $scope = $scope.barApi.getScope();
       var increaseSize = function() {
           //newSize = $('#circle-1').height() * 1.01 + 1;
           newSize = max*(1-1*Math.pow(1.015,(-t))) + 26;
