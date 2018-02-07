@@ -272,3 +272,42 @@ body {
     }
   }
 }
+
+#submitButton {
+  top: 2.5vw;
+  right: 4vw;
+  position: absolute;
+  cursor: pointer;
+
+  .submit-body {
+    height: 5vw;
+    width: 200px;
+    background: rgba(103, 192, 92, 0.7);
+    border-radius: 10px;
+    pointer-events: none;
+
+    .submit-text {
+      font-size: 30px;
+      font-weight: bold;
+      display: block;
+      margin-right: 80px;
+      margin-left: 20px;
+      line-height: 2vw;
+      padding-top: 0.5vw;
+      text-align: center;
+    }
+
+    .submit-icon {
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - 2vw);
+      left: 140px;
+      width: 0;
+      height: 0;
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-left: 40px solid green;
+      border-radius: 10px;
+    }
+  }
+}
