@@ -244,6 +244,8 @@ define([
                   if (lastProducedValue > 0.5 && !down) {
                       lastProducedValue -= Math.random() * 2;
                   } else if (lastProducedValue > 3 && down) {
+                      lastProducedValue += Math.random() * 1;
+                  } else if (lastProducedValue > 4 && down) {
                       lastProducedValue -= Math.random() * 1;
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
@@ -265,18 +267,18 @@ define([
           function produceRestData() {
               data.push(produceValue());
 
-              while (data.length > 124) {
+              while (data.length > 248) {
                   data.shift();
               }
           }
 
-          for (var i = 124; i > 0; i--) {
-              data.push(produceValue(now - i * 500))
+          for (var i = 248; i > 0; i--) {
+              data.push(produceValue(now - i * 250))
           }
 
           setInterval(function() {
               produceRestData();
-          }, 500);
+          }, 250);
 
 
 
