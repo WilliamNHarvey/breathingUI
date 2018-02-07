@@ -203,16 +203,16 @@ define([
                   $circle.animate({'opacity': 1}, 150, function() {
                       recording = false;
                   });
-                  $text.fadeOut('slow', function() {
-                      $text.text('Record').fadeIn('slow');
+                  $text.fadeOut(75, function() {
+                      $text.text('Record').fadeIn(75);
                   });
               }
               else {
                   $circle.animate({'opacity': 0}, 150, function() {
                       recording = true;
                   });
-                  $text.fadeOut('slow', function() {
-                      $text.text('Pause').fadeIn('slow');
+                  $text.fadeOut(75, function() {
+                      $text.text('Pause').fadeIn(75);
                   });
               }
           });
