@@ -37,8 +37,8 @@
       <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="111" lean-forward="false" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
+            <state relative-caret-position="231">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -881,12 +881,12 @@
       <workItem from="1517587710264" duration="6949000" />
       <workItem from="1517624156188" duration="2703000" />
       <workItem from="1517674128254" duration="524000" />
-      <workItem from="1517861866425" duration="54338000" />
+      <workItem from="1517861866425" duration="54513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87345000" />
+    <option name="totallyTimeSpent" value="87520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1814,8 +1814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="111" lean-forward="false" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
+        <state relative-caret-position="231">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>

@@ -8,8 +8,8 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
-      //var breathModel = breathsService;
-      //$scope = breathModel.model;
+      var breathModel = breathsService;
+      $scope = breathModel.model;
 
       if(typeof($window.breathSet) === "undefined") {
           $window.breathSet = false;
