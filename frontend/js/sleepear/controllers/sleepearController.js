@@ -198,13 +198,13 @@ define([
 
           $recButton.click(function() {
               if(recording) {
-                  $circle.animate({'opacity': 0}), 150, function() {
-                      recording = true;
+                  $circle.animate({'opacity': 1}), 150, function() {
+                      recording = false;
                   }
               }
               else {
-                  $circle.animate({'opacity': 1}), 150, function() {
-                      recording = false;
+                  $circle.animate({'opacity': 0}), 150, function() {
+                      recording = true;
                   }
               }
           });
