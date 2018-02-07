@@ -241,15 +241,15 @@ define([
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 1 && !down) {
+                  if (lastProducedValue > 0.5 && !down) {
                       lastProducedValue -= Math.random() * 2;
                   } else if (lastProducedValue > 4 && down) {
                       lastProducedValue -= Math.random() * 1;
-                  } else if (lastProducedValue < -1) {
+                  } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
                       if(down) {
-                          lastProducedValue += Math.random() * 1.5;
+                          lastProducedValue += Math.random() * 2;
                       }
                       else {
                           lastProducedValue += Math.random() * 3 - 1.5;
