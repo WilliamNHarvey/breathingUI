@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/app.js" afterPath="$PROJECT_DIR$/frontend/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" afterPath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" afterPath="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -46,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sleepearService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sleepearService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="794">
-              <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+            <state relative-caret-position="542">
+              <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -196,8 +194,8 @@
         <option value="$PROJECT_DIR$/views/partials/breaths/submit.html" />
         <option value="$PROJECT_DIR$/views/partials/breaths/index.html" />
         <option value="$PROJECT_DIR$/frontend/js/app.js" />
-        <option value="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
+        <option value="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" />
       </list>
     </option>
   </component>
@@ -883,12 +881,12 @@
       <workItem from="1517587710264" duration="6949000" />
       <workItem from="1517624156188" duration="2703000" />
       <workItem from="1517674128254" duration="524000" />
-      <workItem from="1517861866425" duration="52763000" />
+      <workItem from="1517861866425" duration="52912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85770000" />
+    <option name="totallyTimeSpent" value="85919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1798,6 +1796,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/sleepear.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -1808,16 +1814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="794">
-          <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        <state relative-caret-position="542">
+          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding />
         </state>
       </provider>

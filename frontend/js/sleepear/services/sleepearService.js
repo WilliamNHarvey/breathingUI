@@ -3,26 +3,7 @@ define([
 ], function(angularAMD) {
   'use strict';
 
-  angularAMD.factory('breathsService', [
-    '$resource',
-    function($resource) {
-
-      this.resource = function() {
-          return $resource(
-            'api/breaths/:_id',
-            { _id: '@_id' },
-            {
-              update: {
-                method: 'PUT'
-              }
-            }
-          );
-      };
-
-      return this;
-    }
-  ])
-    .factory('submitService', [
+  angularAMD.factory('submitService', [
         '$resource',
         function($resource) {
 
@@ -42,7 +23,7 @@ define([
         }
     ])
 
-    .factory('breathService', ['$rootScope, $resource', function ($rootScope, $resource) {
+    .factory('breathService', ['$rootScope', function ($rootScope) {
 
         var service = {
 
@@ -56,18 +37,6 @@ define([
 
             RestoreState: function () {
                 service.model = angular.fromJson(sessionStorage.breathService);
-            },
-
-            resource: function() {
-                return $resource(
-                    'api/breaths/:_id',
-                    {_id: '@_id'},
-                    {
-                        update: {
-                            method: 'PUT'
-                        }
-                    }
-                );
             }
         };
 
