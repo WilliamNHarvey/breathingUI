@@ -259,7 +259,6 @@ define([
                   }
 
               }
-              console.log(lastProducedValue);
 
               return [now, lastProducedValue];
           }
