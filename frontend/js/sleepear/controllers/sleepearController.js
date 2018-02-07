@@ -313,7 +313,7 @@ define([
 
 
       function formatter(time) {
-          if ((time.getSeconds() % 10) != 0) {
+          if ((time.getSeconds() % 10) !== 0) {
               return "";
           }
           return d3.time.format('%M:%S')(time);
