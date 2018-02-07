@@ -24,6 +24,21 @@ define([
                   }
               })
           )
+          .state('submitting', angularAMD.route({
+                  url: '/submit',
+                  templateUrl: 'partials/breaths/submit.html',
+                  controller: 'submitController',
+                  data: {
+                      title: 'Submit',
+                  },
+                  controllerUrl: 'sleepear/controllers/sleepearController',
+                  resolve: {
+                      breaths: ['submitService', function(submitService) {
+                          //return beerService.resource().query().$promise;
+                      }]
+                  }
+              })
+          )
   }]);
 
   return sleepear;

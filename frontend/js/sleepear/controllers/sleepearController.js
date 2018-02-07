@@ -7,6 +7,7 @@ define([
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
+      $scope.switchPage = $rootScope.switchPage;
       var d3 = $window.d3;
       $scope.barOptions = {
           chart: {
@@ -435,5 +436,8 @@ define([
       setInterval(update, 400);
 
 
+  })
+  .controller('submitController', function($rootScope, $scope, $location, $window) {
+      $scope.switchPage = $rootScope.switchPage;
   });
 });
