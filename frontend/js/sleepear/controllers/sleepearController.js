@@ -304,7 +304,7 @@ define([
           if ((time.getSeconds() % 10) != 0) {
               return "";
           }
-          return d3.time.format('%m:%S')(time);
+          return d3.time.format('%M:%S')(time);
       }
 
       var data = restData.getData();
