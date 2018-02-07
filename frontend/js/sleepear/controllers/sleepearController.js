@@ -100,7 +100,7 @@ define([
       var increaseSize = function() {
           //newSize = $('#circle-1').height() * 1.01 + 1;
           console.log(t);
-          newSize = max*(1-1*Math.pow(1.01,(-t - 6)));
+          newSize = max*(1-1*Math.pow(1.02,(-t - 6)));
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
           t++;
