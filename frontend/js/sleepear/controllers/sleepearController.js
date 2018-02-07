@@ -94,7 +94,7 @@ define([
 
       var down = false;
       var barChart = $scope.barOptions.chart;
-      var max = Math.min($('#circle-1').parent().height() * 0.9, $('#circle-1').parent().width() * 0.9);
+      var max = Math.min($('#circle-1').parent().height() * 0.9, $('#circle-1').parent().width() * 0.9) - 26;
       var newSize;
       var t;
       var increaseSize = function() {
