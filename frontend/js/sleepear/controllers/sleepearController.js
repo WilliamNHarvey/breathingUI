@@ -8,8 +8,8 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
-      var breathModel = breathsService;
-      $scope = breathModel.model;
+      //var breathModel = breathsService;
+      //$scope = breathModel.model;
 
       if(typeof($window.breathSet) == "undefined") {
           $window.breathSet = false;
@@ -210,7 +210,7 @@ define([
                   $scope.barData[0].values[0].value = 40;
                   $scope.barData[0].values[1].value = 60;
                   $scope.barApi.update();
-                  $scope.$apply()
+                  //$scope.$apply()
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                       if(!bouncing) {
