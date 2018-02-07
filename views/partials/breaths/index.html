@@ -1,4 +1,7 @@
-<div id="nokey" class="page">
+<div class="page">
+    <canvas id="nokey">
+        Your Browser Don't Support Canvas, Please Download Chrome ^_^``
+    </canvas>
     <div id="recordButton">
         <div class="record-body">
             <div class="record-text noselect">Record</div>
@@ -32,11 +35,32 @@
 
 <script>
     var canvas = document.getElementById('nokey'),
-        can_w = parseInt(canvas.getAttribute('width')),
-        can_h = parseInt(canvas.getAttribute('height')),
+        can_w = parseInt(window.innerWidth),
+        can_h = parseInt(window.innerHeight),
         ctx = canvas.getContext('2d');
 
     // console.log(typeof can_w);
+    // resize the canvas to fill browser window dynamically
+    window.addEventListener('resize', resizeCanvas, false);
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        can_w = parseInt(window.innerWidth);
+        can_h = parseInt(window.innerHeight);
+
+        /**
+         * Your drawings need to be inside this function otherwise they will be reset when
+         * you resize the browser window and the canvas goes will be cleared.
+         */
+        drawStuff();
+    }
+    resizeCanvas();
+
+    function drawStuff() {
+        // do your drawing stuff here
+    }
+
 
     var ball = {
             x: 0,
