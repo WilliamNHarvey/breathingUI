@@ -200,19 +200,19 @@ define([
           $recButton.click(function() {
               console.log(recording);
               if(recording) {
-                  $circle.animate({'opacity': 1}, 150, function() {
+                  $circle.animate({'opacity': 1}, 300, function() {
                       recording = false;
                   });
-                  $text.fadeOut(75, function() {
-                      $text.text('Record').fadeIn(75);
+                  $text.fadeOut(150, function() {
+                      $text.text('Record').fadeIn(150);
                   });
               }
               else {
-                  $circle.animate({'opacity': 0}, 150, function() {
+                  $circle.animate({'opacity': 0}, 300, function() {
                       recording = true;
                   });
-                  $text.fadeOut(75, function() {
-                      $text.text('Pause').fadeIn(75);
+                  $text.fadeOut(150, function() {
+                      $text.text('Pause').fadeIn(150);
                   });
               }
           });
