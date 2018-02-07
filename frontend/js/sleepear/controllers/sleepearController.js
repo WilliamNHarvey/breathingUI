@@ -119,6 +119,7 @@ define([
               $scope.barData[0].values[0].value++;
               $scope.barData[0].values[1].value--;
               $scope.barApi.update();
+              console.log($scope.barApi);
           }
       };
       var cycle = 0;
