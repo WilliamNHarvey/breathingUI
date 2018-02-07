@@ -243,7 +243,7 @@ define([
               } else {
                   if (lastProducedValue > 0.5 && !down) {
                       lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue > 4 && down) {
+                  } else if (lastProducedValue > 3 && down) {
                       lastProducedValue -= Math.random() * 1;
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
@@ -271,12 +271,12 @@ define([
           }
 
           for (var i = 62; i > 0; i--) {
-              data.push(produceValue(now - i * 1000))
+              data.push(produceValue(now - i * 500))
           }
 
           setInterval(function() {
               produceRestData();
-          }, 1000);
+          }, 500);
 
 
 
