@@ -144,7 +144,7 @@ define([
       pressureInterval = setInterval(changePressure, 3000);
       function start() {
           intervalId = setInterval(increaseSize, 30);
-          barInterval = setInterval(increaseOxygen, 250);
+          barInterval = setInterval(increaseOxygen, 1500);
       }
       function stop() {
           clearInterval(intervalId);
