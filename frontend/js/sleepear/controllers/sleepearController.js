@@ -409,9 +409,9 @@ define([
               .attr("transform", null)
               .transition()
               .delay(0)
-              .duration(1000)
+              .duration(250)
               .ease("linear")
-              .attr("transform", "translate(" + (x(0) - x(1000)) + ")");
+              .attr("transform", "translate(" + (x(0) - x(250)) + ")");
 
 
           var currentTime = new Date().getTime();
@@ -422,13 +422,13 @@ define([
           //move the xaxis left
           svg.select(".x.axis")
               .transition()
-              .duration(1000)
+              .duration(250)
               .ease("linear")
               .call(xAxis);
       }
 
       update();
-      setInterval(update, 1100);
+      setInterval(update, 350);
 
 
   });
