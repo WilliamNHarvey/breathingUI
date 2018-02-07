@@ -428,7 +428,7 @@ define([
       }
 
       update();
-      setInterval(update, 350);
+      setInterval(update, 400);
 
 
   });
