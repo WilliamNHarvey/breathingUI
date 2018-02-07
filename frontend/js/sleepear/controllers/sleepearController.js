@@ -265,12 +265,12 @@ define([
           function produceRestData() {
               data.push(produceValue());
 
-              while (data.length > 62) {
+              while (data.length > 124) {
                   data.shift();
               }
           }
 
-          for (var i = 62; i > 0; i--) {
+          for (var i = 124; i > 0; i--) {
               data.push(produceValue(now - i * 500))
           }
 
