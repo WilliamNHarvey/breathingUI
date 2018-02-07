@@ -8,9 +8,6 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
-      var breathModel = breathsService;
-      $scope = breathModel.model;
-
       if(typeof($window.breathSet) === "undefined") {
           $window.breathSet = false;
       }
@@ -18,8 +15,6 @@ define([
           $window.breathSet = true;
       }
       var d3 = $window.d3;
-
-      $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
 
       $scope.barOptions = {
           chart: {
@@ -66,6 +61,8 @@ define([
               ]
           }
       ];
+
+      $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
 
       var bouncing;
       function bounce() {
