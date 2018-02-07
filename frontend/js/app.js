@@ -102,6 +102,18 @@ define([
             }
         };
 
+        $rootScope.$on("$routeChangeStart", function (event, next, current) {
+            if (sessionStorage.restorestate == "true") {
+                $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
+                sessionStorage.restorestate = false;
+            }
+        });
+
+        //let everthing know that we need to save state now.
+        $window.onbeforeunload = function (event) {
+            $rootScope.$broadcast('savestate');
+        };
+
         // Set progressbar events
         /*ngProgress.color('#18bc9c');
         $rootScope.$on("$stateChangeStart", function (event, next, current) {

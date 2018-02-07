@@ -3,10 +3,13 @@ define([
   ], function(app) {
   'use strict';
 
-  app.controller('breathsController', function($rootScope, $scope, $location, $window) {
+  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathService) {
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
+
+      var breathModel = breathService;
+      $scope = breathModel.model;
 
       if(typeof($window.breathSet) == "undefined") {
           $window.breathSet = false;
@@ -15,7 +18,7 @@ define([
           $window.breathSet = true;
       }
       var d3 = $window.d3;
-      console.log($scope.barOptions, $scope.barData);
+
       $scope.barOptions = {
           chart: {
               type: 'discreteBarChart',
