@@ -1,12 +1,14 @@
 # SleepEar
 
+https://sleepear.herokuapp.com/breaths
+
 ## Build
 
 ### Install
 
 Clone this repo:
 
-    git clone git@github.com:igorprado/angular-requirejs-gulp-express-mongodb-seed.git
+    git clone git@github.com:WilliamNHarvey/breathingUI.git
 
 Run `npm install` to install the dependencies:
 
@@ -28,24 +30,18 @@ Configure your MongoDB database and credentials on `app.js`:
 
     mongoose.connect('mongodb://<user>:<pass>@<host>:<port>/<db>');
 
-_NOTE: If you don't have a MongoDB on your development machine, a simple way to start with this app is create a free MongoDB instance at [Mongolab](https://mongolab.com/home)._
+MongoLab on Heroku adds an environment variable with db credentials
 
 Runs like a typical express app:
 
     node app.js
-
-_For development enviroment, I recommend [Supervisor](https://github.com/isaacs/node-supervisor)._
-
-### Running tests
-
-I have to learn more about tests. So, it's on my roadmap for this seed.
 
 ## Directory Layout
 
     app.js              --> App config
     package.json        --> For npm
     bower.json          --> Frontend libs dependencies
-    frontend/           --> All of the source files to be used in on the client side (will be compiled on public/)
+    frontend/           --> All of the source files to be used in on the client side (compiled by gulp into public/)
       sass/             --> Stylesheet files
         app.sass        --> Default sass stylesheet
         includes/       --> Divide our stylesheet in parts
