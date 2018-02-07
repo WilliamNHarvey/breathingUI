@@ -7,7 +7,13 @@ define([
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
-      $scope.switchPage = $rootScope.switchPage;
+
+      if(typeof($window.breathSet) === "undefined") {
+          $window.breathSet = false;
+      }
+      else {
+          $window.breathSet = true;
+      }
       var d3 = $window.d3;
       $scope.barOptions = {
           chart: {
@@ -156,7 +162,8 @@ define([
           clearInterval(barInterval);
       }
 
-      $(document).ready(function(){
+      $(document).ready(function() {
+          if($window.breathSet) return;
           $('body').keydown(function(e) {
               if(e.keyCode === 32 && !down){
                   //if(!down) stop();
@@ -221,221 +228,217 @@ define([
                   });
               }
           });
-      });
+          var restData = (function() {
 
+              var data = [];
 
-      var restData = (function() {
-
-          var data = [];
-
-          var now = new Date().getTime();
+              var now = new Date().getTime();
 
 
 
-          var lastProducedValue;
+              var lastProducedValue;
 
-          function produceValue(currentTime) {
-              var now;
-              if (currentTime) {
-                  now = currentTime;
-              } else {
-                  now = new Date().getTime();
-              }
-
-              var newNumber;
-              if (!lastProducedValue) {
-                  lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
-              } else {
-                  if (lastProducedValue > 0.5 && !down) {
-                      lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue > 4 && down) {
-                      lastProducedValue -= Math.random() * 1;
-                  } else if (lastProducedValue > 3 && down) {
-                      lastProducedValue += Math.random() * 1;
-                  } else if (lastProducedValue < -0.5) {
-                      lastProducedValue += Math.random() * 2;
+              function produceValue(currentTime) {
+                  var now;
+                  if (currentTime) {
+                      now = currentTime;
                   } else {
-                      if(down) {
-                          lastProducedValue += Math.random() * 2;
-                      }
-                      else {
-                          lastProducedValue += Math.random() * 3 - 1.5;
-                      }
+                      now = new Date().getTime();
                   }
 
+                  var newNumber;
+                  if (!lastProducedValue) {
+                      lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
+                  } else {
+                      if (lastProducedValue > 0.5 && !down) {
+                          lastProducedValue -= Math.random() * 2;
+                      } else if (lastProducedValue > 4 && down) {
+                          lastProducedValue -= Math.random() * 1;
+                      } else if (lastProducedValue > 3 && down) {
+                          lastProducedValue += Math.random() * 1;
+                      } else if (lastProducedValue < -0.5) {
+                          lastProducedValue += Math.random() * 2;
+                      } else {
+                          if(down) {
+                              lastProducedValue += Math.random() * 2;
+                          }
+                          else {
+                              lastProducedValue += Math.random() * 3 - 1.5;
+                          }
+                      }
+
+                  }
+
+                  return [now, lastProducedValue];
               }
 
-              return [now, lastProducedValue];
-          }
+              function produceRestData() {
+                  data.push(produceValue());
 
-          function produceRestData() {
-              data.push(produceValue());
-
-              while (data.length > 248) {
-                  data.shift();
+                  while (data.length > 248) {
+                      data.shift();
+                  }
               }
+
+              for (var i = 248; i > 0; i--) {
+                  data.push(produceValue(now - i * 250))
+              }
+
+              setInterval(function() {
+                  produceRestData();
+              }, 250);
+
+
+
+
+
+              function getData() {
+                  return data;
+              }
+
+              return {
+                  getData: getData
+              }
+          })();
+
+
+
+
+
+          var margin = {
+                  top: 20,
+                  right: 20,
+                  bottom: 50,
+                  left: 50
+              },
+              height = 200 - margin.top - margin.bottom,
+              width = 650 - margin.left - margin.right;
+
+
+
+
+          function formatter(time) {
+              if ((time.getSeconds() % 10) !== 0) {
+                  return "";
+              }
+              return d3.time.format('%M:%S')(time);
           }
 
-          for (var i = 248; i > 0; i--) {
-              data.push(produceValue(now - i * 250))
-          }
+          var data = restData.getData();
+          var x = d3.time.scale()
+              .domain(d3.extent(data, function(d) {
+                  return d[0];
+              }))
+              .range([0, width]);
 
-          setInterval(function() {
-              produceRestData();
-          }, 250);
+          var y = d3.scale.linear()
+              .domain([-5, 5])
+              .range([height, 0]);
 
+          var xAxis = d3.svg.axis()
+              .scale(x)
+              .ticks(d3.time.seconds, 2)
+              .tickFormat(formatter)
+              .orient("bottom");
 
+          var yAxis = d3.svg.axis()
+              .scale(y)
+              .orient("left");
 
+          var line = d3.svg.line()
+              .x(function(d) {
+                  return x(d[0]);
+              })
+              .y(function(d) {
+                  return y(d[1]);
+              })
+              .interpolate("linear");
 
+          var svg = d3.select("#eegChart").append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          function getData() {
-              return data;
-          }
-
-          return {
-              getData: getData
-          }
-      })();
-
-
-
-
-
-      var margin = {
-              top: 20,
-              right: 20,
-              bottom: 50,
-              left: 50
-          },
-          height = 200 - margin.top - margin.bottom,
-          width = 650 - margin.left - margin.right;
-
-
-
-
-      function formatter(time) {
-          if ((time.getSeconds() % 10) !== 0) {
-              return "";
-          }
-          return d3.time.format('%M:%S')(time);
-      }
-
-      var data = restData.getData();
-      var x = d3.time.scale()
-          .domain(d3.extent(data, function(d) {
-              return d[0];
-          }))
-          .range([0, width]);
-
-      var y = d3.scale.linear()
-          .domain([-5, 5])
-          .range([height, 0]);
-
-      var xAxis = d3.svg.axis()
-          .scale(x)
-          .ticks(d3.time.seconds, 2)
-          .tickFormat(formatter)
-          .orient("bottom");
-
-      var yAxis = d3.svg.axis()
-          .scale(y)
-          .orient("left");
-
-      var line = d3.svg.line()
-          .x(function(d) {
-              return x(d[0]);
-          })
-          .y(function(d) {
-              return y(d[1]);
-          })
-          .interpolate("linear");
-
-      var svg = d3.select("#eegChart").append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("clipPath", "url(#innerGraph)")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
-
-      svg.append("g")
-          .attr("class", "y axis")
-          .call(yAxis)
-          .append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 6)
-          .attr("dy", ".71em")
-          .style("text-anchor", "end");
-
-      var holder = svg.append("defs");
-      holder.append("svg:clipPath")
-          .attr("id", "innerGraph")
-          .append("svg:rect")
-          .attr("x", 0)
-          .attr("y", 0)
-          .style("fill", "gray")
-          .attr("height", height)
-          .attr("width", width);
-
-      svg.append("g")
-          .attr("clip-path", "url(#innerGraph)")
-          .append("svg:path")
-          .attr("class", "line")
-          .attr("d", line(data));
-
-      //x
-      svg.append("text")
-          .attr("transform",
-              "translate(" + (width/2) + " ," +
-              (height + margin.top + 20) + ")")
-          .style("text-anchor", "middle")
-          .text("Time (m:s)");
-
-      //y
-      svg.append("text")
-          .attr("transform", "rotate(-90)")
-          .attr("y", 0 - margin.left)
-          .attr("x",0 - (height / 2))
-          .attr("dy", "1em")
-          .style("text-anchor", "middle")
-          .text("Voltage (mv)");
-
-      function update() {
-          data = restData.getData();
-          //var svg = d3.select("svg");
-
-          //move the graph left
-          svg.select(".line")
-              .attr("d", line(data))
-              .attr("transform", null)
-              .transition()
-              .delay(0)
-              .duration(250)
-              .ease("linear")
-              .attr("transform", "translate(" + (x(0) - x(250)) + ")");
-
-
-          var currentTime = new Date().getTime();
-          var startTime = currentTime - 60000;
-          x.domain([startTime, currentTime]);
-          xAxis.scale(x);
-
-          //move the xaxis left
-          svg.select(".x.axis")
-              .transition()
-              .duration(250)
-              .ease("linear")
+          svg.append("g")
+              .attr("class", "x axis")
+              .attr("clipPath", "url(#innerGraph)")
+              .attr("transform", "translate(0," + height + ")")
               .call(xAxis);
-      }
 
-      update();
-      setInterval(update, 400);
+          svg.append("g")
+              .attr("class", "y axis")
+              .call(yAxis)
+              .append("text")
+              .attr("transform", "rotate(-90)")
+              .attr("y", 6)
+              .attr("dy", ".71em")
+              .style("text-anchor", "end");
+
+          var holder = svg.append("defs");
+          holder.append("svg:clipPath")
+              .attr("id", "innerGraph")
+              .append("svg:rect")
+              .attr("x", 0)
+              .attr("y", 0)
+              .style("fill", "gray")
+              .attr("height", height)
+              .attr("width", width);
+
+          svg.append("g")
+              .attr("clip-path", "url(#innerGraph)")
+              .append("svg:path")
+              .attr("class", "line")
+              .attr("d", line(data));
+
+          //x
+          svg.append("text")
+              .attr("transform",
+                  "translate(" + (width/2) + " ," +
+                  (height + margin.top + 20) + ")")
+              .style("text-anchor", "middle")
+              .text("Time (m:s)");
+
+          //y
+          svg.append("text")
+              .attr("transform", "rotate(-90)")
+              .attr("y", 0 - margin.left)
+              .attr("x",0 - (height / 2))
+              .attr("dy", "1em")
+              .style("text-anchor", "middle")
+              .text("Voltage (mv)");
+
+          function update() {
+              data = restData.getData();
+              //var svg = d3.select("svg");
+
+              //move the graph left
+              svg.select(".line")
+                  .attr("d", line(data))
+                  .attr("transform", null)
+                  .transition()
+                  .delay(0)
+                  .duration(250)
+                  .ease("linear")
+                  .attr("transform", "translate(" + (x(0) - x(250)) + ")");
 
 
+              var currentTime = new Date().getTime();
+              var startTime = currentTime - 60000;
+              x.domain([startTime, currentTime]);
+              xAxis.scale(x);
+
+              //move the xaxis left
+              svg.select(".x.axis")
+                  .transition()
+                  .duration(250)
+                  .ease("linear")
+                  .call(xAxis);
+          }
+
+          update();
+          setInterval(update, 400);
+      });
   })
   .controller('submitController', function($rootScope, $scope, $location, $window) {
       $scope.switchPage = $rootScope.switchPage;
