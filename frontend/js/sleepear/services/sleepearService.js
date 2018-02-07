@@ -3,7 +3,8 @@ define([
 ], function(angularAMD) {
   'use strict';
 
-  angularAMD.factory('submitService', [
+  angularAMD
+    .factory('submitService', [
         '$resource',
         function($resource) {
 
@@ -23,7 +24,7 @@ define([
         }
     ])
 
-    .factory('breathService', ['$rootScope', function ($rootScope) {
+    .factory('breathsService', ['$rootScope', function ($rootScope) {
 
         var service = {
 
