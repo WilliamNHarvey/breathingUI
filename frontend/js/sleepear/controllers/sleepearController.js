@@ -94,12 +94,15 @@ define([
 
       var down = false;
       var barChart = $scope.barOptions.chart;
-      var max = Math.min($(window).height(), $(window).width());
+      var max = Math.min($('#circle-1').parent.height() * 0.9, $('#circle-1').parent.width() * 0.9);
       var newSize;
+      var t;
       var increaseSize = function() {
-          newSize = $('#circle-1').height() * 1.02 + 1;
+          //newSize = $('#circle-1').height() * 1.01 + 1;
+          newSize = max*(1-1*1.5^(-t));
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
+          t++;
       };
       var increaseOxygen = function() {
           if($scope.barData[0].values[0].value < 100 && $scope.barData[0].values[1].value > 0) {
@@ -143,6 +146,7 @@ define([
       var pressureInterval;
       pressureInterval = setInterval(changePressure, 3000);
       function start() {
+          t = 0;
           intervalId = setInterval(increaseSize, 30);
           barInterval = setInterval(increaseOxygen, 700);
       }
