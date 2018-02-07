@@ -19,7 +19,7 @@ define([
       }
       var d3 = $window.d3;
 
-      $("#barChart").empty().append('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>');
+      $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
 
       $scope.barOptions = {
           chart: {
