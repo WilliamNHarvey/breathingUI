@@ -144,7 +144,7 @@ define([
       pressureInterval = setInterval(changePressure, 3000);
       function start() {
           intervalId = setInterval(increaseSize, 30);
-          barInterval = setInterval(increaseOxygen, 750);
+          barInterval = setInterval(increaseOxygen, 700);
       }
       function stop() {
           clearInterval(intervalId);
@@ -241,12 +241,19 @@ define([
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 3.5) {
+                  if (lastProducedValue > 1.5 && !down) {
                       lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue < -3.5) {
+                  } else if (lastProducedValue > 3.5 && down) {
+                      lastProducedValue -= Math.random() * 2;
+                  } else if (lastProducedValue < -1.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
-                      lastProducedValue += Math.random() * 3 - 1.5;
+                      if(down) {
+                          lastProducedValue += Math.random() * 1.5;
+                      }
+                      else {
+                          lastProducedValue += Math.random() * 3 - 1.5;
+                      }
                   }
 
               }
