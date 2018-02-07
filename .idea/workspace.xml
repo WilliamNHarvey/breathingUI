@@ -47,8 +47,8 @@
       <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="430" column="29" lean-forward="false" selection-start-line="430" selection-start-column="29" selection-end-line="430" selection-end-column="29" />
+            <state relative-caret-position="712">
+              <caret line="434" column="36" lean-forward="false" selection-start-line="434" selection-start-column="36" selection-end-line="434" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -799,12 +799,12 @@
       <workItem from="1517587710264" duration="6949000" />
       <workItem from="1517624156188" duration="2703000" />
       <workItem from="1517674128254" duration="524000" />
-      <workItem from="1517861866425" duration="41503000" />
+      <workItem from="1517861866425" duration="42043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74510000" />
+    <option name="totallyTimeSpent" value="75050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1728,8 +1728,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="430" column="29" lean-forward="false" selection-start-line="430" selection-start-column="29" selection-end-line="430" selection-end-column="29" />
+        <state relative-caret-position="712">
+          <caret line="434" column="36" lean-forward="false" selection-start-line="434" selection-start-column="36" selection-end-line="434" selection-end-column="36" />
           <folding />
         </state>
       </provider>

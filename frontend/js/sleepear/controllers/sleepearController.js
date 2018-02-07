@@ -425,10 +425,14 @@ define([
               .duration(250)
               .ease("linear")
               .call(xAxis);
+          setTimeout(function(){ //throttle requestAnimationFrame to 20fps
+              requestAnimationFrame(update);
+          }, 250)
       }
 
-      update();
-      setInterval(update, 350);
+      //update();
+      //setInterval(update, 350);
+      requestAnimationFrame(update);
 
 
   });
