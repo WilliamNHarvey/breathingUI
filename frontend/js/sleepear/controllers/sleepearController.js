@@ -251,7 +251,7 @@ define([
 
               var newNumber;
               if (!lastProducedValue) {
-                  lastProducedValue = Math.random() * 10 - 5;//Math.random() * 10;
+                  lastProducedValue = Math.random() * 2 - 1;//Math.random() * 10;
               } else {
                   if (lastProducedValue > 0.5 && !down) {
                       lastProducedValue -= Math.random() * 2;
@@ -335,7 +335,7 @@ define([
           .range([0, width]);
 
       var y = d3.scale.linear()
-          .domain([-5, 5])
+          .domain([-2, 5])
           .range([height, 0]);
 
       var xAxis = d3.svg.axis()
