@@ -161,6 +161,9 @@ define([
       }
       function stop() {
           clearInterval(intervalId);
+
+      }
+      function stopBar() {
           clearInterval(barInterval);
       }
 
