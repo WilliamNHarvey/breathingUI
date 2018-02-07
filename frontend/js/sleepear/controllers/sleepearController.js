@@ -11,13 +11,15 @@ define([
       //var breathModel = breathsService;
       //$scope = breathModel.model;
 
-      if(typeof($window.breathSet) == "undefined") {
+      if(typeof($window.breathSet) === "undefined") {
           $window.breathSet = false;
       }
       else {
           $window.breathSet = true;
       }
       var d3 = $window.d3;
+
+      $("#barChart").empty().append('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>');
 
       $scope.barOptions = {
           chart: {
