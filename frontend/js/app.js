@@ -68,7 +68,7 @@ define([
 
     });
 
-    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash) {
+    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location) {
         // Expose $state and $stateParams to $rootScope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
