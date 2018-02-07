@@ -166,9 +166,9 @@ define([
       function stopBar() {
           clearInterval(barInterval);
       }
-
-      $(document).ready(function() {
-          if($window.breathSet) {
+      //$scope.barApi.refresh();
+      //$(document).ready(function() {
+          /*if($window.breathSet) {
               $('body').keydown(function(e) {
                   if(e.keyCode === 32 && !$window.down){
                       startBar();
@@ -183,7 +183,7 @@ define([
                   }
               });
               return;
-          }
+          }*/
           $('body').keydown(function(e) {
               if(e.keyCode === 32 && !$window.down){
                   //if(!down) stop();
@@ -250,7 +250,7 @@ define([
                   });
               }
           });
-      });
+      //});
 
 
       var restData = (function() {
