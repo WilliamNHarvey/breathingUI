@@ -210,3 +210,51 @@ body {
   stroke: steelblue;
   stroke-width: 1.5px;
 }
+
+#recordButton {
+  top: 2.5vw;
+  left: 5vw;
+  position: absolute;
+  cursor: pointer;
+
+  .record-body {
+    height: 5vw;
+    width: 200px;
+    background: rgba(92, 107, 192,0.7);
+    border-radius: 10px;
+    pointer-events: none;
+
+    .record-text {
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: 20px;
+      line-height: 5vw;
+      display: inline-block;
+    }
+
+    .record-icon {
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - 1.5vw);
+      left: 130px;
+
+      .record-circle {
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        background: rgba(229, 57, 53,1.0);
+        -moz-border-radius: 1.5vw;
+        -webkit-border-radius: 1.5vw;
+        border-radius: 1.5vw;
+        opacity: 1;
+        z-index: 2;
+      }
+
+      .record-paused {
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+      }
+    }
+  }
+}

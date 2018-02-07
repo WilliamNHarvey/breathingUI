@@ -191,6 +191,23 @@ define([
                   });
               }
           });
+
+          var recording = false;
+          var $recButton = $("#recordButton");
+          var $circle = $(".record-circle");
+
+          $recButton.click(function() {
+              if(recording) {
+                  $circle.animate({'opacity': 0}), 150, function() {
+                      recording = true;
+                  }
+              }
+              else {
+                  $circle.animate({'opacity': 1}), 150, function() {
+                      recording = false;
+                  }
+              }
+          });
       });
 
 
