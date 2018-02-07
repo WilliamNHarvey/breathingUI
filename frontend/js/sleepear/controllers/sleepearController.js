@@ -163,7 +163,9 @@ define([
       }
 
       $(document).ready(function() {
-          if($window.breathSet) return;
+          if($window.breathSet) {
+              return;
+          }
           $('body').keydown(function(e) {
               if(e.keyCode === 32 && !down){
                   //if(!down) stop();
