@@ -197,6 +197,7 @@ define([
           var $circle = $(".record-circle");
 
           $recButton.click(function() {
+              console.log(recording);
               if(recording) {
                   $circle.animate({'opacity': 1}), 150, function() {
                       recording = false;
