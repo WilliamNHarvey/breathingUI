@@ -99,6 +99,7 @@ define([
       var t;
       var increaseSize = function() {
           //newSize = $('#circle-1').height() * 1.01 + 1;
+          console.log(max);
           newSize = max*(1-1*1.5^(-t));
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
