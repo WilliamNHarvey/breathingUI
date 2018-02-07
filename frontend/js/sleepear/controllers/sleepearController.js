@@ -3,7 +3,7 @@ define([
   ], function(app) {
   'use strict';
 
-  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathsService) {
+  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathsService, $compile) {
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
