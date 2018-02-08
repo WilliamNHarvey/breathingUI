@@ -62,7 +62,7 @@ define([
           }
       ];
 
-      //$("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
+
 
       var bouncing;
       function bounce() {
@@ -470,7 +470,7 @@ define([
       update();
       setInterval(update, 400);
 
-
+      $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
   })
   .controller('submitController', function($rootScope, $scope, $location, $window) {
       $scope.switchPage = $rootScope.switchPage;
