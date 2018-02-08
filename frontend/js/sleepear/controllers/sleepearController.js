@@ -470,6 +470,7 @@ define([
 
       $( document ).ready(function() {
           $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
+          console.log($scope.barApi.refresh());
       });
 
   })
