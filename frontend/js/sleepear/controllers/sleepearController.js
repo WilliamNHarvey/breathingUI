@@ -108,7 +108,7 @@ define([
       var newSize;
       var t;
       setTimeout(function() {
-          if(!isset($rootScope.barApi)) {
+          if(typeof($rootScope.barApi) === "undefined") {
               $rootScope.barApi = $scope.barApi;
           }
       }, 500);
