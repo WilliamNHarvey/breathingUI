@@ -120,7 +120,6 @@ define([
               $scope.barData[0].values[0].value++;
               $scope.barData[0].values[1].value--;
               $scope.barApi.update();
-              console.log($scope.barApi);
           }
       };
       var cycle = 0;
@@ -238,7 +237,6 @@ define([
           var $text = $(".record-text");
 
           $recButton.click(function() {
-              console.log(recording);
               if(recording) {
                   $circle.animate({'opacity': 1}, 300, function() {
                       recording = false;
@@ -470,7 +468,8 @@ define([
       update();
       setInterval(update, 400);
 
-      $( document ).ready(function() {
+      $scope.$on('$routeChangeSuccess', function($event, next, current) {
+          console.log('routechange')
           $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
       });
 
