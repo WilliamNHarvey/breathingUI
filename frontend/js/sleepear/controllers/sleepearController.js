@@ -468,7 +468,7 @@ define([
       update();
       setInterval(update, 400);
 
-      $scope.$on('$routeChangeSuccess', function($event, next, current) {
+      $( document ).ready(function() {
           console.log('routechange');
           $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
       });
