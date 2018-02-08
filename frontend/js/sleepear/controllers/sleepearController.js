@@ -107,8 +107,9 @@ define([
       var max = Math.min($('#circle-1').parent().height() * 0.9, $('#circle-1').parent().width() * 0.9) - 26;
       var newSize;
       var t;
+      var $api;
       setTimeout(function() {
-          $scope = $scope.barApi.getScope();
+          $api = $scope.barApi.getScope();
       }, 500);
       var increaseSize = function() {
           //newSize = $('#circle-1').height() * 1.01 + 1;
@@ -121,8 +122,8 @@ define([
           if($scope.barData[0].values[0].value < 100 && $scope.barData[0].values[1].value > 0) {
               $scope.barData[0].values[0].value++;
               $scope.barData[0].values[1].value--;
-              $scope.barApi.update();
-              console.log($scope.barApi);
+              $api.update();
+              console.log($api);
           }
       };
       var cycle = 0;
@@ -212,7 +213,7 @@ define([
 
                   $scope.barData[0].values[0].value = 40;
                   $scope.barData[0].values[1].value = 60;
-                  $scope.barApi.update();
+                  $api.update();
                   //$scope.$apply()
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
