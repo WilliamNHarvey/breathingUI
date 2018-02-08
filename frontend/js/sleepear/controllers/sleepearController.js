@@ -107,7 +107,11 @@ define([
       var max = Math.min($('#circle-1').parent().height() * 0.9, $('#circle-1').parent().width() * 0.9) - 26;
       var newSize;
       var t;
-
+      setTimeout(function() {
+          if(!isset($rootScope.barApi)) {
+              $rootScope.barApi = $scope.barApi;
+          }
+      }, 500);
       var increaseSize = function() {
           //newSize = $('#circle-1').height() * 1.01 + 1;
           newSize = max*(1-1*Math.pow(1.015,(-t))) + 26;
@@ -119,7 +123,7 @@ define([
           if($scope.barData[0].values[0].value < 100 && $scope.barData[0].values[1].value > 0) {
               $scope.barData[0].values[0].value++;
               $scope.barData[0].values[1].value--;
-              $scope.barApi.update();
+              $rootScope.barApi.update();
           }
       };
       var cycle = 0;
@@ -170,7 +174,7 @@ define([
       function stopBar() {
           clearInterval(barInterval);
       }
-      //$scope.barApi.refresh();
+      //$rootScope.barApi.refresh();
       //$(document).ready(function() {
           /*if($window.breathSet) {
               $('body').keydown(function(e) {
@@ -183,7 +187,7 @@ define([
                       stopBar();
                       $scope.barData[0].values[0].value = 40;
                       $scope.barData[0].values[1].value = 60;
-                      $scope.barApi.update();
+                      $rootScope.barApi.update();
                   }
               });
               return;
@@ -209,7 +213,7 @@ define([
 
                   $scope.barData[0].values[0].value = 40;
                   $scope.barData[0].values[1].value = 60;
-                  $scope.barApi.update();
+                  $rootScope.barApi.update();
                   //$scope.$apply()
 
                   $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
@@ -467,12 +471,6 @@ define([
 
       update();
       setInterval(update, 400);
-
-      $( document ).ready(function() {
-          $("#barChart").empty().append($compile('<nvd3 data="barData" options="barOptions" api="barApi"></nvd3>')($scope));
-          console.log($scope.barApi);
-          
-      });
 
   })
   .controller('submitController', function($rootScope, $scope, $location, $window) {
