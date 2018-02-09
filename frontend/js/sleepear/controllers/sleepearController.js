@@ -238,7 +238,7 @@ define([
           else {
               $circle.animate({'opacity': 0}, 300, function() {
                   $scope.recording = true;
-                  console.log($scope.recording);
+                  $scope.$digest();
               });
               $text.fadeOut(150, function() {
                   $text.text('Pause').fadeIn(150, function() {
