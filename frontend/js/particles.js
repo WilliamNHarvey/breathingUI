@@ -18,7 +18,8 @@ else {
 
 var ctx = canvas.getContext('2d'),
     can_w = parseInt(window.innerWidth),
-    can_h = parseInt(window.innerHeight);
+    can_h = parseInt(window.innerHeight),
+    numBalls = 75;
 
 function drawStuff() {
     'use strict';
@@ -237,9 +238,9 @@ function renderLines(){
 function addBallIfy(){
     'use strict';
     if(balls.length === 0) {
-        initBalls(50);
+        initBalls(numBalls);
     }
-    else if(balls.length < 50){
+    else if(balls.length < numBalls){
         balls.push(getRandomBall());
     }
 }
@@ -292,7 +293,7 @@ window.addEventListener('resize', function(e){
 function goMovie(){
     'use strict';
     initCanvas();
-    initBalls(50);
+    initBalls(numBalls);
     window.requestAnimationFrame(render);
 }
 if(!window.graphSet) {
