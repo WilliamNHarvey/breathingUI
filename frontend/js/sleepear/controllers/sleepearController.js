@@ -169,91 +169,73 @@ define([
       function stopBar() {
           clearInterval(barInterval);
       }
-      //$scope.barApi.refresh();
-      //$(document).ready(function() {
-          /*if($window.breathSet) {
-              $('body').keydown(function(e) {
-                  if(e.keyCode === 32 && !$window.down){
-                      startBar();
-                  }
 
-              }).keyup(function(u) {
-                  if (u.keyCode === 32 && $window.down) {
-                      stopBar();
-                      $scope.barData[0].values[0].value = 40;
-                      $scope.barData[0].values[1].value = 60;
-                      $scope.barApi.update();
+      $('body').keydown(function(e) {
+          if(e.keyCode === 32 && !$window.down){
+              //if(!down) stop();
+              $('#circle-1').stop(true);
+              $("#circle-2").stop(true, true);
+              if($('#circle-1').width() !== 25) {
+                  $('#circle-1').css({'width':'25px', 'height':'25px'});
+              }
+              $window.down = true;
+
+              start();
+              startBar();
+          }
+      }).keyup(function(u) {
+          if(u.keyCode === 32 && $window.down) {
+              stop();
+              stopBar();
+              $window.down = false;
+
+              $scope.barData[0].values[0].value = 40;
+              $scope.barData[0].values[1].value = 60;
+              $scope.barApi.update();
+              //$scope.$apply()
+
+              $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
+                  if(!bouncing) {
+                      bounce();
                   }
               });
-              return;
-          }*/
-          $('body').keydown(function(e) {
-              if(e.keyCode === 32 && !$window.down){
-                  //if(!down) stop();
-                  $('#circle-1').stop(true);
-                  $("#circle-2").stop(true, true);
-                  if($('#circle-1').width() !== 25) {
-                      $('#circle-1').css({'width':'25px', 'height':'25px'});
-                  }
-                  $window.down = true;
+              $('#circle-2').animate({
+                  'opacity' : 0,
+                  'width': newSize,
+                  'height': newSize
+              }, 300, function() {
+                  $('#circle-2').css({
+                      'opacity' : 1,
+                      'width': 0,
+                      'height': 0
+                  })
+              });
+          }
+      });
 
-                  start();
-                  startBar();
-              }
-          }).keyup(function(u) {
-              if(u.keyCode === 32 && $window.down) {
-                  stop();
-                  stopBar();
-                  $window.down = false;
+      var recording = false;
+      var $recButton = $("#recordButton");
+      var $circle = $(".record-circle");
+      var $text = $(".record-text");
 
-                  $scope.barData[0].values[0].value = 40;
-                  $scope.barData[0].values[1].value = 60;
-                  $scope.barApi.update();
-                  //$scope.$apply()
-
-                  $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
-                      if(!bouncing) {
-                          bounce();
-                      }
-                  });
-                  $('#circle-2').animate({
-                      'opacity' : 0,
-                      'width': newSize,
-                      'height': newSize
-                  }, 300, function() {
-                      $('#circle-2').css({
-                          'opacity' : 1,
-                          'width': 0,
-                          'height': 0
-                      })
-                  });
-              }
-          });
-
-          var recording = false;
-          var $recButton = $("#recordButton");
-          var $circle = $(".record-circle");
-          var $text = $(".record-text");
-
-          $recButton.click(function() {
-              if(recording) {
-                  $circle.animate({'opacity': 1}, 300, function() {
-                      recording = false;
-                  });
-                  $text.fadeOut(150, function() {
-                      $text.text('Record').fadeIn(150);
-                  });
-              }
-              else {
-                  $circle.animate({'opacity': 0}, 300, function() {
-                      recording = true;
-                  });
-                  $text.fadeOut(150, function() {
-                      $text.text('Pause').fadeIn(150);
-                  });
-              }
-          });
-      //});
+      $recButton.click(function() {
+          if(recording) {
+              $circle.animate({'opacity': 1}, 300, function() {
+                  recording = false;
+              });
+              $text.fadeOut(150, function() {
+                  $text.text('Record').fadeIn(150);
+              });
+          }
+          else {
+              $circle.animate({'opacity': 0}, 300, function() {
+                  recording = true;
+              });
+              $text.fadeOut(150, function() {
+                  $text.text('Pause').fadeIn(150);
+              });
+          }
+      });
 
 
       var restData = (function() {
