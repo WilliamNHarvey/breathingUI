@@ -213,7 +213,7 @@ define([
           }
       });
 
-      var recording = false;
+      $scope.recording = false;
       var $recButton = $("#recordButton");
       var $circle = $(".record-circle");
       var $text = $(".record-text");
@@ -225,9 +225,9 @@ define([
           }
           recSwitching = true;
 
-          if(recording) {
+          if($scope.recording) {
               $circle.animate({'opacity': 1}, 300, function() {
-                  recording = false;
+                  $scope.recording = false;
               });
               $text.fadeOut(150, function() {
                   $text.text('Record').fadeIn(150, function() {
@@ -237,7 +237,7 @@ define([
           }
           else {
               $circle.animate({'opacity': 0}, 300, function() {
-                  recording = true;
+                  $scope.recording = true;
               });
               $text.fadeOut(150, function() {
                   $text.text('Pause').fadeIn(150, function() {

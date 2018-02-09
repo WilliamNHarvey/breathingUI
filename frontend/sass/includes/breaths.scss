@@ -41,7 +41,7 @@
   flex-wrap: wrap;
   position: absolute;
   width: 45vw;
-  height: calc(32vw - 10px);
+  min-height: calc(32vw - 10px);
   left: 50vw;
   top: 10vw;
   background: white;
@@ -125,6 +125,26 @@
   position: absolute;
   cursor: pointer;
 
+  .recording-icon {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #e53935;
+    -moz-border-radius: 1.5vw;
+    -webkit-border-radius: 1.5vw;
+    border-radius: 1.5vw;
+    opacity: 1;
+    z-index: 2;
+    left: 5px;
+    top: 5px;
+  }
+
+  .recording-text {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    font-size: 10px;
+  }
   .record-body {
     height: 5vw;
     width: 200px;

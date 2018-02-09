@@ -104,6 +104,8 @@ body {
 .page {
   height: 100%;
   position: relative;
+  overflow: auto;
+  overflow-x: hidden;
   background: #E1BEE7;
 }
 
@@ -144,4 +146,14 @@ body {
       border-radius: 10px;
     }
   }
+}
+
+.submit-body {
+  position: absolute;
+  left: 5vw;
+  top: 10vw;
+  width: 90vw;
+  min-height: 32vw;
+  border: 1px solid black;
+  background: white;
 }
