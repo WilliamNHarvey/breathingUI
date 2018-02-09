@@ -19,7 +19,7 @@ else {
 var ctx = canvas.getContext('2d'),
     can_w = parseInt(window.innerWidth),
     can_h = parseInt(window.innerHeight),
-    numBalls = 75;
+    numBalls = 150;
 
 function drawStuff() {
     'use strict';
