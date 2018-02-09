@@ -228,6 +228,7 @@ define([
           if($scope.recording) {
               $circle.animate({'opacity': 1}, 300, function() {
                   $scope.recording = false;
+                  $scope.$digest();
               });
               $text.fadeOut(150, function() {
                   $text.text('Record').fadeIn(150, function() {
