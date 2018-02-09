@@ -324,3 +324,17 @@ canvas.addEventListener('mousemove', function(e){
     mouse_ball.x = ev.pageX;
     mouse_ball.y = ev.pageY;
 });
+canvas.addEventListener('click', function(e) {
+    'use strict';
+    var new_ball = {
+        x: e.pageX,
+        y: e.pageY,
+        vx: getRandomSpeed('bottom')[0],
+        vy: getRandomSpeed('bottom')[1],
+        r: R,
+        alpha: 1,
+        phase: randomNumFrom(0, 10)
+    };
+    balls.splice(Math.floor(Math.random()*balls.length), 1);
+    balls.push(new_ball);
+});

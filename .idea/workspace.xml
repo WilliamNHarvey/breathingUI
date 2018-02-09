@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/sass/app.scss" afterPath="$PROJECT_DIR$/frontend/sass/app.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/particles.js" afterPath="$PROJECT_DIR$/frontend/js/particles.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -107,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="particles.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="particles.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="445">
+              <caret line="254" column="18" lean-forward="true" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -131,8 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>assets</find>
-      <find>send</find>
       <find>main</find>
       <find>chart</find>
       <find>d3</find>
@@ -146,7 +144,6 @@
       <find>page {</find>
       <find>console</find>
       <find>seconds</find>
-      <find>render()</find>
       <find>render</find>
       <find>down</find>
       <find>barApi</find>
@@ -161,6 +158,9 @@
       <find>recB</find>
       <find>50</find>
       <find>recording</find>
+      <find>.add</find>
+      <find>randomBall</find>
+      <find>render()</find>
     </findStrings>
     <replaceStrings>
       <replace>breaths</replace>
@@ -210,13 +210,13 @@
         <option value="$PROJECT_DIR$/frontend/js/app.js" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/frontend/js/particles.js" />
         <option value="$PROJECT_DIR$/views/partials/breaths/submit.html" />
         <option value="$PROJECT_DIR$/views/partials/breaths/index.html" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
         <option value="$PROJECT_DIR$/frontend/sass/includes/_ngAnimations.scss" />
         <option value="$PROJECT_DIR$/frontend/sass/includes/breaths.scss" />
         <option value="$PROJECT_DIR$/frontend/sass/app.scss" />
+        <option value="$PROJECT_DIR$/frontend/js/particles.js" />
       </list>
     </option>
   </component>
@@ -808,12 +808,12 @@
       <workItem from="1517674128254" duration="524000" />
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
-      <workItem from="1518207763005" duration="8224000" />
+      <workItem from="1518207763005" duration="8869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101976000" />
+    <option name="totallyTimeSpent" value="102621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1138,16 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1220,6 +1210,16 @@
         <state relative-caret-position="420">
           <caret line="107" column="19" lean-forward="false" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="254" column="18" lean-forward="true" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
