@@ -104,6 +104,8 @@ body {
 .page {
   height: 100%;
   position: relative;
+  overflow: hidden;
+  overflow-y: auto;
   background: #E1BEE7;
 }
 
