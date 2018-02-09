@@ -236,7 +236,10 @@ function renderLines(){
 // add balls if there a little balls
 function addBallIfy(){
     'use strict';
-    if(balls.length < 50){
+    if(balls.length === 0) {
+        initBalls(50);
+    }
+    else if(balls.length < 50){
         balls.push(getRandomBall());
     }
 }
@@ -282,6 +285,7 @@ function initCanvas(){
     can_h = parseInt(canvas.getAttribute('height'));
 }
 window.addEventListener('resize', function(e){
+    'use strict';
     initCanvas();
 });
 
@@ -298,10 +302,12 @@ if(!window.graphSet) {
 
 // Mouse effect
 canvas.addEventListener('mouseenter', function(){
+    'use strict';
     mouse_in = true;
     balls.push(mouse_ball);
 });
 canvas.addEventListener('mouseleave', function(){
+    'use strict';
     mouse_in = false;
     var new_balls = [];
     Array.prototype.forEach.call(balls, function(b){
@@ -312,7 +318,8 @@ canvas.addEventListener('mouseleave', function(){
     balls = new_balls.slice(0);
 });
 canvas.addEventListener('mousemove', function(e){
-    var e = e || window.event;
-    mouse_ball.x = e.pageX;
-    mouse_ball.y = e.pageY;
+    'use strict';
+    var ev = e || window.event;
+    mouse_ball.x = ev.pageX;
+    mouse_ball.y = ev.pageY;
 });

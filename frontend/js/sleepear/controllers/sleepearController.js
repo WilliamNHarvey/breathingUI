@@ -217,14 +217,22 @@ define([
       var $recButton = $("#recordButton");
       var $circle = $(".record-circle");
       var $text = $(".record-text");
+      var recSwitching = false;
 
       $recButton.click(function() {
+          if(recSwitching) {
+              return false;
+          }
+          recSwitching = true;
+
           if(recording) {
               $circle.animate({'opacity': 1}, 300, function() {
                   recording = false;
               });
               $text.fadeOut(150, function() {
-                  $text.text('Record').fadeIn(150);
+                  $text.text('Record').fadeIn(150, function() {
+                      recSwitching = false;
+                  });
               });
           }
           else {
@@ -232,7 +240,9 @@ define([
                   recording = true;
               });
               $text.fadeOut(150, function() {
-                  $text.text('Pause').fadeIn(150);
+                  $text.text('Pause').fadeIn(150, function() {
+                      recSwitching = false;
+                  });
               });
           }
       });

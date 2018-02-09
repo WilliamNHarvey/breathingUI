@@ -126,7 +126,7 @@ body {
       display: block;
       margin-left: 80px;
       margin-right: 20px;
-      line-height: 2vw;
+      line-height: 4vw;
       padding-top: 0.5vw;
       text-align: center;
     }
@@ -138,9 +138,9 @@ body {
       right: 140px;
       width: 0;
       height: 0;
-      border-top: 30px solid transparent;
-      border-bottom: 30px solid transparent;
-      border-right: 40px solid green;
+      border-top: 2vw solid transparent;
+      border-bottom: 2vw solid transparent;
+      border-right: 2.5vw solid green;
       border-radius: 10px;
     }
   }
