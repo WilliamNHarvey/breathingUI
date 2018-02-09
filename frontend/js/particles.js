@@ -18,12 +18,15 @@ else {
 
 var ctx = canvas.getContext('2d'),
     can_w = parseInt(window.innerWidth),
-    can_h = parseInt(window.innerHeight);;
+    can_h = parseInt(window.innerHeight);
 
-// resize the canvas to fill browser window dynamically
-window.addEventListener('resize', resizeCanvas, false);
+function drawStuff() {
+    'use strict';
+    // Eventually... background drawings etc. Can be per page based on url location.
+}
 
 function resizeCanvas() {
+    'use strict';
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     can_w = parseInt(window.innerWidth);
@@ -32,10 +35,9 @@ function resizeCanvas() {
     drawStuff();
 }
 resizeCanvas();
+// resize the canvas to fill browser window dynamically
+window.addEventListener('resize', resizeCanvas, false);
 
-function drawStuff() {
-    // Eventually... background drawings etc. Can be per page based on url location.
-}
 
 
 var ball = {
@@ -71,36 +73,39 @@ var ball = {
         type: 'mouse'
     };
 
+function randomNumFrom(min, max){
+    'use strict';
+    return Math.random()*(max - min) + min;
+}
 // Random speed
 function getRandomSpeed(pos){
+    'use strict';
     var  min = -1,
         max = 1;
     switch(pos){
         case 'top':
             return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
-            break;
         case 'right':
             return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
-            break;
         case 'bottom':
             return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
-            break;
         case 'left':
             return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
-            break;
         default:
             return;
-            break;
     }
 }
 function randomArrayItem(arr){
+    'use strict';
     return arr[Math.floor(Math.random() * arr.length)];
 }
-function randomNumFrom(min, max){
-    return Math.random()*(max - min) + min;
+function randomSidePos(length){
+    'use strict';
+    return Math.ceil(Math.random() * length);
 }
 // Random Ball
 function getRandomBall(){
+    'use strict';
     var pos = randomArrayItem(['top', 'right', 'bottom', 'left']);
     switch(pos){
         case 'top':
@@ -149,12 +154,11 @@ function getRandomBall(){
             break;
     }
 }
-function randomSidePos(length){
-    return Math.ceil(Math.random() * length);
-}
+
 
 // Draw Ball
 function renderBalls(){
+    'use strict';
     Array.prototype.forEach.call(balls, function(b){
         if(!b.hasOwnProperty('type')){
             ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
@@ -168,6 +172,7 @@ function renderBalls(){
 
 // Update balls
 function updateBalls(){
+    'use strict';
     var new_balls = [];
     Array.prototype.forEach.call(balls, function(b){
         b.x += b.vx;
@@ -188,11 +193,22 @@ function updateBalls(){
 
 // loop alpha
 function loopAlphaInf(){
+    'use strict';
 
+}
+
+// calculate distance between two points
+function getDisOf(b1, b2){
+    'use strict';
+    var  delta_x = Math.abs(b1.x - b2.x),
+        delta_y = Math.abs(b1.y - b2.y);
+
+    return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
 }
 
 // Draw lines
 function renderLines(){
+    'use strict';
     var fraction, alpha;
     for (var i = 0; i < balls.length; i++) {
         for (var j = i + 1; j < balls.length; j++) {
@@ -215,16 +231,11 @@ function renderLines(){
     }
 }
 
-// calculate distance between two points
-function getDisOf(b1, b2){
-    var  delta_x = Math.abs(b1.x - b2.x),
-        delta_y = Math.abs(b1.y - b2.y);
 
-    return Math.sqrt(delta_x*delta_x + delta_y*delta_y);
-}
 
 // add balls if there a little balls
 function addBallIfy(){
+    'use strict';
     if(balls.length < 50){
         balls.push(getRandomBall());
     }
@@ -232,6 +243,7 @@ function addBallIfy(){
 
 // Render
 function render(){
+    'use strict';
     ctx.clearRect(0, 0, can_w, can_h);
 
     renderBalls();
@@ -247,6 +259,7 @@ function render(){
 
 // Init Balls
 function initBalls(num){
+    'use strict';
     for(var i = 1; i <= num; i++){
         balls.push({
             x: randomSidePos(can_w),
@@ -261,6 +274,7 @@ function initBalls(num){
 }
 // Init Canvas
 function initCanvas(){
+    'use strict';
     canvas.setAttribute('width', window.innerWidth);
     canvas.setAttribute('height', window.innerHeight);
 
@@ -272,6 +286,7 @@ window.addEventListener('resize', function(e){
 });
 
 function goMovie(){
+    'use strict';
     initCanvas();
     initBalls(50);
     window.requestAnimationFrame(render);
