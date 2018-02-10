@@ -624,7 +624,7 @@ define([
                       $this.animate({
                           height: "30px",
                           marginTop: "5px",
-                          marginLeft: "-5px"
+                          marginLeft: "0px"
                       }, 300, function() {
                           $this.animate({
                               width: "15px",
