@@ -603,7 +603,7 @@ define([
               .text("Voltage (mv)");
       });
 
-      $(".data-send").onclick(function(e) {
+      $(".data-send").click(function(e) {
           if(!$rootScope.detectLeftButton(e)) {
               return false;
           }

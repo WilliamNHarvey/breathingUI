@@ -17,11 +17,11 @@
       <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1994">
-              <caret line="492" column="26" lean-forward="true" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
+            <state relative-caret-position="397">
+              <caret line="605" column="22" lean-forward="false" selection-start-line="605" selection-start-column="22" selection-end-line="605" selection-end-column="22" />
               <folding>
-                <marker date="1518291417906" expanded="true" signature="23914:23930" ph="..." />
-                <marker date="1518291417906" expanded="true" signature="23914:23943" ph="..." />
+                <marker date="1518291971204" expanded="true" signature="23914:23930" ph="..." />
+                <marker date="1518291971204" expanded="true" signature="23914:23943" ph="..." />
               </folding>
             </state>
           </provider>
@@ -30,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/breaths/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
+            <state relative-caret-position="21">
+              <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
@@ -103,8 +103,8 @@
       <file leaf-file-name="particles.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="-5756">
+              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -151,9 +151,9 @@
       <find>render()</find>
       <find>==</find>
       <find>data</find>
-      <find>initBalls</find>
       <find>bar</find>
       <find>$scope.recording</find>
+      <find>initBalls</find>
     </findStrings>
     <replaceStrings>
       <replace>breaths</replace>
@@ -206,9 +206,9 @@
         <option value="$PROJECT_DIR$/frontend/sass/includes/_ngAnimations.scss" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" />
         <option value="$PROJECT_DIR$/views/partials/breaths/submit.html" />
-        <option value="$PROJECT_DIR$/frontend/js/particles.js" />
         <option value="$PROJECT_DIR$/frontend/js/app.js" />
         <option value="$PROJECT_DIR$/frontend/sass/app.scss" />
+        <option value="$PROJECT_DIR$/frontend/js/particles.js" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
       </list>
     </option>
@@ -849,12 +849,12 @@
       <workItem from="1517674128254" duration="524000" />
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
-      <workItem from="1518207763005" duration="17811000" />
+      <workItem from="1518207763005" duration="18349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111563000" />
+    <option name="totallyTimeSpent" value="112101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1187,16 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1237,17 +1227,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/breaths/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
@@ -1256,13 +1235,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/breaths/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5756">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1994">
-          <caret line="492" column="26" lean-forward="true" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
+        <state relative-caret-position="397">
+          <caret line="605" column="22" lean-forward="false" selection-start-line="605" selection-start-column="22" selection-end-line="605" selection-end-column="22" />
           <folding>
-            <marker date="1518291417906" expanded="true" signature="23914:23930" ph="..." />
-            <marker date="1518291417906" expanded="true" signature="23914:23943" ph="..." />
+            <marker date="1518291971204" expanded="true" signature="23914:23930" ph="..." />
+            <marker date="1518291971204" expanded="true" signature="23914:23943" ph="..." />
           </folding>
         </state>
       </provider>
