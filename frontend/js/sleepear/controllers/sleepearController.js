@@ -504,7 +504,7 @@ define([
       }
 
       angular.forEach($scope.data, function(val, key) {
-          var $dataSet = $($compile('<div id="data-'+key+'" class="data-set"><div class="data-delete">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
+          var $dataSet = $($compile('<div id="data-'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
           $("#dataBody").append($dataSet);
 
           var data = val.eeg;
@@ -606,11 +606,8 @@ define([
 
       angular.forEach($(".data-send"), function() {
           var $child = $(this).children();
-
           $child.click(function(e) {
-              if(!$rootScope.detectLeftButton(e)) {
-                  return false;
-              }
+              
 
               var $this = $(this);
 
