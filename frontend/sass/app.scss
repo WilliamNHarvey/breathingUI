@@ -156,4 +156,13 @@ body {
   min-height: 32vw;
   border: 1px solid black;
   background: white;
+
+  .data-set {
+    height: 200px;
+    width: calc(100% - 10px);
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    border-radius: 10px;
+    margin: 5px;
+  }
 }
