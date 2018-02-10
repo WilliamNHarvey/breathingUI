@@ -191,13 +191,12 @@ body {
   }
 
   .data-send {
-    transition: all linear 0.5s;
     display: inline-block;
     height: 100%;
     width: 10%;
     text-align: center;
     vertical-align: middle;
-    cursor: pointer;
+    pointer-events: none;
 
     .checkmark{
       display:inline-block;
@@ -217,6 +216,12 @@ body {
       border-width: 0 6px 6px 0;
       transform: rotate(-45deg);
       margin-right: 30px;
+    }
+
+    * {
+      transition: all linear 0.5s;
+      cursor: pointer;
+      pointer-events: all;
     }
   }
 }
