@@ -483,7 +483,7 @@ define([
 
       angular.forEach($scope.data, function(val, key) {
 
-          var $dataSet = $('<div id="data-'+key+'" class="data-set"><div class="data-delete"></div><div class="data-eeg"></div><div class="data-send"></div></div>');
+          var $dataSet = $('<div id="data-'+key+'" class="data-set"><div class="data-delete">✖</div><div class="data-eeg"></div><div class="data-send arrow"></div></div>');
           $("#dataBody").append($dataSet);
 
           var data = val.line;
@@ -491,7 +491,7 @@ define([
           var margin = {
                   top: 20,
                   right: 20,
-                  bottom: 50,
+                  bottom: 45,
                   left: 50
               },
               height = 180 - margin.top - margin.bottom,
