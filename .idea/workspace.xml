@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/app.js" afterPath="$PROJECT_DIR$/frontend/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" afterPath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/sass/app.scss" afterPath="$PROJECT_DIR$/frontend/sass/app.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,14 +14,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="506" column="162" lean-forward="true" selection-start-line="506" selection-start-column="162" selection-end-line="506" selection-end-column="162" />
+            <state relative-caret-position="-1994">
+              <caret line="492" column="26" lean-forward="true" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
               <folding>
-                <marker date="1518291222879" expanded="true" signature="23913:23929" ph="..." />
-                <marker date="1518291222879" expanded="true" signature="23913:23942" ph="..." />
+                <marker date="1518291417906" expanded="true" signature="23914:23930" ph="..." />
+                <marker date="1518291417906" expanded="true" signature="23914:23943" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="207" column="20" lean-forward="true" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="20" />
+            <state relative-caret-position="700">
+              <caret line="229" column="5" lean-forward="true" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -210,8 +208,8 @@
         <option value="$PROJECT_DIR$/views/partials/breaths/submit.html" />
         <option value="$PROJECT_DIR$/frontend/js/particles.js" />
         <option value="$PROJECT_DIR$/frontend/js/app.js" />
-        <option value="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
         <option value="$PROJECT_DIR$/frontend/sass/app.scss" />
+        <option value="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
       </list>
     </option>
   </component>
@@ -851,12 +849,12 @@
       <workItem from="1517674128254" duration="524000" />
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
-      <workItem from="1518207763005" duration="17658000" />
+      <workItem from="1518207763005" duration="17811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111410000" />
+    <option name="totallyTimeSpent" value="111563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1250,22 +1248,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
+    <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="506" column="162" lean-forward="true" selection-start-line="506" selection-start-column="162" selection-end-line="506" selection-end-column="162" />
-          <folding>
-            <marker date="1518291222879" expanded="true" signature="23913:23929" ph="..." />
-            <marker date="1518291222879" expanded="true" signature="23913:23942" ph="..." />
-          </folding>
+        <state relative-caret-position="700">
+          <caret line="229" column="5" lean-forward="true" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="207" column="20" lean-forward="true" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="-1994">
+          <caret line="492" column="26" lean-forward="true" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
+          <folding>
+            <marker date="1518291417906" expanded="true" signature="23914:23930" ph="..." />
+            <marker date="1518291417906" expanded="true" signature="23914:23943" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
