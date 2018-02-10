@@ -17,12 +17,9 @@
       <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="508" column="0" lean-forward="true" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
-              <folding>
-                <marker date="1518292360304" expanded="true" signature="23933:23949" ph="..." />
-                <marker date="1518292360304" expanded="true" signature="23933:23962" ph="..." />
-              </folding>
+            <state relative-caret-position="631">
+              <caret line="505" column="55" lean-forward="false" selection-start-line="505" selection-start-column="55" selection-end-line="505" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -849,12 +846,12 @@
       <workItem from="1517674128254" duration="524000" />
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
-      <workItem from="1518207763005" duration="18737000" />
+      <workItem from="1518207763005" duration="19179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112489000" />
+    <option name="totallyTimeSpent" value="112931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1258,12 +1255,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="508" column="0" lean-forward="true" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
-          <folding>
-            <marker date="1518292360304" expanded="true" signature="23933:23949" ph="..." />
-            <marker date="1518292360304" expanded="true" signature="23933:23962" ph="..." />
-          </folding>
+        <state relative-caret-position="631">
+          <caret line="505" column="55" lean-forward="false" selection-start-line="505" selection-start-column="55" selection-end-line="505" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
