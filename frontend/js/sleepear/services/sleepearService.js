@@ -4,6 +4,17 @@ define([
   'use strict';
 
   angularAMD
+    .factory("LS", function($window, $rootScope) {
+      return {
+          setData: function(storage, val) {
+              $window.localStorage && $window.localStorage.setItem(storage, val);
+              return this;
+          },
+          getData: function(storage) {
+              return $window.localStorage && $window.localStorage.getItem(storage);
+          }
+      };
+    })
     .factory('submitService', [
         '$resource',
         function($resource) {
