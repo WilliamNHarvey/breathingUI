@@ -180,14 +180,12 @@ body {
 
   .data-eeg {
     display: inline-block;
-    width: 30%;
+    width: 50%;
     overflow-x: auto;
   }
 
   .data-bar {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #2c3e50;
+    width: 30%;
     display: inline-block;
   }
 
@@ -210,7 +208,7 @@ body {
       margin-left: calc(50% - 15px);
     }
 
-    &.arrow {
+    .arrow {
       display: inline-block;
       width: 30px;
       height: 30px;
