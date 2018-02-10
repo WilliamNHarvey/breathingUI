@@ -483,7 +483,7 @@ define([
 
       angular.forEach($scope.data, function(val, key) {
 
-          var $dataSet = $(`<div id="data-${key}" class="data-set"></div>`);
+          var $dataSet = $('<div id="data-'+key+'" class="data-set"></div>');
           $("#dataBody").append($dataSet);
 
           var data = val.line;
