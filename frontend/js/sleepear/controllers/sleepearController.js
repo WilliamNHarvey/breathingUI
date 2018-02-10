@@ -616,14 +616,18 @@ define([
               if($this.hasClass("arrow")) {
                   $this.animate({
                       width: "0px",
-                      height: "0px"
+                      height: "0px",
+                      marginLeft: "15px",
+                      marginTop: "15px"
                   }, 600, function() {
                       $this.removeClass("arrow").addClass("checkmark");
                       $this.animate({
-                          height: "30px"
+                          height: "30px",
+                          marginTop: "0px"
                       }, 300, function() {
                           $this.animate({
-                              width: "15px"
+                              width: "15px",
+                              marginLeft: "7.5px"
                           }, 300);
                       })
                   });
