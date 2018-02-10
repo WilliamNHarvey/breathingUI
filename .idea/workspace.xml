@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/app.js" afterPath="$PROJECT_DIR$/frontend/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" afterPath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/sass/app.scss" afterPath="$PROJECT_DIR$/frontend/sass/app.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,22 +16,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="493" column="28" lean-forward="false" selection-start-line="493" selection-start-column="28" selection-end-line="493" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="607">
+              <caret line="506" column="162" lean-forward="true" selection-start-line="506" selection-start-column="162" selection-end-line="506" selection-end-column="162" />
+              <folding>
+                <marker date="1518291222879" expanded="true" signature="23913:23929" ph="..." />
+                <marker date="1518291222879" expanded="true" signature="23913:23942" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,12 +32,22 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/partials/breaths/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state relative-caret-position="378">
+              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="breaths.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/sass/includes/breaths.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,8 +65,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="86" column="67" lean-forward="true" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
+            <state relative-caret-position="613">
+              <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -77,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="219" column="20" lean-forward="true" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
+            <state relative-caret-position="196">
+              <caret line="207" column="20" lean-forward="true" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -121,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>window.nv</find>
       <find>restData</find>
       <find>.append</find>
       <find>width</find>
@@ -150,6 +154,7 @@
       <find>==</find>
       <find>data</find>
       <find>initBalls</find>
+      <find>bar</find>
       <find>$scope.recording</find>
     </findStrings>
     <replaceStrings>
@@ -200,13 +205,13 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/partials/breaths/index.html" />
         <option value="$PROJECT_DIR$/frontend/sass/includes/breaths.scss" />
-        <option value="$PROJECT_DIR$/frontend/js/app.js" />
         <option value="$PROJECT_DIR$/frontend/sass/includes/_ngAnimations.scss" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/services/sleepearService.js" />
         <option value="$PROJECT_DIR$/views/partials/breaths/submit.html" />
         <option value="$PROJECT_DIR$/frontend/js/particles.js" />
-        <option value="$PROJECT_DIR$/frontend/sass/app.scss" />
+        <option value="$PROJECT_DIR$/frontend/js/app.js" />
         <option value="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
+        <option value="$PROJECT_DIR$/frontend/sass/app.scss" />
       </list>
     </option>
   </component>
@@ -846,12 +851,12 @@
       <workItem from="1517674128254" duration="524000" />
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
-      <workItem from="1518207763005" duration="15279000" />
+      <workItem from="1518207763005" duration="17658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109031000" />
+    <option name="totallyTimeSpent" value="111410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1168,30 +1173,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/sass/includes/breaths.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3822">
-          <caret line="187" column="1" lean-forward="true" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="86" column="67" lean-forward="true" selection-start-line="86" selection-start-column="67" selection-end-line="86" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/sass/includes/_ngAnimations.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -1204,6 +1185,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="987">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1224,20 +1223,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/particles.js">
+    <entry file="file://$PROJECT_DIR$/frontend/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="40" column="1" lean-forward="false" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="613">
+          <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/sass/includes/breaths.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="60" column="1" lean-forward="true" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/breaths/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        <state relative-caret-position="378">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
@@ -1245,18 +1250,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
+    <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="219" column="20" lean-forward="true" selection-start-line="219" selection-start-column="20" selection-end-line="219" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="607">
+          <caret line="506" column="162" lean-forward="true" selection-start-line="506" selection-start-column="162" selection-end-line="506" selection-end-column="162" />
+          <folding>
+            <marker date="1518291222879" expanded="true" signature="23913:23929" ph="..." />
+            <marker date="1518291222879" expanded="true" signature="23913:23942" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
+    <entry file="file://$PROJECT_DIR$/frontend/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="493" column="28" lean-forward="false" selection-start-line="493" selection-start-column="28" selection-end-line="493" selection-end-column="28" />
+        <state relative-caret-position="196">
+          <caret line="207" column="20" lean-forward="true" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="20" />
           <folding />
         </state>
       </provider>

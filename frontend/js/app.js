@@ -109,6 +109,15 @@ define([
             }
         });
 
+        $rootScope.detectLeftButton = function(evt) {
+            evt = evt || window.event;
+            if ("buttons" in evt) {
+                return evt.buttons == 1;
+            }
+            var button = evt.which || evt.button;
+            return button == 1;
+        };
+
         //let everthing know that we need to save state now.
         $window.onbeforeunload = function (event) {
             $rootScope.$broadcast('savestate');

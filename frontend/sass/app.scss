@@ -179,30 +179,38 @@ body {
 
   .data-eeg {
     display: inline-block;
-    width: 50%;
+    width: 30%;
     overflow-x: auto;
+  }
+
+  .data-bar {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #2c3e50;
+    margin: 5px;
+    flex-basis: calc(50% - 14px);
+    overflow-x: auto;
+    display: flex;
   }
 
   .data-send {
     transition: all linear 0.5s;
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    vertical-align: middle;
 
     &.checkmark{
       display:inline-block;
 
       &:after{
-        /*Add another block-level blank space*/
         content: '';
         display: block;
-
-        /*Make it a small rectangle so the border will create an L-shape*/
-        width: 3px;
-        height: 6px;
-
-        /*Add a white border on the bottom and left, creating that 'L' */
+        width: 15px;
+        height: 30px;
         border: solid #000;
-        border-width: 0 2px 2px 0;
-
-        /*Rotate the L 45 degrees to turn it into a checkmark*/
+        border-width: 0 6px 6px 0;
         transform: rotate(45deg);
       }
     }
@@ -211,65 +219,14 @@ body {
       display: inline-block;
 
       &:after {
-        /*Add another block-level blank space*/
         content: '';
         display: block;
-
-        /*Make it a small rectangle so the border will create an L-shape*/
-        width: 6px;
-        height: 6px;
-
-        /*Add a white border on the bottom and left, creating that 'L' */
+        width: 30px;
+        height: 30px;
         border: solid #000;
-        border-width: 0 2px 2px 0;
-
-        /*Rotate the L 45 degrees to turn it into a checkmark*/
+        border-width: 0 6px 6px 0;
         transform: rotate(-45deg);
       }
     }
-  }
-}
-
-
-
-.checkmark{
-  display:inline-block;
-
-  &:after{
-    /*Add another block-level blank space*/
-    content: '';
-    display: block;
-
-    /*Make it a small rectangle so the border will create an L-shape*/
-    width: 3px;
-    height: 6px;
-
-    /*Add a white border on the bottom and left, creating that 'L' */
-    border: solid #000;
-    border-width: 0 2px 2px 0;
-
-    /*Rotate the L 45 degrees to turn it into a checkmark*/
-    transform: rotate(45deg);
-  }
-}
-
-.arrow {
-  display: inline-block;
-
-  &:after {
-    /*Add another block-level blank space*/
-    content: '';
-    display: block;
-
-    /*Make it a small rectangle so the border will create an L-shape*/
-    width: 6px;
-    height: 6px;
-
-    /*Add a white border on the bottom and left, creating that 'L' */
-    border: solid #000;
-    border-width: 0 2px 2px 0;
-
-    /*Rotate the L 45 degrees to turn it into a checkmark*/
-    transform: rotate(-45deg);
   }
 }
