@@ -347,6 +347,7 @@ define([
       }
 
       var data = restData.getData();
+      console.log(data);
       var x = d3.time.scale()
           .domain(d3.extent(data, function(d) {
               return d[0];
@@ -375,6 +376,7 @@ define([
               return y(d[1]);
           })
           .interpolate("linear");
+
 
       var svg = d3.select("#eegChart").append("svg")
           .attr("width", width + margin.left + margin.right)
@@ -464,5 +466,11 @@ define([
   })
   .controller('submitController', function($rootScope, $scope, $location, $window) {
       $scope.switchPage = $rootScope.switchPage;
+
+      $scope.data = [
+          {
+
+          }
+      ];
   });
 });
