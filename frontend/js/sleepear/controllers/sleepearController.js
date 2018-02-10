@@ -626,7 +626,7 @@ define([
           var $parent = $(this).parent();
           $parent.animate({
               opacity: 0
-          }, 300, function() {
+          }, 150, function() {
               $parent.remove();
               // Animation complete.
           });
