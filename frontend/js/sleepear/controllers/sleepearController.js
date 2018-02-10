@@ -604,7 +604,7 @@ define([
       });
 
 
-      angular.forEach($(".data-send"), function() {
+      $(".data-send").each(function() {
           console.log('here');
           var $child = $(this).children();
           console.log($child);
