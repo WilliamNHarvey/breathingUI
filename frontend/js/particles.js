@@ -232,7 +232,21 @@ function renderLines(){
     }
 }
 
-
+// Init Balls
+function initBalls(num){
+    'use strict';
+    for(var i = 1; i <= num; i++){
+        balls.push({
+            x: randomSidePos(can_w),
+            y: randomSidePos(can_h),
+            vx: getRandomSpeed('top')[0],
+            vy: getRandomSpeed('top')[1],
+            r: R,
+            alpha: 1,
+            phase: randomNumFrom(0, 10)
+        });
+    }
+}
 
 // add balls if there a little balls
 function addBallIfy(){
@@ -261,21 +275,7 @@ function render(){
     window.requestAnimationFrame(render);
 }
 
-// Init Balls
-function initBalls(num){
-    'use strict';
-    for(var i = 1; i <= num; i++){
-        balls.push({
-            x: randomSidePos(can_w),
-            y: randomSidePos(can_h),
-            vx: getRandomSpeed('top')[0],
-            vy: getRandomSpeed('top')[1],
-            r: R,
-            alpha: 1,
-            phase: randomNumFrom(0, 10)
-        });
-    }
-}
+
 // Init Canvas
 function initCanvas(){
     'use strict';

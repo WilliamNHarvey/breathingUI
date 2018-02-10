@@ -35,9 +35,9 @@
 }
 
 .fade.ng-hide-remove {
-  transition: all ease-out 50ms;
+  transition: all linear 150ms;
 }
 
 .fade.ng-hide-add {
-  transition: all ease-out 50ms;
+  transition: all linear 50ms;
 }

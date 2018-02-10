@@ -85,10 +85,10 @@ define([
 
             else { // Use the specified animation
                 $rootScope.pageAnimationClass = pageAnimationClass;
-                if(pageAnimationClass == 'slideLeft') {
+                if(pageAnimationClass === 'slideLeft') {
                     $rootScope.removeSlideLeft = true;
                 }
-                if(pageAnimationClass == 'slideRight') {
+                if(pageAnimationClass === 'slideRight') {
                     $rootScope.removeSlideRight = true;
                 }
             }
@@ -103,7 +103,7 @@ define([
         };
 
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
-            if (sessionStorage.restorestate == "true") {
+            if (sessionStorage.restorestate === "true") {
                 $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
                 sessionStorage.restorestate = false;
             }
