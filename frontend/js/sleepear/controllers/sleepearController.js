@@ -618,7 +618,7 @@ define([
                       width: "0px",
                       height: "0px",
                       marginLeft: "30px",
-                      marginTop: "30px"
+                      marginTop: "15px"
                   }, 600, function() {
                       $this.removeClass("arrow").addClass("checkmark");
                       $this.animate({
