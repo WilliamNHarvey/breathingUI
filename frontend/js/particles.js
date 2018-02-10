@@ -3,8 +3,9 @@
  */
 
 var canvas = document.getElementById('nokey');
+var page = document.getElementsByClassName("page")[0];
 
-if(!canvas) {
+if(!canvas || !page) {
     throw new Error("No canvas");
 }
 
@@ -29,11 +30,9 @@ function drawStuff() {
 
 function resizeCanvas() {
     'use strict';
-    canvas.style.width ='100%';
-    canvas.style.height='100%';
     // ...then set the internal size to match
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width  = page.scrollWidth;
+    canvas.height = page.scrollHeight;
     can_w = parseInt(canvas.width);
     can_h = parseInt(canvas.height);
 
