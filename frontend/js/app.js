@@ -110,12 +110,12 @@ define([
         });
 
         $rootScope.detectLeftButton = function(evt) {
-            evt = evt || window.event;
+            evt = evt || $window.event;
             if ("buttons" in evt) {
-                return evt.buttons == 1;
+                return evt.buttons === 1;
             }
             var button = evt.which || evt.button;
-            return button == 1;
+            return button === 1;
         };
 
         //let everthing know that we need to save state now.

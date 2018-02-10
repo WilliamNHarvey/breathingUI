@@ -603,23 +603,28 @@ define([
               .text("Voltage (mv)");
       });
 
-      $(".data-send").click(function(e) {
-          if(!$rootScope.detectLeftButton(e)) {
-              return false;
-          }
 
-          var $child = this.children()[0];
+      angular.forEach($(".data-send"), function() {
+          var $child = $(this).children()[0];
 
-          if($child.hasClass("arrow")) {
-              $child.addClass("checkmark").removeClass("arrow");
-          }
-          else if($child.hasClass("checkmark")) {
-              $child.addClass("arrow").removeClass("checkmark");
-          }
+          $child.click(function(e) {
+              if(!$rootScope.detectLeftButton(e)) {
+                  return false;
+              }
+
+              var $this = $(this);
+
+              if($this.hasClass("arrow")) {
+                  $this.addClass("checkmark").removeClass("arrow");
+              }
+              else if($this.hasClass("checkmark")) {
+                  $this.addClass("arrow").removeClass("checkmark");
+              }
+          });
       });
 
       $(".data-delete").click(function() {
-          var $parent = this.parent();
+          var $parent = $(this).parent();
           $parent.animate({
               opacity: 0
           }, 500, function() {
