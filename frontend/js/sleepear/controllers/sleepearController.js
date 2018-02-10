@@ -605,7 +605,7 @@ define([
 
 
       angular.forEach($(".data-send"), function() {
-          var $child = $(this).children()[0];
+          var $child = $(this).children();
 
           $child.click(function(e) {
               if(!$rootScope.detectLeftButton(e)) {
