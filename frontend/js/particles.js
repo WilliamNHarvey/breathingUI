@@ -17,9 +17,10 @@ else {
 
 
 var ctx = canvas.getContext('2d'),
-    can_w = parseInt(window.innerWidth),
-    can_h = parseInt(window.innerHeight),
     numBalls = 150;
+
+var can_w;
+var can_h;
 
 function drawStuff() {
     'use strict';
@@ -28,10 +29,13 @@ function drawStuff() {
 
 function resizeCanvas() {
     'use strict';
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    can_w = parseInt(window.innerWidth);
-    can_h = parseInt(window.innerHeight);
+    canvas.style.width ='100%';
+    canvas.style.height='100%';
+    // ...then set the internal size to match
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    can_w = parseInt(canvas.width);
+    can_h = parseInt(canvas.height);
 
     drawStuff();
 }

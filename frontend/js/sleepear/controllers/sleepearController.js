@@ -483,7 +483,7 @@ define([
 
       angular.forEach($scope.data, function(val, key) {
 
-          var $dataSet = $('<div id="data-'+key+'" class="data-set"></div>');
+          var $dataSet = $('<div id="data-'+key+'" class="data-set"><div class="data-delete"></div><div class="data-eeg"></div><div class="data-send"></div></div>');
           $("#dataBody").append($dataSet);
 
           var data = val.line;
@@ -494,7 +494,7 @@ define([
                   bottom: 50,
                   left: 50
               },
-              height = 200 - margin.top - margin.bottom,
+              height = 180 - margin.top - margin.bottom,
               width = 650 - margin.left - margin.right;
 
           var x = d3.time.scale()
@@ -527,7 +527,7 @@ define([
               .interpolate("linear");
 
 
-          var svg = d3.select($dataSet.get(0)).append("svg")
+          var svg = d3.select($dataSet.children(".data-eeg").get(0)).append("svg")
               .attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
               .append("g")

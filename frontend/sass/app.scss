@@ -166,4 +166,110 @@ body {
     margin: 5px;
     background-color: #e9e9e9;
   }
+
+  .data-delete {
+    display: inline-block;
+    height: calc(100% + 50px);
+    width: 15%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+    color: #D50000;
+  }
+
+  .data-eeg {
+    display: inline-block;
+    width: 50%;
+    overflow-x: auto;
+  }
+
+  .data-send {
+    transition: all linear 0.5s;
+
+    &.checkmark{
+      display:inline-block;
+
+      &:after{
+        /*Add another block-level blank space*/
+        content: '';
+        display: block;
+
+        /*Make it a small rectangle so the border will create an L-shape*/
+        width: 3px;
+        height: 6px;
+
+        /*Add a white border on the bottom and left, creating that 'L' */
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+
+        /*Rotate the L 45 degrees to turn it into a checkmark*/
+        transform: rotate(45deg);
+      }
+    }
+
+    &.arrow {
+      display: inline-block;
+
+      &:after {
+        /*Add another block-level blank space*/
+        content: '';
+        display: block;
+
+        /*Make it a small rectangle so the border will create an L-shape*/
+        width: 6px;
+        height: 6px;
+
+        /*Add a white border on the bottom and left, creating that 'L' */
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+
+        /*Rotate the L 45 degrees to turn it into a checkmark*/
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+
+
+.checkmark{
+  display:inline-block;
+
+  &:after{
+    /*Add another block-level blank space*/
+    content: '';
+    display: block;
+
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: 3px;
+    height: 6px;
+
+    /*Add a white border on the bottom and left, creating that 'L' */
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(45deg);
+  }
+}
+
+.arrow {
+  display: inline-block;
+
+  &:after {
+    /*Add another block-level blank space*/
+    content: '';
+    display: block;
+
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: 6px;
+    height: 6px;
+
+    /*Add a white border on the bottom and left, creating that 'L' */
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(-45deg);
+  }
 }
