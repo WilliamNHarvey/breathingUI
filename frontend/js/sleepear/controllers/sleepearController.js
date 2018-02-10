@@ -614,11 +614,24 @@ define([
               var $this = $(this);
 
               if($this.hasClass("arrow")) {
-                  $this.addClass("checkmark").removeClass("arrow");
+                  $this.animate({
+                      width: 0,
+                      height: 0
+                  }, 300, function() {
+                      $this.removeClass("arrow").addClass("checkmark");
+                      $this.animate({
+                          height: "30px"
+                      }, 150, function() {
+                          $this.animate({
+                              width: "30px"
+                          }, 150);
+                      })
+                  });
+
               }
-              else if($this.hasClass("checkmark")) {
+              /*else if($this.hasClass("checkmark")) {
                   $this.addClass("arrow").removeClass("checkmark");
-              }
+              }*/
           });
       });
 
@@ -626,7 +639,7 @@ define([
           var $parent = $(this).parent();
           $parent.animate({
               opacity: 0
-          }, 150, function() {
+          }, 300, function() {
               $parent.remove();
               // Animation complete.
           });
