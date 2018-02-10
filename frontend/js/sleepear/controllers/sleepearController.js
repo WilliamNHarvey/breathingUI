@@ -605,9 +605,11 @@ define([
 
 
       angular.forEach($(".data-send"), function() {
+          console.log('here');
           var $child = $(this).children();
+          console.log($child);
           $child.click(function(e) {
-              
+              console.log('click');
 
               var $this = $(this);
 
