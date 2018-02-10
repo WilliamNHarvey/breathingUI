@@ -455,7 +455,7 @@ define([
       setInterval(update, 400);
 
   })
-  .controller('submitController', function($rootScope, $scope, $location, $window, LS) {
+  .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile) {
       $scope.switchPage = $rootScope.switchPage;
       var d3 = $window.d3;
 
@@ -504,7 +504,7 @@ define([
       }
 
       angular.forEach($scope.data, function(val, key) {
-          var $dataSet = $('<div id="data-'+key+'" class="data-set"><div class="data-delete">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].barData" options="barOptions" api="barApi"></nvd3></div><div class="data-send arrow"></div></div>');
+          var $dataSet = $($compile('<div id="data-'+key+'" class="data-set"><div class="data-delete">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].barData" options="barOptions" api="barApi"></nvd3></div><div class="data-send arrow"></div></div>')($scope));
           $("#dataBody").append($dataSet);
 
           var data = val.eeg;
