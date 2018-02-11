@@ -684,7 +684,7 @@ define([
               $parent.remove();
               var counter = 0;
               $.each($(".data-set"), function() {
-                  if(counter === 0) {
+                  if(counter === id) {
                       $(this).css({marginTop: "205px"}).animate({marginTop: "5px"}, 300);
                   }
                   $(this).attr("id",counter);
