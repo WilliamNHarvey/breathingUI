@@ -540,6 +540,8 @@ define([
 
           var data = val.eeg;
 
+          console.log()
+
           var margin = {
                   top: 20,
                   right: 20,
@@ -547,7 +549,7 @@ define([
                   left: 50
               },
               height = 170 - margin.top - margin.bottom,
-              width = data.length * 10 - margin.left - margin.right;
+              width = data.length * 650 / 248 - margin.left - margin.right;
 
           var x = d3.time.scale()
               .domain(d3.extent(data, function(d) {
@@ -636,13 +638,13 @@ define([
 
 
       $(".data-send").each(function() {
-          var $parent = $(this).parent();
-          var id = parseInt($parent.attr('id'));
-          $scope.data[id].sent = true;
-          LS.setData("storedData", JSON.stringify($scope.data));
           var $child = $(this).children();
           $child.click(function(e) {
               var $this = $(this);
+              var $parent = $this.parent().parent();
+              var id = parseInt($parent.attr('id'));
+              $scope.data[id].sent = true;
+              LS.setData("storedData", JSON.stringify($scope.data));
               if($this.hasClass("arrow")) {
                   $this.animate({
                       width: "0px",
