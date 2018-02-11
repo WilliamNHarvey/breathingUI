@@ -667,7 +667,7 @@ define([
           var id = parseInt($parent.attr('id'));
 
           console.log(id);
-          $scope.data = $scope.data.splice(id, 1);
+          $scope.data.splice(id, 1);
           console.log($scope.data);
           LS.setData("storedData", JSON.stringify($scope.data));
 
