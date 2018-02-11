@@ -17,11 +17,11 @@
       <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="546" column="16" lean-forward="true" selection-start-line="546" selection-start-column="16" selection-end-line="546" selection-end-column="16" />
+            <state relative-caret-position="211">
+              <caret line="531" column="23" lean-forward="true" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
               <folding>
-                <marker date="1518379831546" expanded="true" signature="24764:24780" ph="..." />
-                <marker date="1518379831546" expanded="true" signature="25181:25197" ph="..." />
+                <marker date="1518379900177" expanded="true" signature="24784:24800" ph="..." />
+                <marker date="1518379900177" expanded="true" signature="25197:25213" ph="..." />
               </folding>
             </state>
           </provider>
@@ -850,12 +850,12 @@
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
       <workItem from="1518207763005" duration="30309000" />
-      <workItem from="1518340628005" duration="6383000" />
+      <workItem from="1518340628005" duration="6448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130444000" />
+    <option name="totallyTimeSpent" value="130509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1254,11 +1254,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="546" column="16" lean-forward="true" selection-start-line="546" selection-start-column="16" selection-end-line="546" selection-end-column="16" />
+        <state relative-caret-position="211">
+          <caret line="531" column="23" lean-forward="true" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="23" />
           <folding>
-            <marker date="1518379831546" expanded="true" signature="24764:24780" ph="..." />
-            <marker date="1518379831546" expanded="true" signature="25181:25197" ph="..." />
+            <marker date="1518379900177" expanded="true" signature="24784:24800" ph="..." />
+            <marker date="1518379900177" expanded="true" signature="25197:25213" ph="..." />
           </folding>
         </state>
       </provider>

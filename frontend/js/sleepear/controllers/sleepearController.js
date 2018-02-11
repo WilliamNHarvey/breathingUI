@@ -529,11 +529,12 @@ define([
       $scope.barApi = [];
 
       angular.forEach($scope.data, function(val, key) {
+          var $dataSet;
           if(val.sent) {
-              var $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="checkmark"></div></div></div>')($scope));
+              $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="checkmark"></div></div></div>')($scope));
           }
           else {
-              var $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
+              $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
           }
           $("#dataBody").append($dataSet);
 
