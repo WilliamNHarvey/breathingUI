@@ -8,7 +8,7 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
-      var storedData = LS.getData("storedData");
+      var storedData = JSON.parse(LS.getData("storedData"));
       var index;
       if(!storedData) {
           index = 0;
@@ -239,7 +239,6 @@ define([
                   $scope.recording = false;
                   $scope.$digest();
                   storedData[index].bar = $scope.barData;
-                  storedData[index].eeg = storedData[index].eeg;
                   console.log(JSON.stringify(storedData));
                   LS.setData("storedData", JSON.stringify(storedData));
                   index++;
