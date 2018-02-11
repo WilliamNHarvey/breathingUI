@@ -83,6 +83,6 @@ require(['d3'], function(d3) {
     'use strict';
     window.d3 = d3;
     require(['nvd3'], function(nvd3) {
-        console.log(nvd3);
+        
     });
 });
