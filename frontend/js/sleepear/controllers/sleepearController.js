@@ -670,7 +670,9 @@ define([
           });
           var id = parseInt($(this).attr('id'));
 
+          console.log(id);
           $scope.data.slice(id, 1);
+          console.log($scope.data);
           LS.setData("storedData", JSON.stringify($scope.data));
 
           var counter = 0;
