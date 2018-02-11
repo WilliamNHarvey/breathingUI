@@ -529,7 +529,8 @@ define([
       $scope.barApi = [];
 
       angular.forEach($scope.data, function(val, key) {
-          var $dataSet = $($compile('<div id="data-'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="val.bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
+          console.log(val);
+          var $dataSet = $($compile('<div id="data-'+key+1+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="val.bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
           $("#dataBody").append($dataSet);
 
           var data = val.eeg;
@@ -669,10 +670,10 @@ define([
               $parent.remove();
               // Animation complete.
           });
-          var id = parseInt($(this).parent().attr('id'));
+          var id = parseInt($(this).parent().attr('id')) - 1;
 
           console.log(id);
-          $scope.data.slice(id, 1);
+          $scope.data.slice(id, id + 1);
           console.log($scope.data);
           LS.setData("storedData", JSON.stringify($scope.data));
 
