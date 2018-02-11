@@ -530,7 +530,7 @@ define([
 
       angular.forEach($scope.data, function(val, key) {
           console.log(val);
-          var $dataSet = $($compile('<div id="data-'+key+1+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="val.bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
+          var $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="val.bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
           $("#dataBody").append($dataSet);
 
           var data = val.eeg;
@@ -664,13 +664,7 @@ define([
 
       $(".data-delete").click(function() {
           var $parent = $(this).parent();
-          $parent.animate({
-              opacity: 0
-          }, 500, function() {
-              $parent.remove();
-              // Animation complete.
-          });
-          var id = parseInt($(this).parent().attr('id')) - 1;
+          var id = parseInt($parent.attr('id'));
 
           console.log(id);
           $scope.data.slice(id, id + 1);
@@ -682,6 +676,13 @@ define([
               $(this).attr("id",counter);
               counter++;
           });
+          $parent.animate({
+              opacity: 0
+          }, 500, function() {
+              $parent.remove();
+              // Animation complete.
+          });
+
 
 
       });
