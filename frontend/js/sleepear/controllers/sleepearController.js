@@ -242,6 +242,7 @@ define([
                   storedData[index].eeg = JSON.stringify(storedData[index].eeg);
                   index++;
                   storedData[index] = {};
+                  console.log(storedData);
                   LS.setData("storedData", storedData);
               });
               $text.fadeOut(150, function() {
