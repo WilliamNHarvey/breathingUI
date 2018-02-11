@@ -324,13 +324,13 @@ canvas.addEventListener('mousemove', function(e){
     'use strict';
     var ev = e || window.event;
     mouse_ball.x = ev.pageX;
-    mouse_ball.y = ev.pageY;
+    mouse_ball.y = ev.pageY + $(".page").get(0).scrollTop;
 });
 canvas.addEventListener('click', function(e) {
     'use strict';
     var new_ball = {
         x: e.pageX,
-        y: e.pageY,
+        y: e.pageY + $(".page").get(0).scrollTop,
         vx: getRandomSpeed('bottom')[0],
         vy: getRandomSpeed('bottom')[1],
         r: R,
