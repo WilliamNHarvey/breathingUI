@@ -546,13 +546,13 @@ define([
                   left: 50
               },
               height = 170 - margin.top - margin.bottom,
-              width = 650 - margin.left - margin.right;
+              width = val.eeg.length() * 10 - margin.left - margin.right;
 
           var x = d3.time.scale()
               .domain(d3.extent(data, function(d) {
                   return d[0];
               }))
-              .range([0, 200]);
+              .range([0, width]);
 
           var y = d3.scale.linear()
               .domain([-2, 5])
