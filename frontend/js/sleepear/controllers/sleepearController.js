@@ -686,9 +686,13 @@ define([
               $parent.remove();
               var counter = 0;
               $.each($(".data-set"), function() {
+                  if(counter == 0) {
+                      $(this).css({marginTop: "200px"}).animate({marginTop: "0px"}, 300);
+                  }
                   $(this).attr("id",counter);
                   counter++;
               });
+              
           });
 
 
