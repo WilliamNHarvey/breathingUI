@@ -549,7 +549,7 @@ define([
                   left: 50
               },
               height = 170 - margin.top - margin.bottom,
-              width = 650 + data.length/248 - margin.left - margin.right;
+              width = 650/248 + data.length - margin.left - margin.right;
 
           var x = d3.time.scale()
               .domain(d3.extent(data, function(d) {
@@ -687,12 +687,12 @@ define([
               var counter = 0;
               $.each($(".data-set"), function() {
                   if(counter == 0) {
-                      $(this).css({marginTop: "200px"}).animate({marginTop: "0px"}, 300);
+                      $(this).css({marginTop: "205px"}).animate({marginTop: "5px"}, 300);
                   }
                   $(this).attr("id",counter);
                   counter++;
               });
-              
+
           });
 
 
