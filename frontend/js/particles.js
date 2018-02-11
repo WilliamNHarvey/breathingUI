@@ -18,7 +18,7 @@ else {
 
 
 var ctx = canvas.getContext('2d'),
-    numBalls = 150;
+    numBalls = 100;
 
 var can_w;
 var can_h;
