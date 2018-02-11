@@ -530,7 +530,7 @@ define([
 
       angular.forEach($scope.data, function(val, key) {
           console.log(val);
-          var $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="val.bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
+          var $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
           $("#dataBody").append($dataSet);
 
           var data = val.eeg;
@@ -667,7 +667,7 @@ define([
           var id = parseInt($parent.attr('id'));
 
           console.log(id);
-          $scope.data.slice(id, id + 1);
+          $scope.data = $scope.data.slice(id, id + 1);
           console.log($scope.data);
           LS.setData("storedData", JSON.stringify($scope.data));
 
