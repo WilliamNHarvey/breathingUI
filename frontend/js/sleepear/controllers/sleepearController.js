@@ -12,9 +12,11 @@ define([
       var index;
       if(!storedData) {
           index = 0;
+          storedData = [{}];
       }
       else {
           index = storedData.length;
+          storedData[index] = {};
       }
 
       if(typeof($window.breathSet) === "undefined") {
@@ -239,6 +241,7 @@ define([
                   storedData[index].bar = JSON.stringify($scope.barData);
                   storedData[index].eeg = JSON.stringify(storedData[index].eeg);
                   index++;
+                  storedData[index] = {};
                   LS.setData("storedData", storedData);
               });
               $text.fadeOut(150, function() {
