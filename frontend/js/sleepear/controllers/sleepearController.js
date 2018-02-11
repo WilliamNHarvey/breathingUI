@@ -547,7 +547,7 @@ define([
                   left: 50
               },
               height = 170 - margin.top - margin.bottom,
-              width = val.eeg.length() * 10 - margin.left - margin.right;
+              width = data.length * 10 - margin.left - margin.right;
 
           var x = d3.time.scale()
               .domain(d3.extent(data, function(d) {
