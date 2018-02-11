@@ -60,11 +60,12 @@
 
   .data-delete {
     display: inline-block;
-    height: calc(100% + 25px);
     width: 10%;
     text-align: center;
     vertical-align: middle;
     font-size: 50px;
+    position: relative;
+    bottom: 75px;
     color: #D50000;
     cursor: pointer;
   }
