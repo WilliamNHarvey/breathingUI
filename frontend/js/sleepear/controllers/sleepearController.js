@@ -671,16 +671,15 @@ define([
           console.log($scope.data);
           LS.setData("storedData", JSON.stringify($scope.data));
 
-          var counter = 0;
-          $.each($(".data-set"), function() {
-              $(this).attr("id",counter);
-              counter++;
-          });
           $parent.animate({
               opacity: 0
           }, 500, function() {
               $parent.remove();
-              // Animation complete.
+              var counter = 0;
+              $.each($(".data-set"), function() {
+                  $(this).attr("id",counter);
+                  counter++;
+              });
           });
 
 
