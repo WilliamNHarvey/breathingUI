@@ -238,12 +238,12 @@ define([
               $circle.animate({'opacity': 1}, 300, function() {
                   $scope.recording = false;
                   $scope.$digest();
-                  storedData[index].bar = JSON.stringify($scope.barData);
-                  storedData[index].eeg = JSON.stringify(storedData[index].eeg);
+                  storedData[index].bar = $scope.barData;
+                  storedData[index].eeg = storedData[index].eeg;
+                  console.log(JSON.stringify(storedData));
+                  LS.setData("storedData", JSON.stringify(storedData));
                   index++;
                   storedData[index] = {};
-                  console.log(storedData);
-                  LS.setData("storedData", storedData);
               });
               $text.fadeOut(150, function() {
                   $text.text('Record').fadeIn(150, function() {
