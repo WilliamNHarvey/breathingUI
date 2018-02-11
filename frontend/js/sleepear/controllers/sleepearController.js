@@ -239,7 +239,6 @@ define([
                   $scope.recording = false;
                   $scope.$digest();
                   storedData[index].bar = $scope.barData;
-                  console.log(JSON.stringify(storedData));
                   LS.setData("storedData", JSON.stringify(storedData));
                   index++;
                   storedData[index] = {};
@@ -361,7 +360,6 @@ define([
       }
 
       var data = restData.getData();
-      console.log(data);
       var x = d3.time.scale()
           .domain(d3.extent(data, function(d) {
               return d[0];
@@ -528,6 +526,7 @@ define([
       }
 
       angular.forEach($scope.data, function(val, key) {
+          console.log($scope.data[key].bar);
           var $dataSet = $($compile('<div id="data-'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
           $("#dataBody").append($dataSet);
 
@@ -668,6 +667,18 @@ define([
               $parent.remove();
               // Animation complete.
           });
+          var id = parseInt($(this).attr('id'));
+
+          $scope.data.split(id, 1);
+          LS.setData("storedData", JSON.stringify($scope.data));
+
+          var counter = 0;
+          $.each($(".data-set"), function() {
+              $(this).attr("id",counter);
+              counter++;
+          });
+
+
       });
 
 
