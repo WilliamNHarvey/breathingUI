@@ -33,7 +33,6 @@ function resizeCanvas() {
     // ...then set the internal size to match
     canvas.width  = page.scrollWidth;
     canvas.height = page.scrollHeight;
-    console.log(canvas.height);
     can_w = parseInt(canvas.width);
     can_h = parseInt(canvas.height);
 
@@ -190,7 +189,6 @@ function updateBalls(){
         // alpha change
         b.phase += alpha_f;
         b.alpha = Math.abs(Math.cos(b.phase));
-        // console.log(b.alpha);
     });
 
     balls = new_balls.slice(0);

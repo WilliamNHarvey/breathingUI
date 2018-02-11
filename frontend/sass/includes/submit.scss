@@ -1,0 +1,118 @@
+#backButton {
+  top: 2.5vw;
+  left: 5vw;
+  position: absolute;
+  cursor: pointer;
+
+  .back-body {
+    height: 5vw;
+    width: 200px;
+    background: rgba(103, 192, 92, 0.7);
+    border-radius: 10px;
+    pointer-events: none;
+
+    .back-text {
+      font-size: calc(12px + 1vw);
+      font-weight: bold;
+      display: block;
+      margin-left: 80px;
+      margin-right: 20px;
+      line-height: 4vw;
+      padding-top: 0.5vw;
+      text-align: center;
+    }
+
+    .back-icon {
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - 2vw);
+      right: 140px;
+      width: 0;
+      height: 0;
+      border-top: 2vw solid transparent;
+      border-bottom: 2vw solid transparent;
+      border-right: 2.5vw solid green;
+      border-radius: 10px;
+    }
+  }
+}
+
+.data-body {
+  position: absolute;
+  left: 5vw;
+  top: 10vw;
+  width: 90vw;
+  min-height: 32vw;
+  border: 1px solid black;
+  background: white;
+
+  .data-set {
+    height: 200px;
+    width: calc(100% - 10px);
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #e9e9e9;
+    //transition: 0.5s linear all;
+    opacity: 1;
+  }
+
+  .data-delete {
+    display: inline-block;
+    height: calc(100% + 25px);
+    width: 10%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+    color: #D50000;
+    cursor: pointer;
+  }
+
+  .data-eeg {
+    display: inline-block;
+    width: 50%;
+    overflow-x: auto;
+  }
+
+  .data-bar {
+    width: 30%;
+    display: inline-block;
+  }
+
+  .data-send {
+    display: inline-block;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    vertical-align: middle;
+    pointer-events: none;
+
+    .checkmark{
+      display:inline-block;
+      width: 15px;
+      height: 30px;
+      border: solid #000;
+      border-width: 0 6px 6px 0;
+      transform: rotate(45deg);
+      margin-right: 30px;
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: solid #000;
+      border-width: 0 6px 6px 0;
+      transform: rotate(-45deg);
+      margin-right: 30px;
+    }
+
+    * {
+      //transition: all linear 0.5s;
+      cursor: pointer;
+      pointer-events: all;
+      border-radius: 0.5px;
+    }
+  }
+}

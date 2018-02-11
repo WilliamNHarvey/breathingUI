@@ -540,8 +540,6 @@ define([
 
           var data = val.eeg;
 
-          console.log()
-
           var margin = {
                   top: 20,
                   right: 20,
