@@ -549,7 +549,7 @@ define([
                   left: 50
               },
               height = 170 - margin.top - margin.bottom,
-              width = data.length * 650 / 248 - margin.left - margin.right;
+              width = 650 + data.length/248 - margin.left - margin.right;
 
           var x = d3.time.scale()
               .domain(d3.extent(data, function(d) {

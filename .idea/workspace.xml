@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6616890-e552-4b74-a837-6195ee093026" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" afterPath="$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +18,11 @@
       <file leaf-file-name="sleepearController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="551" column="39" lean-forward="false" selection-start-line="551" selection-start-column="39" selection-end-line="551" selection-end-column="39" />
+            <state relative-caret-position="363">
+              <caret line="555" column="30" lean-forward="true" selection-start-line="555" selection-start-column="30" selection-end-line="555" selection-end-column="30" />
               <folding>
-                <marker date="1518380473748" expanded="true" signature="24784:24800" ph="..." />
-                <marker date="1518380473748" expanded="true" signature="25197:25213" ph="..." />
+                <marker date="1518380810730" expanded="true" signature="24784:24800" ph="..." />
+                <marker date="1518380810730" expanded="true" signature="25197:25213" ph="..." />
               </folding>
             </state>
           </provider>
@@ -850,12 +851,12 @@
       <workItem from="1517861866425" duration="60036000" />
       <workItem from="1518130113883" duration="709000" />
       <workItem from="1518207763005" duration="30309000" />
-      <workItem from="1518340628005" duration="6994000" />
+      <workItem from="1518340628005" duration="7327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131055000" />
+    <option name="totallyTimeSpent" value="131388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1254,11 +1255,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/sleepear/controllers/sleepearController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="551" column="39" lean-forward="false" selection-start-line="551" selection-start-column="39" selection-end-line="551" selection-end-column="39" />
+        <state relative-caret-position="363">
+          <caret line="555" column="30" lean-forward="true" selection-start-line="555" selection-start-column="30" selection-end-line="555" selection-end-column="30" />
           <folding>
-            <marker date="1518380473748" expanded="true" signature="24784:24800" ph="..." />
-            <marker date="1518380473748" expanded="true" signature="25197:25213" ph="..." />
+            <marker date="1518380810730" expanded="true" signature="24784:24800" ph="..." />
+            <marker date="1518380810730" expanded="true" signature="25197:25213" ph="..." />
           </folding>
         </state>
       </provider>
