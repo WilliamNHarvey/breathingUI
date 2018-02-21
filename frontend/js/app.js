@@ -10,8 +10,7 @@ define([
     'angular-flash',
     'sleepear/sleepear',
     'd3',
-    'angular-nvd3',
-    'directives/loginModal'
+    'angular-nvd3'
 ], function (angularAMD) {
     'use strict';
 
@@ -22,7 +21,6 @@ define([
         'ngProgress',
         'ui.router',
         'App.sleepear',
-        'App.login',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
         'nvd3'
@@ -56,7 +54,7 @@ define([
                     url: '/',
                     templateUrl: 'partials/index.html',
                     controller: function($scope) {
-                        $scope.loginAs = "Patient";
+
                     }
                 })
             );

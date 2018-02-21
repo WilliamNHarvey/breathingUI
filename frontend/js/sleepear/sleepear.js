@@ -39,6 +39,36 @@ define([
                   }
               })
           )
+          .state('login', angularAMD.route({
+                  url: '/login',
+                  templateUrl: 'partials/login.html',
+                  controller: 'loginController',
+                  data: {
+                      title: 'Login',
+                  },
+                  controllerUrl: 'sleepear/controllers/loginController',
+                  resolve: {
+                      breaths: ['submitService', function(submitService) {
+                          //return beerService.resource().query().$promise;
+                      }]
+                  }
+              })
+          )
+          .state('register', angularAMD.route({
+                  url: '/register',
+                  templateUrl: 'partials/register.html',
+                  controller: 'registerController',
+                  data: {
+                      title: 'Register',
+                  },
+                  controllerUrl: 'sleepear/controllers/registerController',
+                  resolve: {
+                      breaths: ['submitService', function(submitService) {
+                          //return beerService.resource().query().$promise;
+                      }]
+                  }
+              })
+          )
   }]);
 
   return sleepear;
