@@ -1,16 +1,17 @@
 define([
     'app'
-], function(app) {
+], function() {
   'use strict';
 
-  app.directive('loginModal', function() {
+  var login = angular.module('App.login', []);
+  login.directive('loginModal', function() {
     return {
       restrict: 'AEC',
       templateUrl: 'login.html',
       scope: {
         loginAs: '=loginAs'
       },
-      controller: function($rootScope, $scope, $element){
+      controller: function($rootScope, $scope, $element, breathsService){
           $scope.test = function() {
               console.log('test');
               console.log('loginAs: ', $scope.loginAs);

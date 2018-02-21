@@ -22,6 +22,7 @@ define([
         'ngProgress',
         'ui.router',
         'App.sleepear',
+        'App.login',
         'angular-flash.service',
         'angular-flash.flash-alert-directive',
         'nvd3'
