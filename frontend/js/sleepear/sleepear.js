@@ -9,6 +9,18 @@ define([
   // App Config
   sleepear.config(["$stateProvider", function ($stateProvider, $urlRouterProvider) {
       $stateProvider
+          .state('index', angularAMD.route({
+                  url: '/',
+                  templateUrl: 'partials/index.html',
+                  controller: 'indexController',
+                  controllerUrl: 'sleepear/controllers/indexController',
+                  resolve: {
+                      breaths: ['breathsService', function(breathsService) {
+                          //return beerService.resource().query().$promise;
+                      }]
+                  }
+              })
+          )
           .state('breathing', angularAMD.route({
                   url: '/breaths',
                   templateUrl: 'partials/breaths/index.html',

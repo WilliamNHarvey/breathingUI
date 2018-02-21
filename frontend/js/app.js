@@ -49,17 +49,6 @@ define([
             return $delegate;
         });
 
-        $stateProvider
-            .state('index', angularAMD.route({
-                    url: '/',
-                    templateUrl: 'partials/index.html',
-                    controller: function($scope) {
-                        $scope.switchPage = $rootScope.switchPage;
-                        $scope.location = /[^/]*$/.exec($location.path())[0];
-                    }
-                })
-            );
-
         $urlRouterProvider.otherwise('/');
 
         // Flash messages config
