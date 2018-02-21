@@ -9,9 +9,5 @@ define([
         };
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
-
-        /*$scope.test = function() {
-            console.log('login test');
-        }*/
     });
 });

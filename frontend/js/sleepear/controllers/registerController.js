@@ -3,7 +3,7 @@ define([
 ], function(app) {
     'use strict';
 
-    app.controller('registerController', function ($rootScope, $scope, $location, $window, breathsService, $compile, LS) {
+    app.controller('registerController', function ($rootScope, $scope, $location, userService, LS) {
         window.ondragstart = function () {
             return false;
         };
@@ -12,6 +12,12 @@ define([
 
         $scope.test = function() {
             console.log('register test');
+        }
+
+        $scope.register = function($user) {
+            console.log($user);
+            var status = userService.register($user);
+            console.log(status);
         }
     });
 });

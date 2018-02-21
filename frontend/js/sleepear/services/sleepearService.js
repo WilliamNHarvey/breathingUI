@@ -56,6 +56,29 @@ define([
         $rootScope.$on("restorestate", service.RestoreState);
 
         return service;
+    }])
+
+    .factory('userService', ['$rootScope, $http', function ($rootScope, $http) {
+
+        var service = {
+            login: function ($user) {
+                return $http({
+                    method : 'POST',
+                    url : '/api/login',
+                    data : $user
+                });
+            },
+
+            register: function ($user) {
+                return $http({
+                    method : 'POST',
+                    url : '/api/register',
+                    data : $user
+                });
+            }
+        };
+
+        return service;
     }]);
 
 });
