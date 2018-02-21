@@ -53,7 +53,9 @@ define([
             .state('index', angularAMD.route({
                     url: '/',
                     templateUrl: 'partials/index.html',
-                    controller: function($scope) {}
+                    controller: function($scope) {
+                        $scope.loginAs = "Patient";
+                    }
                 })
             );
 
