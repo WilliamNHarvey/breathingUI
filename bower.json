@@ -9,7 +9,8 @@
     "angular-flash": "~0.1.13",
     "d3": "^4.13.0",
     "nvd3": "^1.7.1",
-    "angular-nvd3": "^1.0.9"
+    "angular-nvd3": "^1.0.9",
+    "bootstrap": "4.0.0"
   },
   "resolutions": {
     "d3": "^3.3.13"
