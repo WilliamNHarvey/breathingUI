@@ -4,7 +4,7 @@
   "dependencies": {
     "angularAMD": "^0.2.1",
     "ngprogress": "~1.0.4",
-    "angular-ui-router": "~1.0.14",
+    "angular-ui-router": "^1.0.14",
     "checklist-model": "~0.1.3",
     "angular-flash": "~0.1.13",
     "d3": "^4.13.0",
