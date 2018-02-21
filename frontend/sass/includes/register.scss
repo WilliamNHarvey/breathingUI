@@ -3,11 +3,47 @@
   width: 100%;
   background-image: linear-gradient(to bottom right, rgba(250, 1, 0, 0.5), rgba(195, 0, 255, 0.5));
   font-size: 1.5em;
+  min-height: 650px;
+  padding: 20px;
 
   h1 {
-    font-size: 6em;
+    font-size: 4em;
     font-weight: 600;
     text-align: center;
     margin-bottom: 1em;
+  }
+
+  label {
+    width: 20%;
+  }
+
+  .text-input {
+    width: 80%;
+  }
+
+  .radio-list {
+    margin-left: 40%;
+  }
+
+  .submit-button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: #555555;
+    color: white;
   }
 }
