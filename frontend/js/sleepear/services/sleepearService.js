@@ -58,7 +58,7 @@ define([
         return service;
     }])
 
-    .factory('userService', ['$rootScope, $http', function ($rootScope, $http) {
+    .factory('userService', ['$rootScope', '$http', function ($rootScope, $http) {
 
         var service = {
             login: function ($user) {

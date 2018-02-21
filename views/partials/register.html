@@ -1,14 +1,15 @@
 <div class="page">
-    <div class="register-page col-md-6 offset-3">
-        <form novalidate class="simple-form">
+    <div class="register-page">
+        <h1>Register</h1>
+        <form novalidate class="simple-form col-md-6 offset-3">
             <label>My name: <input type="text" ng-model="user.name" /></label><br />
             <label>My e-mail: <input type="email" ng-model="user.email" /></label><br />
-            <label>I am a: </label>
+            <label>I am a: </label><br/>
             <input type="radio" ng-model="user.job" value="user.patient" checked> Patient<br/>
             <input type="radio" ng-model="user.job" value="doctor"> Clinician<br/>
             <input type="radio" ng-model="user.job" value="technician"> Technician<br/>
             <input type="radio" ng-model="user.job" value="visitor"> Visitor<br/>
-            <input type="submit" ng-click="register(user)" value="Save" />
+            <input type="submit" ng-click="register(user)" value="Register" />
         </form>
     </div>
 </div>
