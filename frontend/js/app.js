@@ -10,7 +10,8 @@ define([
     'angular-flash',
     'sleepear/sleepear',
     'd3',
-    'angular-nvd3'
+    'angular-nvd3',
+    'directives/loginModal'
 ], function (angularAMD) {
     'use strict';
 
