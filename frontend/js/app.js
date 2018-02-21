@@ -34,7 +34,7 @@ define([
     });
 
     // App Config
-    app.config(function ($locationProvider, $stateProvider, $urlRouterProvider, flashProvider) {
+    app.config(function ($provide, $locationProvider, $stateProvider, $urlRouterProvider, flashProvider) {
 
         $locationProvider.html5Mode({
             enabled: true,
@@ -42,12 +42,12 @@ define([
         });
 
 
-        /*$provide.decorator('$state', function($delegate) {
+        $provide.decorator('$state', function($delegate) {
             $delegate.reinit = function() {
                 this.transitionTo(this.current, this.$current.params, { reload: true, inherit: true, notify: true });
             };
             return $delegate;
-        });*/
+        });
 
         $stateProvider
             .state('index', angularAMD.route({
