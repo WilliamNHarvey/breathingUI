@@ -83,38 +83,31 @@
   .failed {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 60px;
-    margin-left: 50px;
-    margin-bottom: -20px;
-    overflow: hidden;
-    &:hover {
-      &::before, &::after {
-        background: #ff6a00;
-      }
+
+    .x-top {
+      position: absolute;
+      top: -40px;
+      margin-left: 50px;
+      margin-bottom: -20px;
+      width: 30px;
+      height: 30px;
+      border: solid #ff0005;
+      border-width: 0 10px 10px 0;
+      transform: rotate(45deg);
+      margin-right: 30px;
     }
 
-    &::before, &::after {
-      content: '';
+    .x-bottom {
       position: absolute;
-      height: 2px;
-      width: 100%;
-      top: 50%;
-      left: 0;
-      margin-top: -1px;
-      background: #ff0005;
-    }
-    &::before {
-      transform: rotate(45deg);
-      height: 8px;
-      margin-top: -4px;
-      border-radius: 5px;
-    }
-    &::after {
-      transform: rotate(-45deg);
-      height: 8px;
-      margin-top: -4px;
-      border-radius: 5px;
+      margin-left: 50px;
+      margin-bottom: -20px;
+      width: 30px;
+      height: 30px;
+      border: solid #00c961;
+      border-width: 0 10px 10px 0;
+      margin-right: 30px;
+      transform: rotate(-135deg);
+      top: -10px;
     }
   }
 }

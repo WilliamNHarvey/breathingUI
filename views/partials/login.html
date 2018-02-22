@@ -8,7 +8,10 @@
             <input class="submit-button" type="submit" ng-click="login(user)" value="login" />
             <div class="loader ng-cloak" ng-show="loading"></div>
             <div class="checkmark ng-cloak" ng-show="loggedIn"></div>
-            <div class="failed ng-cloak" ng-show="failed"></div>
+            <div class="failed ng-cloak" ng-show="failed">
+                <div class="x-top"></div>
+                <div class="x-bottom"></div>
+            </div>
         </form>
     </div>
 </div>

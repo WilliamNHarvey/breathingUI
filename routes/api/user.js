@@ -13,8 +13,15 @@ router.route('/user')
     var user = new User();
     user.name = req.body.name;
     user.email = req.body.email;
-    user.password = passwordHash.generate(req.body.password);
     user.job = req.body.job;
+    try {
+        user.password = passwordHash.generate(req.body.password);
+    }
+    catch(err) {
+        res.status(400);
+        res.send(err);
+        res.json({ message: "Bad password", passErr: true });
+    }
 
     // save
     user.save(function(err) {
