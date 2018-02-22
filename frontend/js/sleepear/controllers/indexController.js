@@ -14,14 +14,14 @@ define([
         console.log(user_session);
         if(user_session) {
             userService.checkSession(user_session).then(function(err, res) {
-                if(err) {
+                if(!res) {
                     console.log('err', err);
                 }
                 else if(res.status === 200) {
                     console.log('logged in', res.data.user);
                 }
                 else {
-                    console.log('logged out')
+                    console.log('logged out', err)
                 }
             });
         }
