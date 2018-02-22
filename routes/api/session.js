@@ -24,19 +24,19 @@ router.route('/session')
                 res.status(403);
                 res.json({message: "User has been deactivated. Please contact SleepEar."})
             } else {
-                Session.findOne({_id: sid},  function(err, session) {
-                    if(err) {
-                        res.send(err);
-                    } else if(Date.now() > session.expires) {
-                        res.status(401);
-                        res.json({ message: "Session expired" });
-                        session.remove();
-                    }
-                    else {
+                //Session.findOne({_id: sid},  function(err, session) {
+                    //if(err) {
+                        //res.send(err);
+                    //} else if(Date.now() > session.expires) {
+                    //    res.status(401);
+                    //    res.json({ message: "Session expired" });
+                    //    session.remove();
+                    //}
+                    //else {
                         res.status(200);
                         res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
-                    }
-                });
+                    //}
+                //});
             }
         });
     });
