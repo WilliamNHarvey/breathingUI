@@ -11,7 +11,7 @@ define([
         $scope.location = /[^/]*$/.exec($location.path())[0];
         console.log($cookies.getAll());
         var user_session = JSON.parse(LS.getData('user_session'));
-        console.log(user_session.email);
+        console.log(user_session);
         if(user_session) {
             userService.checkSession(user_session).then(function(err, res) {
                 if(err) {
