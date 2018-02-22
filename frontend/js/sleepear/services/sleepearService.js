@@ -62,19 +62,29 @@ define([
 
         var service = {
             login: function ($user) {
-                return $http({
-                    method : 'GET',
-                    url : '/api/user',
-                    data : $user
-                });
+                try {
+                    return $http({
+                        method : 'POST',
+                        url : '/api/user',
+                        data : $user
+                    });
+                }
+                catch(err) {
+                    return err;
+                }
             },
 
             register: function ($user) {
-                return $http({
-                    method : 'POST',
-                    url : '/api/user',
-                    data : $user
-                });
+                try {
+                    return $http({
+                        method : 'PUT',
+                        url : '/api/user',
+                        data : $user
+                    });
+                }
+                catch(err) {
+                    return err;
+                }
             }
         };
 

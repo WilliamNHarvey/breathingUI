@@ -9,7 +9,7 @@ var User = require('../../app/models/user');
 router.route('/user')
   
   // Creates
-  .post(function(req, res){
+  .put(function(req, res){
     var user = new User();
     user.name = req.body.name;
     user.email = req.body.email;
@@ -40,8 +40,8 @@ router.route('/user')
     }
   })
 
-  // Get
-  .get(function(req, res){
+  // login
+  .post(function(req, res){
     var email = req.body.email,
         password = req.body.password;
     User.findOne({ where: { email: email } }).then(function(err, user) {
