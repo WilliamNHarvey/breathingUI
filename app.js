@@ -105,13 +105,13 @@ var sessionChecker = (req, res, next) => {
 app.use('/', routes);
 
 // server view partials
-app.use('/partials', partials);
+app.use('/partials', sessionChecker, partials);
 
 // JSON API
 app.use('/api', api);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', sessionChecker, function(req, res, next) {
+app.get('*', function(req, res, next) {
   res.render('index');
 });
 
