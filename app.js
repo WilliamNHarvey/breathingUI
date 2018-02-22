@@ -18,6 +18,10 @@ var express = require('express'),
 
 var app = module.exports = express();
 
+
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 /**
  * Configuration
  */
@@ -63,6 +67,36 @@ mailer.extend(app, {
 // Use your own configuration
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27017/sleepear');
 
+app.use(session({
+    key: 'user_sid',
+    secret: 'foo',
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}));
+
+var sessionChecker = (req, res, next) => {
+    if (req.session.user && req.cookies.user_sid) {
+        switch (req.session.user.job) {
+            case 'patient':
+                if(req.path !== '/breaths' && req.path !== '/submit' && req.path !== '/') {
+                    res.redirect('/breaths');
+                }
+                break;
+            default:
+                if(req.path !== '/' && req.path !== '/login' && req.path !== '/register') {
+                    res.redirect('/');
+                }
+        }
+    } else {
+        if(req.path !== '/' && req.path !== '/login' && req.path !== '/register') {
+            res.redirect('/');
+        }
+        next();
+    }
+};
+
 /**
  * Routes
  */
@@ -77,7 +111,7 @@ app.use('/partials', partials);
 app.use('/api', api);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', function(req, res, next) {
+app.get('*', sessionChecker, function(req, res, next) {
   res.render('index');
 });
 

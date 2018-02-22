@@ -8,7 +8,7 @@ var User = require('../../app/models/user');
 /* Default route */
 router.route('/user')
   
-  // Creates a breath (accessed at POST /api/breaths)
+  // Creates
   .post(function(req, res){
     var user = new User();
     user.name = req.body.name;
@@ -16,7 +16,7 @@ router.route('/user')
     user.password = passwordHash.generate(req.body.password);
     user.job = req.body.job;
 
-    // save the breath and check for errors
+    // save
     user.save(function(err) {
       if (err) {
           res.status(401);
@@ -25,21 +25,33 @@ router.route('/user')
       }
       else {
           res.status(200);
-          res.json({ message: 'Registration successful' });
+          res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
+          req.session.user = user.dataValues;
       }
-
-
-
     });
   })
 
-  // Get all breathss (accessed at GET /api/breathss)
+  // Get
   .get(function(req, res){
-    User.find(function(err, breaths) {
+    var username = req.body.email,
+        password = req.body.password;
+    User.findOne({ where: { email: email } }).then(function(err, user) {
       if (err)
           res.send(err);
-
-      res.json(breaths);
+      if (!user) {
+          res.status(400);
+          res.json({ message: "User not found" });
+      } else if (passwordHash.verify(password, user.password)) {
+          res.status(401);
+          res.json({message: "Wrong password"});
+      } else if (user.status === false) {
+          res.status(403);
+          res.json({message: "User has been deactivated. Please contact SleepEar."})
+      } else {
+          req.session.user = user.dataValues;
+          res.status(200);
+          res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
+      }
     });
   })
 
