@@ -70,7 +70,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27
 var sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
 app.use(session({
     key: 'user_sid',
-    secret: '34SDgsdgspxxxxxxxdfsG',
+    //secret: '34SDgsdgspxxxxxxxdfsG',
     store: sessionStore,
     user: {},
     resave: false,
