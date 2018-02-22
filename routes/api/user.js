@@ -26,7 +26,7 @@ router.route('/user')
 
     // save
     if(user.password) {
-        user.save(function(err) {
+        user.save(function(err, newUser) {
             if (err) {
                 res.status(401);
                 res.send(err);
@@ -38,8 +38,10 @@ router.route('/user')
                 req.session.user = user.dataValues;
                 req.session.save();
                 var sid = req.sessionID;
-                User.update({email: user.email}, {$set:{"session" : sid}});
-                res.cookie('SleepEarSess'+user._id, sid, { maxAge: 60000, httpOnly: true });
+                user.session = sid;
+                user.save();
+                //User.update({email: user.email}, {$set:{"session" : sid}});
+                res.cookie('SleepEarSess'+newUser._id, sid, { maxAge: 60000, httpOnly: true });
             }
         });
     }
