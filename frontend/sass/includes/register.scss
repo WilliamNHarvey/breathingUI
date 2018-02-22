@@ -46,12 +46,14 @@
   }
 
   .loader {
-    border: 16px solid #f3f3f3;
+    border: 10px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 1s linear infinite; /* Safari */
+    border-top: 10px solid #3498db;
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+    margin-bottom: -20px;
+    -webkit-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
   }
 
@@ -67,12 +69,52 @@
   }
 
   .checkmark{
-    display:inline-block;
-    width: 15px;
-    height: 30px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: -20px;
+    width: 30px;
+    height: 60px;
     border: solid #00c961;
-    border-width: 0 6px 6px 0;
+    border-width: 0 10px 10px 0;
     transform: rotate(45deg);
     margin-right: 30px;
+  }
+
+  .failed {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-left: 50px;
+    margin-bottom: -20px;
+    overflow: hidden;
+    &:hover {
+      &::before, &::after {
+        background: #ff6a00;
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      background: #ff0005;
+    }
+    &::before {
+      @include transform(rotate(45deg));
+      height: 8px;
+      margin-top: -4px;
+      border-radius: 5px;
+    }
+    &::after {
+      @include transform(rotate(-45deg));
+      height: 8px;
+      margin-top: -4px;
+      border-radius: 5px;
+    }
   }
 }

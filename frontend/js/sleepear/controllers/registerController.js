@@ -11,6 +11,7 @@ define([
         $scope.location = /[^/]*$/.exec($location.path())[0];
         $scope.loading = false;
         $scope.registered = false;
+        $scope.failed = false;
 
         $scope.test = function() {
             console.log('register test');
@@ -19,10 +20,16 @@ define([
         $scope.register = function($user) {
             console.log($user);
             $scope.loading = true;
-            userService.register($user).then(function(status) {
-                console.log(status);
+            userService.register($user).then(function(res) {
+                console.log(res);
                 $scope.loading = false;
-                $scope.registered = true;
+                if(res.status === 200) {
+                    $scope.registered = true;
+                }
+                else {
+                    $scope.failed = true;
+                }
+
             });
 
         }

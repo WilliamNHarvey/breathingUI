@@ -18,10 +18,18 @@ router.route('/user')
 
     // save the breath and check for errors
     user.save(function(err) {
-      if (err)
-        res.send(err);
+      if (err) {
+          res.status(401);
+          res.send(err);
+          res.json({ message: 'Registration failed' });
+      }
+      else {
+          res.status(200);
+          res.json({ message: 'Registration successful' });
+      }
 
-      res.json({ message: 'Registration successful' });
+
+
     });
   })
 
