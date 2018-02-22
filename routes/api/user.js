@@ -51,7 +51,6 @@ router.route('/user')
   .post(function(req, res){
     var email = req.body.email,
         password = req.body.password;
-    var sid = req.sessionID;
     User.findOne({email: email}, function(err, user) {
       if (err)
           res.send(err);
@@ -68,13 +67,14 @@ router.route('/user')
           req.session.regenerate();
           req.session.user = user.dataValues;
           req.session.save();
+          var sid = req.sessionID;
           //user.session = sid;
           //user.markModified('session');
           //user.save();
           User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
 
           });
-          res.cookie('SleepEarSess'+user._id, sid, { maxAge: 6000000, httpOnly: true });
+          res.cookie('SleepEarSess'+user._id, sid, { maxAge: 86400000, httpOnly: true });
           res.status(200);
           res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
       }
