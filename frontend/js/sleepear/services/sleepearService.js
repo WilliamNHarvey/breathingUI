@@ -63,8 +63,8 @@ define([
         var service = {
             login: function ($user) {
                 return $http({
-                    method : 'POST',
-                    url : '/api/login',
+                    method : 'GET',
+                    url : '/api/user',
                     data : $user
                 });
             },
@@ -72,7 +72,7 @@ define([
             register: function ($user) {
                 return $http({
                     method : 'POST',
-                    url : '/api/register',
+                    url : '/api/user',
                     data : $user
                 });
             }

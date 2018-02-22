@@ -9,15 +9,20 @@ define([
         };
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
+        $scope.loading = false;
 
         $scope.test = function() {
             console.log('register test');
-        }
+        };
 
         $scope.register = function($user) {
             console.log($user);
-            var status = userService.register($user);
-            console.log(status);
+            $scope.loading = true;
+            userService.register($user).then(function(status) {
+                console.log(status);
+                $scope.loading = false;
+            });
+
         }
     });
 });

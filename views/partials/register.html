@@ -2,8 +2,9 @@
     <div class="register-page">
         <h1>Register</h1>
         <form novalidate class="simple-form col-md-6 offset-3">
-            <label>My name: </label><input class="text-input" type="text" ng-model="user.name" /><br />
-            <label>My e-mail: </label><input class="text-input" type="email" ng-model="user.email" /><br />
+            <label>Name: </label><input class="text-input" type="text" ng-model="user.name" /><br />
+            <label>E-mail: </label><input class="text-input" type="email" ng-model="user.email" /><br />
+            <label>Password: </label><input class="text-input" type="password" ng-model="user.password" /><br />
             <label>I am a: </label><br/>
             <div class="radio-list">
                 <input type="radio" ng-model="user.job" value="user.patient" checked> Patient<br/>
@@ -13,6 +14,7 @@
             </div>
             <br/>
             <input class="submit-button" type="submit" ng-click="register(user)" value="Register" />
+            <div class="loader ng-cloak" ng-show="loading"></div>
         </form>
     </div>
 </div>
