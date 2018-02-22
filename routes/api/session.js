@@ -28,6 +28,9 @@ router.route('/session')
                 Session.findOne({_id: sid},  function(err, session) {
                     if(err) {
                         res.send(err);
+                    } else if(!session) {
+                        res.status(400);
+                        res.json({ message: "No session" });
                     } else if(Date.now() > session.expires) {
                         res.status(401);
                         res.json({ message: "Session expired" });
