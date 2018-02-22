@@ -68,9 +68,11 @@ mailer.extend(app, {
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27017/sleepear');
 
 var sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
+var cookieParser = require('cookie-parser');
+app.use(cookieParser('foo'));
 app.use(session({
     key: 'user_sid',
-    //secret: '34SDgsdgspxxxxxxxdfsG',
+    secret: 'foo',
     store: sessionStore,
     user: {},
     resave: false,
