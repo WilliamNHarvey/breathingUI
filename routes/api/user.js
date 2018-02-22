@@ -60,9 +60,9 @@ router.route('/user')
           res.status(403);
           res.json({message: "User has been deactivated. Please contact SleepEar."})
       } else {
+          req.session.destroy();
           req.session.user = user.dataValues;
           req.session.save();
-          req.session.destroy();
           User.update({_id: user._id}, {$set:{"session" : sid}});
           res.cookie('SleepEarSess'+user._id, sid, { maxAge: 60000, httpOnly: true });
           res.status(200);
