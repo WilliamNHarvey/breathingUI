@@ -64,7 +64,7 @@ router.route('/user')
           res.status(403);
           res.json({message: "User has been deactivated. Please contact SleepEar."})
       } else {
-          //req.session.regenerate();
+          req.session.regenerate();
           req.session.user = user.dataValues;
           req.session.save();
           var sid = req.sessionID;
