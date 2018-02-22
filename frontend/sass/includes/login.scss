@@ -1,0 +1,114 @@
+.login-page {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, rgba(1, 0, 250, 0.5), rgba(0, 255, 45, 0.5));
+  font-size: 1.5em;
+  min-height: 700px;
+  padding: 20px;
+
+  h1 {
+    font-size: 4em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  label {
+    width: 20%;
+  }
+
+  .text-input {
+    width: 80%;
+  }
+
+  .radio-list {
+    margin-left: 40%;
+  }
+
+  .submit-button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .loader {
+    display: inline-block;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+    margin-bottom: -20px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .checkmark{
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: -20px;
+    width: 30px;
+    height: 60px;
+    border: solid #00c961;
+    border-width: 0 10px 10px 0;
+    transform: rotate(45deg);
+    margin-right: 30px;
+  }
+
+  .failed {
+    position: relative;
+    display: inline-block;
+
+    .x-top {
+      position: absolute;
+      top: -40px;
+      margin-left: 50px;
+      margin-bottom: -20px;
+      width: 30px;
+      height: 30px;
+      border: solid #ff0005;
+      border-width: 0 10px 10px 0;
+      transform: rotate(45deg);
+      margin-right: 30px;
+    }
+
+    .x-bottom {
+      position: absolute;
+      margin-left: 50px;
+      margin-bottom: -20px;
+      width: 30px;
+      height: 30px;
+      border: solid #ff0005;
+      border-width: 0 10px 10px 0;
+      margin-right: 30px;
+      transform: rotate(-135deg);
+      top: -10px;
+    }
+  }
+}
