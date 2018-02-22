@@ -9,14 +9,15 @@ define([
         };
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
-        var user_email = LS.getData('user_email');
-        console.log(user_email);
-        if(user_email) {
-            userService.checkSession({email: user_email}).then(function(err, res) {
+        console.log($cookies.getAll());
+        var user_session = JSON.parse(LS.getData('user_session'));
+        console.log(user_session.email);
+        if(user_session) {
+            userService.checkSession(user_session).then(function(err, res) {
                 if(err) {
                     console.log(err);
                 }
-                if(res.status === 200) {
+                else if(res.status === 200) {
                     console.log('logged in', res.data.user);
                 }
                 else {

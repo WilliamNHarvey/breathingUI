@@ -74,9 +74,9 @@ router.route('/user')
           User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
 
           });
-          res.cookie('SleepEarSess'+user._id, sid, { maxAge: 60000, httpOnly: true });
+          res.cookie('SleepEarSess'+user._id, sid, { maxAge: 6000000, httpOnly: true });
           res.status(200);
-          res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
+          res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
       }
     });
   })
