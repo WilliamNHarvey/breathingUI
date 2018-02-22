@@ -24,18 +24,20 @@ router.route('/user')
     }
 
     // save
-    user.save(function(err) {
-      if (err) {
-          res.status(401);
-          res.send(err);
-          res.json({ message: 'Registration failed' });
-      }
-      else {
-          res.status(200);
-          res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
-          req.session.user = user.dataValues;
-      }
-    });
+    if(user.password) {
+        user.save(function(err) {
+            if (err) {
+                res.status(401);
+                res.send(err);
+                res.json({ message: 'Registration failed' });
+            }
+            else {
+                res.status(200);
+                res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
+                req.session.user = user.dataValues;
+            }
+        });
+    }
   })
 
   // Get
