@@ -39,7 +39,7 @@ router.route('/user')
                 newUser.session = sid;
                 newUser.save();
                 //User.update({email: user.email}, {$set:{"session" : sid}});
-                res.cookie('SleepEarSess'+newUser._id, sid, { maxAge: 60000, httpOnly: true });
+                //res.cookie('SleepEarSess'+newUser._id, sid, { maxAge: 60000, httpOnly: true });
                 res.status(200);
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
             }
@@ -64,7 +64,7 @@ router.route('/user')
           res.status(403);
           res.json({message: "User has been deactivated. Please contact SleepEar."})
       } else {
-          req.session.regenerate();
+          //req.session.regenerate();
           req.session.user = user.dataValues;
           req.session.save();
           var sid = req.sessionID;
@@ -74,7 +74,7 @@ router.route('/user')
           User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
 
           });
-          res.cookie('SleepEarSess'+user._id, sid, { maxAge: 86400000, httpOnly: true });
+          //res.cookie('SleepEarSess'+user._id, sid, { maxAge: 86400000, httpOnly: true });
           res.status(200);
           res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
       }
