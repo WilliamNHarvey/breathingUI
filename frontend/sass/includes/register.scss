@@ -105,13 +105,13 @@
       background: #ff0005;
     }
     &::before {
-      @include transform(rotate(45deg));
+      transform: rotate(45deg);
       height: 8px;
       margin-top: -4px;
       border-radius: 5px;
     }
     &::after {
-      @include transform(rotate(-45deg));
+      transform: rotate(-45deg);
       height: 8px;
       margin-top: -4px;
       border-radius: 5px;
