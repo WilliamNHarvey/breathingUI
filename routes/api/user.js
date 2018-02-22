@@ -42,7 +42,7 @@ router.route('/user')
 
   // Get
   .get(function(req, res){
-    var username = req.body.email,
+    var email = req.body.email,
         password = req.body.password;
     User.findOne({ where: { email: email } }).then(function(err, user) {
       if (err)
