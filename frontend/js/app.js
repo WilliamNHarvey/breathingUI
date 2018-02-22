@@ -100,7 +100,7 @@ define([
                 sessionStorage.restorestate = false;
             }
 
-            
+
         });
 
         $rootScope.detectLeftButton = function(evt) {

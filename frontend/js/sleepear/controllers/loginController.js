@@ -3,7 +3,7 @@ define([
 ], function(app) {
     'use strict';
 
-    app.controller('registerController', function ($rootScope, $scope, $location, userService, LS) {
+    app.controller('loginController', function ($rootScope, $scope, $location, userService, LS) {
         window.ondragstart = function () {
             return false;
         };
