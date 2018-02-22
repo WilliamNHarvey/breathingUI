@@ -81,6 +81,17 @@
     margin-right: 30px;
   }
 
+  .arrow {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: solid #000;
+    border-width: 6px 0px 0px 6px;
+    transform: rotate(-45deg);
+    margin-right: 30px;
+    cursor: pointer;
+  }
+
   .failed {
     position: relative;
     display: inline-block;

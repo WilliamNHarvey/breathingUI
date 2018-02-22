@@ -74,9 +74,10 @@
     width: 30px;
     height: 30px;
     border: solid #000;
-    border-width: 0 6px 6px 0;
-    transform: rotate(45deg);
+    border-width: 6px 0px 0px 6px;
+    transform: rotate(-45deg);
     margin-right: 30px;
+    cursor: pointer;
   }
 
   .checkmark{
