@@ -35,6 +35,7 @@ router.route('/user')
                 res.status(200);
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
                 req.session.user = user.dataValues;
+                req.session.save();
             }
         });
     }
@@ -58,6 +59,7 @@ router.route('/user')
           res.json({message: "User has been deactivated. Please contact SleepEar."})
       } else {
           req.session.user = user.dataValues;
+          req.session.save();
           res.status(200);
           res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
       }
