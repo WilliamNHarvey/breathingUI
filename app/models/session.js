@@ -2,6 +2,7 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var SessionSchema   = new Schema({
+    _id         : { type: String , required: true },
     cookie      : { type: String , unique: true, required: true, dropDups: true },
     expires     : { type: Date , required: true }
 });
