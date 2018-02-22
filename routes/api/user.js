@@ -63,7 +63,8 @@ router.route('/user')
           req.session.reload();
           req.session.user = user.dataValues;
           req.session.save();
-          User.update({_id: user._id}, {$set:{"session" : sid}});
+          user.session = sid;
+          User.save();
           res.cookie('SleepEarSess'+user._id, sid, { maxAge: 60000, httpOnly: true });
           res.status(200);
           res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
