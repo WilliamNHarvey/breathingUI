@@ -65,4 +65,14 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  .checkmark{
+    display:inline-block;
+    width: 15px;
+    height: 30px;
+    border: solid #00c961;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+    margin-right: 30px;
+  }
 }

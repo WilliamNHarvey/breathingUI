@@ -10,6 +10,7 @@ define([
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
         $scope.loading = false;
+        $scope.registered = false;
 
         $scope.test = function() {
             console.log('register test');
@@ -21,6 +22,7 @@ define([
             userService.register($user).then(function(status) {
                 console.log(status);
                 $scope.loading = false;
+                $scope.registered = true;
             });
 
         }
