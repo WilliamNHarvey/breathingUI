@@ -80,18 +80,18 @@ var sessionChecker = (req, res, next) => {
     if (req.session.user && req.cookies.user_sid) {
         switch (req.session.user.job) {
             case 'patient':
-                if(req.path !== '/breaths' && req.path !== '/submit' && req.path !== '/') {
-                    res.redirect('/breaths');
+                if(req.path !== '/partials/breaths/index.html' && req.path !== '/partials/breaths/submit.html' && req.path !== '/partials/index.html') {
+                    res.redirect('/partials/breaths/index.html');
                 }
                 break;
             default:
-                if(req.path !== '/' && req.path !== '/login' && req.path !== '/register') {
-                    res.redirect('/');
+                if(req.path !== '/partials/index.html' && req.path !== '/partials/login.html' && req.path !== '/partials/register.html') {
+                    res.redirect('/partials/index.html');
                 }
         }
     } else {
-        if(req.path !== '/' && req.path !== '/login' && req.path !== '/register') {
-            res.redirect('/');
+        if(req.path !== '/partials/index.html' && req.path !== '/partials/login.html' && req.path !== '/partials/register.html') {
+            res.redirect('/partials/index.html');
         }
         next();
     }
