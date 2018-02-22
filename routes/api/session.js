@@ -11,7 +11,7 @@ router.route('/session')
     // check
     .post(function(req, res){
         var email = req.body.email;
-        req.session.regenerate();
+        req.session.reload();
         var sid = req.sessionID;
             //sid = req.body.session;
 
