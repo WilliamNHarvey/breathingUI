@@ -12,8 +12,8 @@ router.route('/session')
     .post(function(req, res){
         var email = req.body.email;
         //req.session.reload();
-        var sid = req.sessionID;
-            //sid = req.body.session;
+        //var sid = req.sessionID;
+            var sid = req.body.session;
 
         User.findOne({email: email, session: sid}, function(err, user) {
             if (err)
