@@ -50,7 +50,7 @@ router.route('/user')
       if (!user) {
           res.status(400);
           res.json({ message: "User "+ email +" not found" });
-      } else if (passwordHash.verify(password, user.password)) {
+      } else if (!passwordHash.verify(password, user.password)) {
           res.status(401);
           res.json({message: "Wrong password"});
       } else if (user.status === false) {
