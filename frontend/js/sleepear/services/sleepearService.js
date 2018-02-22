@@ -62,31 +62,23 @@ define([
 
         var service = {
             login: function ($user) {
-                try {
-                    var promise = $http({
-                        method : 'POST',
-                        url : '/api/user',
-                        data : $user
-                    });
-                    return promise;
-                }
-                catch(err) {
+                return $http({
+                    method : 'POST',
+                    url : '/api/user',
+                    data : $user
+                }).catch(function(reason){
                     return $q.when({status: false});
-                }
+                });
             },
 
             register: function ($user) {
-                try {
-                    var promise = $http({
-                        method : 'PUT',
-                        url : '/api/user',
-                        data : $user
-                    });
-                    return promise;
-                }
-                catch(err) {
+                return $http({
+                    method : 'PUT',
+                    url : '/api/user',
+                    data : $user
+                }).catch(function(reason){
                     return $q.when({status: false});
-                }
+                });
             }
         };
 
