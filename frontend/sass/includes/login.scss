@@ -69,6 +69,16 @@
     100% { transform: rotate(360deg); }
   }
 
+  .arrow {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: solid #000;
+    border-width: 0 6px 6px 0;
+    transform: rotate(45deg);
+    margin-right: 30px;
+  }
+
   .checkmark{
     display: inline-block;
     margin-left: 50px;
