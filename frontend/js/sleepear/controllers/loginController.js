@@ -23,8 +23,8 @@ define([
                 $scope.loading = false;
                 if(res.status === 200) {
                     $scope.loggedIn = true;
-                    $rootScope.user = $res.data.user;
-                    switch($res.data.user.job) {
+                    $rootScope.user = res.data.user;
+                    switch(res.data.user.job) {
                         case 'patient':
                             $location.path('/breaths');
                             break;
