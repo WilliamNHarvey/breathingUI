@@ -9,6 +9,18 @@ define([
         };
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
-        console.log($cookies.getAll());
+        var user_email = LS.getData('user_email');
+        console.log(user_email);
+        if(user_email) {
+            userService.checkSession({email: user_email}).then(function(err, res) {
+                if(res.status === 200) {
+                    console.log('logged in', res.data.user);
+                }
+                else {
+                    console.log('logged out')
+                }
+            });
+        }
+
     });
 });

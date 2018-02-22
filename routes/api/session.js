@@ -10,10 +10,9 @@ router.route('/session')
 
     // check
     .post(function(req, res){
-        var userId = req.body.user,
-            sessionId = req.body.session;
+        var email = req.body.email;
         var sid = req.sessionID;
-        User.findOne({_id: userId, session: sessionId}, function(err, user) {
+        User.findOne({email: email, session: sid}, function(err, user) {
             if (err)
                 res.send(err);
             if (!user) {
@@ -23,7 +22,7 @@ router.route('/session')
                 res.status(403);
                 res.json({message: "User has been deactivated. Please contact SleepEar."})
             } else {
-                Session.findOne({_id: sessionId},  function(err, session) {
+                Session.findOne({_id: sid},  function(err, session) {
                     if(err) {
                         res.send(err);
                     } else if(Date.now() > session.expires) {

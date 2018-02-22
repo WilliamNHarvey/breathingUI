@@ -16,7 +16,6 @@ define([
         $scope.register = function($user) {
             $scope.registered = false;
             $scope.failed = false;
-            console.log($user);
             $scope.loading = true;
             userService.register($user).then(function(res) {
                 console.log(res);
@@ -24,6 +23,7 @@ define([
                 if(res.status === 200) {
                     $scope.registered = true;
                     $rootScope.user = res.data.user;
+                    LS.setData('user_email', $rootScope.user.email);
                     switch(res.data.user.job) {
                         case 'patient':
                             $location.path('/breaths');

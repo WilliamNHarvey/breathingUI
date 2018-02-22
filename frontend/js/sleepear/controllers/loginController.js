@@ -24,6 +24,7 @@ define([
                 if(res.status === 200) {
                     $scope.loggedIn = true;
                     $rootScope.user = res.data.user;
+                    LS.setData('user_email', $rootScope.user.email);
                     switch(res.data.user.job) {
                         case 'patient':
                             $location.path('/breaths');
