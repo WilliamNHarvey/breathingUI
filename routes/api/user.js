@@ -33,15 +33,15 @@ router.route('/user')
                 res.json({ message: 'Registration failed' });
             }
             else {
-                res.status(200);
-                res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
-                req.session.user = user.dataValues;
+                req.session.user = newUser.dataValues;
                 req.session.save();
                 var sid = req.sessionID;
-                user.session = sid;
-                user.save();
+                newUser.session = sid;
+                newUser.save();
                 //User.update({email: user.email}, {$set:{"session" : sid}});
                 res.cookie('SleepEarSess'+newUser._id, sid, { maxAge: 60000, httpOnly: true });
+                res.status(200);
+                res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
             }
         });
     }
