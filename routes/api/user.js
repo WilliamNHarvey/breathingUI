@@ -41,7 +41,7 @@ router.route('/user')
                 //User.update({email: user.email}, {$set:{"session" : sid}});
                 //res.cookie('SleepEarSess'+newUser._id, sid, { maxAge: 60000, httpOnly: true });
                 res.status(200);
-                res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
+                res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job }, session: sid });
             }
         });
     }

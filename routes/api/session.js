@@ -35,7 +35,7 @@ router.route('/session')
                     //}
                     //else {
                         res.status(200);
-                        res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
+                        res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
                     //}
                 //});
             }
