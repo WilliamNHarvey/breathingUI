@@ -90,8 +90,9 @@ var sessionChecker = (req, res, next) => {
                 }
         }
     } else {
-        if(req.path !== '/partials/index.html' && req.path !== '/partials/login.html' && req.path !== '/partials/register.html') {
-            res.redirect('/partials/index.html');
+        console.log(req.path);
+        if(req.path !== '/' && req.path !== '/partials/login.html' && req.path !== '/partials/register.html') {
+            res.redirect('/');
         }
         next();
     }
