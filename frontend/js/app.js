@@ -23,7 +23,8 @@ define([
         'App.sleepear',
         //'angular-flash.service',
         'angular-flash.flash-alert-directive',
-        'nvd3'
+        'nvd3',
+        'Auth'
     ]);
 
     // Constants
@@ -60,7 +61,20 @@ define([
 
     });
 
-    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location) {
+    app.factory('Auth', function(){
+        var user;
+
+        return{
+            setUser : function(aUser){
+                user = aUser;
+            },
+            isLoggedIn : function(){
+                return(user)? user : false;
+            }
+        }
+    });
+
+    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location, Auth) {
         // Expose $state and $stateParams to $rootScope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -98,6 +112,16 @@ define([
             if (sessionStorage.restorestate === "true") {
                 $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
                 sessionStorage.restorestate = false;
+            }
+
+            if (!Auth.isLoggedIn()) {
+                console.log('DENY');
+                //event.preventDefault();
+                //$location.path('/login');
+            }
+            else {
+                console.log('ALLOW');
+                //$location.path('/home');
             }
         });
 
