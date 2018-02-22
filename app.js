@@ -76,7 +76,7 @@ app.use(session({
     cookie: { secure: true }
 }));
 
-var sessionChecker = (req, res, next) => {
+/*var sessionChecker = (req, res, next) => {
     if(req.path === '/index.html') next();
     if (req.session.user && req.cookies.user_sid) {
         switch (req.session.user.job) {
@@ -96,7 +96,7 @@ var sessionChecker = (req, res, next) => {
         }
         next();
     }
-};
+};*/
 
 /**
  * Routes
@@ -106,7 +106,7 @@ var sessionChecker = (req, res, next) => {
 app.use('/', routes);
 
 // server view partials
-app.use('/partials', sessionChecker, partials);
+app.use('/partials', partials);
 
 // JSON API
 app.use('/api', api);
