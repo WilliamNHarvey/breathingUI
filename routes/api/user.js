@@ -36,6 +36,7 @@ router.route('/user')
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
                 req.session.user = user.dataValues;
                 req.session.save();
+                User.update({email: user.email}, {$set:{"session" : req.sessionID}});
             }
         });
     }
@@ -45,6 +46,7 @@ router.route('/user')
   .post(function(req, res){
     var email = req.body.email,
         password = req.body.password;
+    var sid = req.sessionID;
     User.findOne({email: email}, function(err, user) {
       if (err)
           res.send(err);
@@ -60,6 +62,10 @@ router.route('/user')
       } else {
           req.session.user = user.dataValues;
           req.session.save();
+          sessionStore.destroy(user.session, function(){
+              User.update({_id: user._id}, {$set:{"session" : sid}});
+          }
+          res.cookie('SleepEarSess'+user._id, sid, { maxAge: 60000, httpOnly: true })
           res.status(200);
           res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
       }

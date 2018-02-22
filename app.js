@@ -67,13 +67,14 @@ mailer.extend(app, {
 // Use your own configuration
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27017/sleepear');
 
+
 app.use(session({
     key: 'user_sid',
-    secret: 'foo',
+    secret: '34SDgsdgspxxxxxxxdfsG',
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: true }
+    cookie: { secure: true, maxAge: 60000 }
 }));
 
 /*var sessionChecker = (req, res, next) => {
