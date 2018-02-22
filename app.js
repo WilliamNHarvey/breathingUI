@@ -77,7 +77,7 @@ app.use(session({
     user: {},
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: true, maxAge: 86400000 }
+    cookie: { secure: false, maxAge: 86400000 }
 }));
 
 /*var sessionChecker = (req, res, next) => {

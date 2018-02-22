@@ -39,7 +39,7 @@ router.route('/user')
                 newUser.session = sid;
                 newUser.save();
                 //User.update({email: user.email}, {$set:{"session" : sid}});
-                res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
+                //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
                 res.status(200);
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job }, session: sid });
             }
@@ -74,7 +74,7 @@ router.route('/user')
           User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
 
           });
-          res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
+          //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
           res.status(200);
           res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
       }
