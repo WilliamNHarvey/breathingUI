@@ -45,10 +45,11 @@ router.route('/user')
     var email = req.body.email,
         password = req.body.password;
     User.find({ where: { email: email } }).then(function(err, user) {
+      console.log(user);
       if (err)
           res.send(err);
       if (!user) {
-          res.status(401);
+          res.status(400);
           res.json({ message: "User "+ email +" not found" });
       } else if (passwordHash.verify(password, user.password)) {
           res.status(401);
