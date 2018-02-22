@@ -87,6 +87,7 @@ define([
                     url : '/api/session',
                     data : $session
                 }).catch(function(reason){
+                    console.log(reason);
                     return $q.when({status: false});
                 });
             }

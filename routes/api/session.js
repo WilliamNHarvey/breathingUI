@@ -17,7 +17,7 @@ router.route('/session')
                 res.send(err);
             if (!user) {
                 res.status(401);
-                res.json({ message: "User "+ email +" not found" });
+                res.json({ message: email +" not found with "+sid });
             } else if (user.status === false) {
                 res.status(403);
                 res.json({message: "User has been deactivated. Please contact SleepEar."})
