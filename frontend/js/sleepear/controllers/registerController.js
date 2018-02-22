@@ -13,11 +13,9 @@ define([
         $scope.registered = false;
         $scope.failed = false;
 
-        $scope.test = function() {
-            console.log('register test');
-        };
-
         $scope.register = function($user) {
+            $scope.registered = false;
+            $scope.failed = false;
             console.log($user);
             $scope.loading = true;
             userService.register($user).then(function(res) {
@@ -25,6 +23,14 @@ define([
                 $scope.loading = false;
                 if(res.status === 200) {
                     $scope.registered = true;
+                    $rootScope.user = $res.data.user;
+                    switch($res.data.user.job) {
+                        case 'patient':
+                            $location.path('/breaths');
+                            break;
+                        default:
+                            $location.path('/');
+                    }
                 }
                 else {
                     $scope.failed = true;

@@ -79,6 +79,16 @@ define([
                 }).catch(function(reason){
                     return $q.when({status: false});
                 });
+            },
+
+            checkSession: function ($session) {
+                return $http({
+                    method : 'POST',
+                    url : '/api/session',
+                    data : $session
+                }).catch(function(reason){
+                    return $q.when({status: false});
+                });
             }
         };
 

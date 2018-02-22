@@ -14,6 +14,8 @@ define([
         $scope.failed = false;
 
         $scope.login = function($user) {
+            $scope.loggedIn = false;
+            $scope.failed = false;
             console.log($user);
             $scope.loading = true;
             userService.login($user).then(function(res) {
@@ -21,11 +23,18 @@ define([
                 $scope.loading = false;
                 if(res.status === 200) {
                     $scope.loggedIn = true;
+                    $rootScope.user = $res.data.user;
+                    switch($res.data.user.job) {
+                        case 'patient':
+                            $location.path('/breaths');
+                            break;
+                        default:
+                            $location.path('/');
+                    }
                 }
                 else {
                     $scope.failed = true;
                 }
-
             });
 
         }

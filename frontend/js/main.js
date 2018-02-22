@@ -14,6 +14,7 @@ require.config({
 
         // Other libs
         'ngProgress'          : '../lib/ngprogress/build/ngProgress.min',
+        'ngCookies'           : '//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-cookies.js',
         'angular-ui-router'   : '../lib/angular-ui-router/release/angular-ui-router.min',
         'checklist-model'     : '../lib/checklist-model/checklist-model',
         'angular-flash'       : '../lib/angular-flash/dist/angular-flash.min',
@@ -46,6 +47,9 @@ require.config({
             deps : ['angular']
         },
         'ngProgress': {
+            deps : ['angular']
+        },
+        'ngCookies': {
             deps : ['angular']
         },
         'angular-ui-router': {
