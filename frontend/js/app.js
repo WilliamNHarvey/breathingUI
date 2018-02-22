@@ -23,8 +23,7 @@ define([
         'App.sleepear',
         //'angular-flash.service',
         'angular-flash.flash-alert-directive',
-        'nvd3',
-        'Auth'
+        'nvd3'
     ]);
 
     // Constants
@@ -61,20 +60,7 @@ define([
 
     });
 
-    app.factory('Auth', function(){
-        var user;
-
-        return{
-            setUser : function(aUser){
-                user = aUser;
-            },
-            isLoggedIn : function(){
-                return(user)? user : false;
-            }
-        }
-    });
-
-    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location, Auth) {
+    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location) {
         // Expose $state and $stateParams to $rootScope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -114,15 +100,7 @@ define([
                 sessionStorage.restorestate = false;
             }
 
-            if (!Auth.isLoggedIn()) {
-                console.log('DENY');
-                //event.preventDefault();
-                //$location.path('/login');
-            }
-            else {
-                console.log('ALLOW');
-                //$location.path('/home');
-            }
+            
         });
 
         $rootScope.detectLeftButton = function(evt) {
