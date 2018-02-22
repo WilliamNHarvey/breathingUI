@@ -14,6 +14,7 @@ router.route('/user')
     user.name = req.body.name;
     user.email = req.body.email;
     user.job = req.body.job;
+    user.session = '';
     try {
         user.password = passwordHash.generate(req.body.password);
     }
@@ -36,7 +37,9 @@ router.route('/user')
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job } });
                 req.session.user = user.dataValues;
                 req.session.save();
-                User.update({email: user.email}, {$set:{"session" : req.sessionID}});
+                var sid = req.sessionID;
+                User.update({email: user.email}, {$set:{"session" : sid}});
+                res.cookie('SleepEarSess'+user._id, sid, { maxAge: 60000, httpOnly: true });
             }
         });
     }
