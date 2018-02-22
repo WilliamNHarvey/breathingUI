@@ -44,7 +44,7 @@ router.route('/user')
   .post(function(req, res){
     var email = req.body.email,
         password = req.body.password;
-    User.findOne({ where: { email: email } }).then(function(err, user) {
+    User.find({ where: { email: email } }).then(function(err, user) {
       if (err)
           res.send(err);
       if (!user) {

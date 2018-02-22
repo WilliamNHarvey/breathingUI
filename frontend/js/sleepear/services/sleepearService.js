@@ -58,32 +58,34 @@ define([
         return service;
     }])
 
-    .factory('userService', ['$rootScope', '$http', function ($rootScope, $http) {
+    .factory('userService', ['$rootScope', '$http', '$q', function ($rootScope, $http, $q) {
 
         var service = {
             login: function ($user) {
                 try {
-                    return $http({
+                    var promise = $http({
                         method : 'POST',
                         url : '/api/user',
                         data : $user
                     });
+                    return promise;
                 }
                 catch(err) {
-                    return err;
+                    return $q.when({status: false});
                 }
             },
 
             register: function ($user) {
                 try {
-                    return $http({
+                    var promise = $http({
                         method : 'PUT',
                         url : '/api/user',
                         data : $user
                     });
+                    return promise;
                 }
                 catch(err) {
-                    return err;
+                    return $q.when({status: false});
                 }
             }
         };
