@@ -48,8 +48,8 @@ router.route('/user')
       if (err)
           res.send(err);
       if (!user) {
-          res.status(400);
-          res.json({ message: "User not found" });
+          res.status(401);
+          res.json({ message: "User "+ email +" not found" });
       } else if (passwordHash.verify(password, user.password)) {
           res.status(401);
           res.json({message: "Wrong password"});
