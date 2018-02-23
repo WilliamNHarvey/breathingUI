@@ -3,10 +3,25 @@ define([
   ], function(app) {
   'use strict';
 
-  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathsService, $compile, LS) {
+  app.controller('breathsController', function($rootScope, $scope, $location, $window, breathsService, $compile, LS, userService) {
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
+
+      userService.checkSession().then(function(res) {
+          if(!res) {
+              $location.path("/");
+          }
+          else if(res.status === 200) {
+              $scope.user = res.data.user;
+              if($scope.user.job !== "patient") {
+                  $location.path("/");
+              }
+          }
+          else {
+              $location.path("/");
+          }
+      });
 
       var storedData = JSON.parse(LS.getData("storedData"));
       var index;
@@ -479,6 +494,22 @@ define([
   })
   .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile) {
       $scope.switchPage = $rootScope.switchPage;
+
+      userService.checkSession().then(function(res) {
+          if(!res) {
+              $location.path("/");
+          }
+          else if(res.status === 200) {
+              $scope.user = res.data.user;
+              if($scope.user.job !== "patient") {
+                  $location.path("/");
+              }
+          }
+          else {
+              $location.path("/");
+          }
+      });
+
       var d3 = $window.d3;
 
       $scope.data = JSON.parse(LS.getData("storedData"));
