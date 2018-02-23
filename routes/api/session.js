@@ -28,7 +28,16 @@ router.route('/session')
     })
 
     .delete(function(req, res){
-        req.session.destroy();
+        req.session.destroy(function(err) {
+            if(err) {
+                res.status(400);
+                res.json({ message: "User already logged out" });
+            }
+            else {
+                res.status(200);
+                res.json({ message: "Logout successful" });
+            }
+        });
     });
 
 module.exports = router;

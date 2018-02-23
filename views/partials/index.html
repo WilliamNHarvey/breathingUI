@@ -2,7 +2,12 @@
   <div class="index">
     <section class="title-section">
       <h1 class="noselect">SleepEar</h1>
-      <div class="row ng-cloak" ng-show="!loggedIn">
+      <div class="row ng-cloak" ng-show="!loggedIn && !loggedOut">
+        <div class="col-md-12">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <div class="row ng-cloak" ng-show="loggedOut">
         <div class="col-sm-12 col-md-6">
           <div class="button register" ng-click="switchPage('/register')">Register</div>
         </div>
@@ -13,6 +18,7 @@
       <div class="row ng-cloak" ng-show="loggedIn">
         <div class="col-md-12">
           <div class="button logout" ng-click="logout()">Logout</div>
+          <div class="loader" ng-show="loggingOut"></div>
         </div>
       </div>
     </section>
