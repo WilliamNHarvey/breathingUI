@@ -71,6 +71,7 @@ var sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
 app.use(session({
     key: 'user_sid',
     secret: '34SDgsdgspxxxxxxxdfsG',
+    user: '',
     store: sessionStore,
     resave: true,
     saveUninitialized: false,
