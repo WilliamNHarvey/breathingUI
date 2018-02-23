@@ -492,7 +492,7 @@ define([
       setInterval(update, 400);
 
   })
-  .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile) {
+  .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile, userService) {
       $scope.switchPage = $rootScope.switchPage;
 
       userService.checkSession().then(function(res) {
