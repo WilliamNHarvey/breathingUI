@@ -64,40 +64,16 @@ mailer.extend(app, {
 });
 
 // Mongoose configuration
-// Use your own configuration
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27017/sleepear');
 
 var sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
 app.use(session({
-    //key: 'user_sid',
-    secret: '34SDgsdgspxxxxxxxdfsG',
+    secret: process.env.SESSION_SECRET,
     store: sessionStore,
     resave: true,
     saveUninitialized: false
-    //cookie: { secure: true, maxAge: 86400000 }
 }));
 
-/*var sessionChecker = (req, res, next) => {
-    if(req.path === '/index.html') next();
-    if (req.session.user && req.cookies.user_sid) {
-        switch (req.session.user.job) {
-            case 'patient':
-                if(req.path !== '/partials/breaths/index.html' && req.path !== '/partials/breaths/submit.html' && req.path !== '/partials/index.html') {
-                    res.redirect('/partials/breaths/index.html');
-                }
-                break;
-            default:
-                if(req.path !== '/partials/index.html' && req.path !== '/partials/login.html' && req.path !== '/partials/register.html') {
-                    res.redirect('/partials/index.html');
-                }
-        }
-    } else {
-        if(req.path !== '/partials/index.html' && req.path !== '/partials/login.html' && req.path !== '/partials/register.html') {
-            res.redirect('/partials/index.html');
-        }
-        next();
-    }
-};*/
 
 /**
  * Routes

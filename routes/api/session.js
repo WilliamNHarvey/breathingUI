@@ -10,11 +10,7 @@ router.route('/session')
 
     // check
     .post(function(req, res){
-        var email = req.body.email;
-        //req.session.reload();
         var sid = req.session.userId;
-            //var sid = req.body.session;
-
         User.findOne({_id: sid}, function(err, user) {
             if (err)
                 res.send(err);
@@ -25,24 +21,14 @@ router.route('/session')
                 res.status(403);
                 res.json({message: "User has been deactivated. Please contact SleepEar."})
             } else {
-                /*Session.findOne({_id: sid},  function(err, session) {
-                    if(err) {
-                        res.send(err);
-                    } else if(!session) {
-                        res.status(400);
-                        res.json({ message: "No session" });
-                    } else if(Date.now() > session.expires) {
-                        res.status(401);
-                        res.json({ message: "Session expired" });
-                        session.remove();
-                    }
-                    else {*/
-                        res.status(200);
-                        res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
-                    //}
-                //});
+                res.status(200);
+                res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job } });
             }
         });
+    })
+
+    .delete(function(req, res){
+        req.session.destroy();
     });
 
 module.exports = router;

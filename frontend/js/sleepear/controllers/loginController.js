@@ -25,7 +25,7 @@ define([
                     $scope.loggedIn = true;
                     $rootScope.user = res.data.user;
                     $rootScope.session = res.data.session;
-                    LS.setData('user_session', JSON.stringify({email: $rootScope.user.email, session: $rootScope.session}));
+
                     switch(res.data.user.job) {
                         case 'patient':
                             $location.path('/breaths');

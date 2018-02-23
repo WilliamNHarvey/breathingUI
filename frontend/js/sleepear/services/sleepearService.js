@@ -81,11 +81,20 @@ define([
                 });
             },
 
-            checkSession: function ($session) {
+            checkSession: function () {
                 return $http({
                     method : 'POST',
-                    url : '/api/session',
-                    data : $session
+                    url : '/api/session'
+                }).catch(function(reason){
+                    console.log('reason', reason);
+                    return $q.when({status: false});
+                });
+            },
+
+            logout: function () {
+                return $http({
+                    method : 'DELETE',
+                    url : '/api/session'
                 }).catch(function(reason){
                     console.log('reason', reason);
                     return $q.when({status: false});
