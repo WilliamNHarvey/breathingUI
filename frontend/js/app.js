@@ -96,6 +96,24 @@ define([
             }
         };
 
+        userService.checkSession().then(function(res) {
+            if(!res) {
+                $rootScope.loggedIn = false;
+                $rootScope.loggedOut = true;
+            }
+            else if(res.status === 200) {
+                console.log('logged in', res.data.user);
+                $rootScope.loggedIn = true;
+                $rootScope.loggedOut = false;
+                $rootScope.user = res.data.user;
+            }
+            else {
+                console.log('logged out');
+                $rootScope.loggedOut = true;
+                $rootScope.loggedIn = false;
+            }
+        });
+
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
             if (sessionStorage.restorestate === "true") {
                 $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
