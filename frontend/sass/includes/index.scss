@@ -1,13 +1,17 @@
 .index {
   //padding: 0px 20px;
 
+  .row {
+    margin-bottom: 50px;
+  }
+
   .title-section {
     background: linear-gradient(to bottom right, #4E6CCF, #20CAB6);
   }
 
   section {
     height: 100vh;
-    min-height: 350px;
+    min-height: 450px;
     padding: 20px 50px;
   }
 
@@ -32,6 +36,9 @@
     }
     &.logout {
       background: #db0055;
+    }
+    &.dashboard {
+      background: linear-gradient(to bottom right, #00796B, #8E24AA);
     }
     cursor: pointer;
     text-align: center;
