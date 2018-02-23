@@ -40,6 +40,9 @@ router.route('/user')
                 newUser.save();
                 //User.update({email: user.email}, {$set:{"session" : sid}});
                 //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
+                Session.update({_id: sid}, {'user': newUser._id}, function(err, session) {
+
+                });
                 res.status(200);
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job }, session: sid });
             }
@@ -71,6 +74,9 @@ router.route('/user')
           //user.session = sid;
           //user.markModified('session');
           //user.save();
+          Session.update({user: user._id}, {'_id': sid}, function(err, session) {
+
+          });
           User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
 
           });
