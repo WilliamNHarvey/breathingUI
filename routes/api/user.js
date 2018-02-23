@@ -4,6 +4,8 @@ var passwordHash = require('password-hash');
 
 // Model
 var User = require('../../app/models/user');
+var Session = require('../../app/models/session');
+
 
 /* Default route */
 router.route('/user')
