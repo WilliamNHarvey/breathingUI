@@ -137,33 +137,35 @@ define([
                     $rootScope.loggedOut = true;
                     $rootScope.loggedIn = false;
                 }
-            });
 
-            console.log($location.path());
-            if(!$rootScope.loggedIn) {
-                if($location.path() !== "/" && $location.path() !== "") {
+                console.log($location.path());
+                if(!$rootScope.loggedIn) {
+                    if($location.path() !== "/" && $location.path() !== "") {
+                        event.preventDefault();
+                        $location.path("/");
+                    }
+                }
+                else if($rootScope.user.job === "patient" && $location.path() !== "/" && $location.path() !== ""
+                    && $location.path() !== "/breaths" && $location.path() !== "/submit") {
                     event.preventDefault();
                     $location.path("/");
                 }
-            }
-            else if($rootScope.user.job === "patient" && $location.path() !== "/" && $location.path() !== ""
-                && $location.path() !== "/breaths" && $location.path() !== "/submit") {
-                event.preventDefault();
-                $location.path("/");
-            }
-            else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
-                console.log('here');
-                event.preventDefault();
-                $location.path("/");
-            }
-            else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== "") {
-                event.preventDefault();
-                $location.path("/");
-            }
-            else if($rootScope.user.job === "visitor" && $location.path() !== "/" && $location.path() !== "") {
-                event.preventDefault();
-                $location.path("/");
-            }
+                else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
+                    console.log('here');
+                    event.preventDefault();
+                    $location.path("/");
+                }
+                else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== "") {
+                    event.preventDefault();
+                    $location.path("/");
+                }
+                else if($rootScope.user.job === "visitor" && $location.path() !== "/" && $location.path() !== "") {
+                    event.preventDefault();
+                    $location.path("/");
+                }
+            });
+
+
 
         });
 
