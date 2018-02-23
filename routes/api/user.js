@@ -42,9 +42,9 @@ router.route('/user')
                 newUser.save();
                 //User.update({email: user.email}, {$set:{"session" : sid}});
                 //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
-                Session.update({_id: sid}, {'user': newUser._id}, function(err, session) {
+                /*Session.update({_id: sid}, {'user': newUser._id}, function(err, session) {
 
-                });
+                });*/
                 res.status(200);
                 res.json({ message: 'Registration successful', user: { name: user.name, email: user.email, job: user.job }, session: sid });
             }
@@ -69,22 +69,24 @@ router.route('/user')
           res.status(403);
           res.json({message: "User has been deactivated. Please contact SleepEar."})
       } else {
-          req.session.regenerate();
+          req.session.regenerate(function(err) {
+              req.session.save();
+              var sid = req.sessionID;
+              //user.session = sid;
+              //user.markModified('session');
+              //user.save();
+              /*Session.update({user: user._id}, {'_id': sid}, function(err, session) {
+
+              });*/
+              User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
+
+              });
+              //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
+              res.status(200);
+              res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
+          })
           //req.session.user = user.dataValues;
-          req.session.save();
-          var sid = req.sessionID;
-          //user.session = sid;
-          //user.markModified('session');
-          //user.save();
-          Session.update({user: user._id}, {'_id': sid}, function(err, session) {
 
-          });
-          User.update({_id: user._id}, {'session': sid}, function(err, numAffected) {
-
-          });
-          //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
-          res.status(200);
-          res.json({ message: "Login successful", user: { name: user.name, email: user.email, job: user.job }, session: sid });
       }
     });
   })
