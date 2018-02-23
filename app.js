@@ -68,16 +68,13 @@ mailer.extend(app, {
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27017/sleepear');
 
 var sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
-var cookieParser = require('cookie-parser');
-app.use(cookieParser('foo'));
 app.use(session({
     key: 'user_sid',
-    secret: 'foo',
+    secret: '34SDgsdgspxxxxxxxdfsG',
     store: sessionStore,
-    user: {},
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false, maxAge: 86400000 }
+    cookie: { secure: true, maxAge: 86400000 }
 }));
 
 /*var sessionChecker = (req, res, next) => {
