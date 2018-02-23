@@ -13,15 +13,15 @@ define([
         var user_session = JSON.parse(LS.getData('user_session'));
         console.log(user_session);
         if(user_session) {
-            userService.checkSession(user_session).then(function(err, res) {
+            userService.checkSession(user_session).then(function(res) {
                 if(!res) {
-                    console.log('err', err);
+                    console.log('err');
                 }
                 else if(res.status === 200) {
                     console.log('logged in', res.data.user);
                 }
                 else {
-                    console.log('logged out', err)
+                    console.log('logged out')
                 }
             });
         }
