@@ -37,6 +37,11 @@ define([
             })
         };
 
+        $scope.comingSoon = function() {
+            console.log('coming soon');
+            $("#snackbar").addClass("show");
+            setTimeout(function(){ $("#snackbar").removeClass("show"); }, 3000);
+        }
 
     });
 });

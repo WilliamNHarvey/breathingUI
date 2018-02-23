@@ -1,13 +1,13 @@
 <div class="page">
   <div class="index">
-    <section class="title-section">
+    <section class="title-section ng-cloak">
       <h1 class="noselect">SleepEar</h1>
-      <div class="row ng-cloak" ng-show="!loggedIn && !loggedOut">
+      <div class="row" ng-show="!loggedIn && !loggedOut">
         <div class="col-md-12">
           <div class="loader"></div>
         </div>
       </div>
-      <div class="row ng-cloak" ng-show="loggedOut">
+      <div class="row" ng-show="loggedOut">
         <div class="col-sm-12 col-md-6">
           <div class="button register" ng-click="switchPage('/register')">Register</div>
         </div>
@@ -15,10 +15,18 @@
           <div class="button login" ng-click="switchPage('/login')">Login</div>
         </div>
       </div>
-      <div class="row ng-cloak" ng-show="loggedIn">
-        <div class="col-md-12">
+      <div class="row" ng-show="loggedIn">
+        <div class="col-md-12" style="position: relative">
           <div class="button logout" ng-click="logout()">Logout</div>
           <div class="loader" ng-show="loggingOut"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="button dashboard" ng-show="user.job === 'patient'" ng-click="switchPage('/breaths')">Patient Dashboard</div>
+          <div class="button dashboard" ng-show="user.job === 'doctor'" ng-click="comingSoon()">Clinician Dashboard</div>
+          <div class="button dashboard" ng-show="user.job === 'technician'" ng-click="comingSoon()">Technician Dashboard</div>
+          <div class="button dashboard" ng-show="user.job === 'visitor'" ng-click="comingSoon()">Visitor Dashboard</div>
         </div>
       </div>
     </section>
@@ -26,5 +34,6 @@
       <h1 class="noselect">Who are we, what is this, where am I?</h1>
       <p>Big explanation goes here</p>
     </section>
+    <div id="snackbar">Coming soon</div>
   </div>
 </div>
