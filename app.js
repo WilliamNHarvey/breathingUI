@@ -72,7 +72,7 @@ app.use(session({
     key: 'user_sid',
     secret: '34SDgsdgspxxxxxxxdfsG',
     store: sessionStore,
-    resave: false,
+    resave: true,
     saveUninitialized: false,
     cookie: { secure: true, maxAge: 86400000 }
 }));
