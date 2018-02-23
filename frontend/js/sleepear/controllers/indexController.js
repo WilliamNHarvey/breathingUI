@@ -9,10 +9,10 @@ define([
         };
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
-        $scope.loggedIn = false;
-        $scope.loggedOut = false;
+        $scope.loggedIn = $rootScope.loggedIn;
+        $scope.loggedOut = $rootScope.loggedOut;
         $scope.loggingOut = false;
-        userService.checkSession().then(function(res) {
+        /*userService.checkSession().then(function(res) {
             if(!res) {
                 console.log('err');
                 $scope.loggedOut = true;
@@ -26,13 +26,15 @@ define([
                 console.log('logged out');
                 $scope.loggedOut = true;
             }
-        });
+        });*/
 
         $scope.logout = function() {
             console.log('logout');
             $scope.loggingOut = true;
             userService.logout().then(function(res) {
                 $scope.loggingOut = false;
+                $rootScope.loggedOut = true;
+                $rootScope.loggedIn = false;
                 $window.location.reload();
             })
         };

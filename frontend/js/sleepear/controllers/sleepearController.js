@@ -8,7 +8,7 @@ define([
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
 
-      userService.checkSession().then(function(res) {
+      /*userService.checkSession().then(function(res) {
           if(!res) {
               $location.path("/");
           }
@@ -21,7 +21,7 @@ define([
           else {
               $location.path("/");
           }
-      });
+      });*/
 
       var storedData = JSON.parse(LS.getData("storedData"));
       var index;
@@ -495,7 +495,7 @@ define([
   .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile, userService) {
       $scope.switchPage = $rootScope.switchPage;
 
-      userService.checkSession().then(function(res) {
+      /*userService.checkSession().then(function(res) {
           if(!res) {
               $location.path("/");
           }
@@ -508,7 +508,7 @@ define([
           else {
               $location.path("/");
           }
-      });
+      });*/
 
       var d3 = $window.d3;
 

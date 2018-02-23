@@ -74,7 +74,6 @@ app.use(session({
     saveUninitialized: false
 }));
 
-
 /**
  * Routes
  */

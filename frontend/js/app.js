@@ -62,7 +62,7 @@ define([
 
     });
 
-    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location) {
+    app.run(function ($rootScope, $state, $stateParams, ngProgress, projectDefaults, flash, $window, $location, userService) {
         // Expose $state and $stateParams to $rootScope
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
@@ -102,6 +102,47 @@ define([
                 sessionStorage.restorestate = false;
             }
 
+            userService.checkSession().then(function(res) {
+                if(!res) {
+                    $rootScope.loggedIn = false;
+                    $rootScope.loggedOut = true;
+                }
+                else if(res.status === 200) {
+                    console.log('logged in', res.data.user);
+                    $rootScope.loggedIn = true;
+                    $rootScope.loggedOut = false;
+                    $rootScope.user = res.data.user;
+                }
+                else {
+                    console.log('logged out');
+                    $rootScope.loggedOut = true;
+                    $rootScope.loggedIn = false;
+                }
+            });
+
+            if(!$rootScope.loggedIn) {
+                if($location.path() !== "/" && $location.path() !== "") {
+                    event.preventDefault();
+                    $location.path("/");
+                }
+            }
+            else if($rootScope.user.job === "patient" && $location.path() !== "/" && $location.path() !== ""
+                && $location.path() !== "/breaths" && $location.path() !== "/submit") {
+                event.preventDefault();
+                $location.path("/");
+            }
+            else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
+                event.preventDefault();
+                $location.path("/");
+            }
+            else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== "") {
+                event.preventDefault();
+                $location.path("/");
+            }
+            else if($rootScope.user.job === "visitor" && $location.path() !== "/" && $location.path() !== "") {
+                event.preventDefault();
+                $location.path("/");
+            }
 
         });
 
