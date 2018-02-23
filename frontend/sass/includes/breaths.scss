@@ -7,7 +7,19 @@
   border: 1px solid black;
   background: white;
 }
-
+.back-arrow {
+  position: absolute;
+  top: 2.5vw;
+  left: 5vw;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: solid #000;
+  border-width: 6px 0px 0px 6px;
+  transform: rotate(-45deg);
+  margin-right: 30px;
+  cursor: pointer;
+}
 #circle-1 {
   border-radius: 50%;
   width: 25px;
@@ -121,7 +133,7 @@
 
 #recordButton {
   top: 2.5vw;
-  left: 5vw;
+  left: 10vw;
   position: absolute;
   cursor: pointer;
 

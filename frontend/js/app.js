@@ -125,7 +125,6 @@ define([
                 $location.path("/");
             }
             else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
-                console.log('here');
                 event.preventDefault();
                 $location.path("/");
             }
