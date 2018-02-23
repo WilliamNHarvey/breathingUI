@@ -69,13 +69,12 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://william:root@localhost:27
 
 var sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
 app.use(session({
-    key: 'user_sid',
+    //key: 'user_sid',
     secret: '34SDgsdgspxxxxxxxdfsG',
-    user: '',
     store: sessionStore,
     resave: true,
-    saveUninitialized: false,
-    cookie: { secure: true, maxAge: 86400000 }
+    saveUninitialized: false
+    //cookie: { secure: true, maxAge: 86400000 }
 }));
 
 /*var sessionChecker = (req, res, next) => {
