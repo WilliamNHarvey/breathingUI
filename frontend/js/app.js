@@ -115,6 +115,7 @@ define([
         });
 
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
+
             if (sessionStorage.restorestate === "true") {
                 $rootScope.$broadcast('restorestate'); //let everything know we need to restore state
                 sessionStorage.restorestate = false;
@@ -138,6 +139,7 @@ define([
                 }
             });
 
+            console.log($location.path());
             if(!$rootScope.loggedIn) {
                 if($location.path() !== "/" && $location.path() !== "") {
                     event.preventDefault();
@@ -150,6 +152,7 @@ define([
                 $location.path("/");
             }
             else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
+                console.log('here');
                 event.preventDefault();
                 $location.path("/");
             }
