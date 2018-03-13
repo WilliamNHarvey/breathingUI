@@ -76,6 +76,7 @@
             optionalServices: ["pulse_oximeter", "battery_service", "current_time", "heart_rate"]})
             .then(device => {
             console.log('Connecting to GATT Server...');
+            console.log(device);
         return device.gatt.connect();
     })
         .then(server => {
