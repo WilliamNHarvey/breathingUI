@@ -45,7 +45,7 @@
 <script>
     var button = document.getElementById("button");
     button.addEventListener('pointerup', function(event) {
-        console.log(navigator);
+      /*console.log(navigator);
         navigator.bluetooth.requestDevice({ acceptAllDevices: true })
             .then(device => {
             // Human-readable name of the device.
@@ -69,5 +69,37 @@
             console.log('Battery percentage is ' + value.getUint8(0));
     })
               .catch(error => { console.log(error); });
+    });*/
+        navigator.bluetooth.requestDevice({
+            // filters: [...] <- Prefer filters to save energy & show relevant devices.
+            acceptAllDevices: true,
+            optionalServices: optionalServices})
+            .then(device => {
+            log('Connecting to GATT Server...');
+        return device.gatt.connect();
+    })
+        .then(server => {
+            // Note that we could also get all services that match a specific UUID by
+            // passing it to getPrimaryServices().
+            log('Getting Services...');
+        return server.getPrimaryServices();
+    })
+        .then(services => {
+            log('Getting Characteristics...');
+        let queue = Promise.resolve();
+        services.forEach(service => {
+            queue = queue.then(_ => service.getCharacteristics().then(characteristics => {
+                log('> Service: ' + service.uuid);
+        characteristics.forEach(characteristic => {
+            log('>> Characteristic: ' + characteristic.uuid + ' ' +
+            getSupportedProperties(characteristic));
+    });
+    }));
+    });
+        return queue;
+    })
+        .catch(error => {
+            log('Argh! ' + error);
+    });
     });
 </script>
