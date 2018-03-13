@@ -23,6 +23,11 @@
       </div>
       <div class="row">
         <div class="col-md-12">
+          <div id="button" class="button logout">Test Bluetooth</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
           <div class="button dashboard" ng-show="user.job === 'patient'" ng-click="switchPage('/breaths')">Patient Dashboard</div>
           <div class="button dashboard" ng-show="user.job === 'doctor'" ng-click="comingSoon()">Clinician Dashboard</div>
           <div class="button dashboard" ng-show="user.job === 'technician'" ng-click="comingSoon()">Technician Dashboard</div>
@@ -37,3 +42,19 @@
     <div id="snackbar">Coming soon</div>
   </div>
 </div>
+<script>
+    var button = document.getElementById("button");
+    button.addEventListener('pointerup', function(event) {
+        console.log(navigator);
+        navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+            .then(device => {
+            // Human-readable name of the device.
+            console.log(device.name);
+
+        // Attempts to connect to remote GATT Server.
+        return device.gatt.connect();
+    })
+        .then(server => { /* ... */ })
+        .catch(error => { console.log(error); });
+    });
+</script>
