@@ -46,7 +46,7 @@
     var button = document.getElementById("button");
     button.addEventListener('pointerup', function(event) {
         console.log(navigator);
-        navigator.bluetooth.requestDevice()
+        navigator.bluetooth.requestDevice({ acceptAllDevices: true })
             .then(device => {
             // Human-readable name of the device.
             console.log(device.name);
