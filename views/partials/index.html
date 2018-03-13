@@ -46,15 +46,14 @@
     var button = document.getElementById("button");
     button.addEventListener('pointerup', function(event) {
         console.log(navigator);
-        navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+        navigator.bluetooth.requestDevice()
             .then(device => {
             // Human-readable name of the device.
             console.log(device.name);
 
-        // Attempts to connect to remote GATT Server.
-        return device.gatt.connect();
-    })
-        .then(server => { /* ... */ })
-        .catch(error => { console.log(error); });
+            // Attempts to connect to remote GATT Server.
+            return device.gatt.connect();
+            }).then(server => { /* ... */ })
+              .catch(error => { console.log(error); });
     });
 </script>
