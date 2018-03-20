@@ -59,7 +59,7 @@
     }
 
     .border-top {
-      border-top: 1px solid black;
+      //border-top: 1px solid black;
       margin: 20px;
     }
 
@@ -68,13 +68,15 @@
         font-size: 24px;
       }
 
-      table, th, td {
-        border: 1px solid black;
+      th, td {
+        padding: 5px;
+      }
+      table {
         border-collapse: collapse;
         text-align: center;
       }
-      th, td {
-        padding: 5px;
+      table td, table th {
+        border: 1px solid black;
       }
       table tr:first-child th {
         border-top: 0;
