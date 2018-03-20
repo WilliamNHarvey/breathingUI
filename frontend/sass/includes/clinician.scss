@@ -158,6 +158,15 @@
         }
       }
     }
+
+    #patient-scores {
+      .row {
+        .section-chart {
+          border: 1px solid black;
+          height: 200px;
+        }
+      }
+    }
   }
 }
 
