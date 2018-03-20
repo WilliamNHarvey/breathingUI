@@ -16,7 +16,7 @@
 
     .section-title {
       font-size: 25px;
-      margin-bottom: 20px
+      
     }
 
     #probability-section {
@@ -97,6 +97,7 @@
 
     #charts {
       .row {
+        padding: 20px 0px;
         .border-top {
           margin: 20px 0px;
         }
@@ -129,6 +130,7 @@
 
     #population-comparison {
       .row {
+        padding: 20px 0px;
         .border-top {
           margin: 20px 0px;
         }
@@ -161,6 +163,7 @@
 
     #patient-scores {
       .row {
+        padding: 20px 0px;
         .section-chart {
           border: 1px solid black;
           height: 400px;
