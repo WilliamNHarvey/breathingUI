@@ -1,0 +1,60 @@
+.page {
+  .title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: bold;
+  }
+
+  #report {
+    margin: 20px 20px;
+    width: calc(100% - 40px);
+    border: 2px solid black;
+    background-color: white;
+
+    #probability-section {
+      padding: 20px;
+
+      .probability {
+        width: 40%;
+        display: inline-block;
+
+        .section-title {
+          display: block;
+          text-align: center;
+          font-size: 25px;
+        }
+
+        .section-amount {
+          display: block;
+          text-align: center;
+          font-size: 60px;
+          font-weight: bold;
+        }
+      }
+
+      .index {
+        width: 30%;
+        display: inline-block;
+
+        .section-amount {
+          display: block;
+          text-align: center;
+          font-size: 40px;
+          font-weight: bold;
+
+          span {
+            border: 1px solid black;
+            padding: 10px;
+          }
+        }
+
+        .section-title {
+          display: block;
+          text-align: center;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
