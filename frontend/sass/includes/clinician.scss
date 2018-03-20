@@ -13,6 +13,10 @@
     border: 2px solid black;
     background-color: white;
 
+    .section-title {
+      font-size: 25px;
+    }
+
     #probability-section {
       padding: 20px;
 
@@ -64,10 +68,6 @@
     }
 
     #summary {
-      .section-title {
-        font-size: 24px;
-      }
-
       th, td {
         padding: 5px;
       }
@@ -91,6 +91,57 @@
       table tr td:last-child,
       table tr th:last-child {
         border-right: 0;
+      }
+    }
+
+    #charts {
+      row {
+        .section-title {
+          text-align: center;
+          font-size: 16px;
+        }
+        .section-text {
+          text-align: center;
+          font-size: 10px;
+          width: 60%;
+          margin-left: 20%;
+        }
+        .section-chart {
+          border: 1px solid black;
+          height: 100px;
+        }
+        .chart {
+          .section-text {
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+
+    }
+
+    #population-comparison {
+      row {
+        .section-title {
+          text-align: center;
+          font-size: 16px;
+        }
+        .section-text {
+          text-align: center;
+          font-size: 10px;
+          width: 60%;
+          margin-left: 20%;
+        }
+        .section-chart {
+          border: 1px solid black;
+          height: 100px;
+        }
+        .patient, .population {
+          .section-text {
+            width: 100%;
+            margin: 0;
+          }
+        }
       }
     }
   }
