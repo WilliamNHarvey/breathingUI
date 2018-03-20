@@ -165,6 +165,12 @@
           border: 1px solid black;
           height: 200px;
         }
+        .list {
+          border-left: 1px solid #dee2e6;
+        }
+        ul {
+          list-style-type:decimal;
+        }
       }
     }
   }
