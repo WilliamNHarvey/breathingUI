@@ -51,6 +51,16 @@ define([
                   }
               })
           )
+          .state('clinician', angularAMD.route({
+                  url: '/clinician',
+                  templateUrl: 'partials/clinician/index.html',
+                  controller: 'clinicianController',
+                  data: {
+                      title: 'Clinician',
+                  },
+                  controllerUrl: 'sleepear/controllers/clinicianController'
+              })
+          )
           .state('login', angularAMD.route({
                   url: '/login',
                   templateUrl: 'partials/login.html',

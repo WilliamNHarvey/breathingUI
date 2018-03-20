@@ -124,7 +124,8 @@ define([
                 event.preventDefault();
                 $location.path("/");
             }
-            else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
+            else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== ""
+                && $location.path() !== "/clinician") {
                 event.preventDefault();
                 $location.path("/");
             }
@@ -176,7 +177,8 @@ define([
                     event.preventDefault();
                     $location.path("/");
                 }
-                else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== "") {
+                else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== ""
+                    && $location.path() !== "/clinician") {
                     console.log('here');
                     event.preventDefault();
                     $location.path("/");
