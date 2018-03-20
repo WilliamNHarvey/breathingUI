@@ -106,14 +106,14 @@
           width: 60%;
           margin-left: 20%;
         }
-        .section-chart {
-          border: 1px solid black;
-          height: 100px;
-        }
         .chart {
           .section-text {
             width: 100%;
             margin: 0;
+          }
+          .section-chart {
+            border: 1px solid black;
+            height: 100px;
           }
         }
       }
@@ -132,14 +132,15 @@
           width: 60%;
           margin-left: 20%;
         }
-        .section-chart {
-          border: 1px solid black;
-          height: 100px;
-        }
+
         .patient, .population {
           .section-text {
             width: 100%;
             margin: 0;
+          }
+          .section-chart {
+            border: 1px solid black;
+            height: 100px;
           }
         }
       }
