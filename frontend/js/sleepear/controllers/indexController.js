@@ -7,6 +7,7 @@ define([
         window.ondragstart = function () {
             return false;
         };
+        $scope.$apply();
         $scope.switchPage = $rootScope.switchPage;
         $scope.location = /[^/]*$/.exec($location.path())[0];
         $scope.loggedIn = $rootScope.loggedIn;
