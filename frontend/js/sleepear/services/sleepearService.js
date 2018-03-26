@@ -99,6 +99,16 @@ define([
                     console.log('reason', reason);
                     return $q.when({status: false});
                 });
+            },
+
+            getAll: function() {
+                return $http({
+                    method : 'POST',
+                    url : '/api/user/get'
+                }).catch(function(reason){
+                    console.log('reason', reason);
+                    return $q.when({status: false});
+                });
             }
         };
 

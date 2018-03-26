@@ -38,8 +38,8 @@ router.route('/user')
                 req.session.userId = newUser._id;
                 //req.session.save();
                 var sid = req.sessionID;
-                newUser.session = sid;
-                newUser.save();
+                /*newUser.session = sid;
+                newUser.save();*/
                 //User.update({email: user.email}, {$set:{"session" : sid}});
                 //res.cookie('user_sid', sid, { maxAge: 86400000, httpOnly: true });
                 //Session.update({_id: sid}, {'user': newUser._id}, function(err, session) {
@@ -102,5 +102,54 @@ router.route('/user')
       res.json({ message: 'breath deleted' });
     });
   });
+
+router.route('/user/connect')
+    .post(function(req, res){
+        var email = req.body.email,
+            connectee = req.body.connectee;
+        User.findOne({email: email}, function(err, user) {
+            if (err)
+                res.send(err);
+            if (!user) {
+                res.status(400);
+                res.json({ message: "User "+ email +" not found" });
+            } else if (user.connectedTo) {
+                res.status(401);
+                res.json({message: "Already connected"});
+            } else if (user.status === false) {
+                res.status(403);
+                res.json({message: "User has been deactivated. Please contact SleepEar."})
+            } else {
+                User.findOne({email: connectee}, function(err, connecteeU) {
+                    if (err)
+                        res.send(err);
+                    if (!connecteeU) {
+                        res.status(400);
+                        res.json({ message: "User "+ email +" not found" });
+                    } else if (connecteeU.status === false) {
+                        res.status(403);
+                        res.json({message: "Connectee has been deactivated. Please contact SleepEar."})
+                    } else {
+                        User.update({_id: user._id}, {'connectedTo': connectee._id}, function(err, numAffected) {
+                            res.status(200);
+                            res.json({ message: "Connection Successful", user: { name: user.name, email: user.email, job: user.job }, connectee: { name: connecteeU.name, email: connecteeU.email, job: connecteeU.job } });
+                        });
+                    }
+                });
+            }
+        });
+    });
+router.route('/user/get')
+    .post(function(req, res){
+        var email = req.body.email,
+            connectee = req.body.connectee;
+        User.find(function(err, users) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json({ message: "Users Found Successfully", users: users });
+            }
+        });
+    });
 
 module.exports = router;
