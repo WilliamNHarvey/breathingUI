@@ -129,7 +129,8 @@ define([
                 event.preventDefault();
                 $location.path("/");
             }
-            else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== "") {
+            else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== ""
+                && $location.path() !== "/technician") {
                 event.preventDefault();
                 $location.path("/");
             }

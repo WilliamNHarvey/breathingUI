@@ -61,6 +61,16 @@ define([
                   controllerUrl: 'sleepear/controllers/clinicianController'
               })
           )
+          .state('technician', angularAMD.route({
+                  url: '/technician',
+                  templateUrl: 'partials/technician/index.html',
+                  controller: 'technicianController',
+                  data: {
+                      title: 'Technician',
+                  },
+                  controllerUrl: 'sleepear/controllers/technicianController'
+              })
+          )
           .state('login', angularAMD.route({
                   url: '/login',
                   templateUrl: 'partials/login.html',
