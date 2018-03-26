@@ -61,12 +61,62 @@ define([
                   controllerUrl: 'sleepear/controllers/clinicianController'
               })
           )
+          .state('clinicianSubmitting', angularAMD.route({
+                  url: '/clinician',
+                  templateUrl: 'partials/clinician/send.html',
+                  controller: 'clinicianSubmittingController',
+                  data: {
+                      title: 'Send data',
+                  },
+                  controllerUrl: 'sleepear/controllers/clinicianController'
+              })
+          )
+          .state('clinicianReport', angularAMD.route({
+                  url: '/clinician',
+                  templateUrl: 'partials/clinician/report.html',
+                  controller: 'clinicianReportController',
+                  data: {
+                      title: 'Final report',
+                  },
+                  controllerUrl: 'sleepear/controllers/clinicianController'
+              })
+          )
           .state('technician', angularAMD.route({
                   url: '/technician',
                   templateUrl: 'partials/technician/index.html',
                   controller: 'technicianController',
                   data: {
                       title: 'Technician',
+                  },
+                  controllerUrl: 'sleepear/controllers/technicianController'
+              })
+          )
+          .state('technicianSetup', angularAMD.route({
+                  url: '/technician',
+                  templateUrl: 'partials/technician/setup.html',
+                  controller: 'technicianSetupController',
+                  data: {
+                      title: 'Set up patients',
+                  },
+                  controllerUrl: 'sleepear/controllers/technicianController'
+              })
+          )
+          .state('technicianManage', angularAMD.route({
+                  url: '/technician',
+                  templateUrl: 'partials/technician/manage.html',
+                  controller: 'technicianManageController',
+                  data: {
+                      title: 'Manage datasets',
+                  },
+                  controllerUrl: 'sleepear/controllers/technicianController'
+              })
+          )
+          .state('technicianSend', angularAMD.route({
+                  url: '/technician',
+                  templateUrl: 'partials/technician/send.html',
+                  controller: 'technicianSendController',
+                  data: {
+                      title: 'Send report',
                   },
                   controllerUrl: 'sleepear/controllers/technicianController'
               })
