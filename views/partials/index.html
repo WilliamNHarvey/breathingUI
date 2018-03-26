@@ -30,7 +30,7 @@
         <div class="col-md-12">
           <div class="button dashboard" ng-show="user.job === 'patient'" ng-click="switchPage('/breaths')">Patient Dashboard</div>
           <div class="button dashboard" ng-show="user.job === 'doctor'" ng-click="switchPage('/clinician')">Clinician Dashboard</div>
-          <div class="button dashboard" ng-show="user.job === 'technician'" ng-click="comingSoon()">Technician Dashboard</div>
+          <div class="button dashboard" ng-show="user.job === 'technician'" ng-click="switchPage('/technician')">Technician Dashboard</div>
           <div class="button dashboard" ng-show="user.job === 'visitor'" ng-click="comingSoon()">Visitor Dashboard</div>
         </div>
       </div>

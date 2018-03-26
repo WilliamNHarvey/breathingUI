@@ -130,7 +130,7 @@ define([
                 $location.path("/");
             }
             else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== ""
-                && $location.path() !== "/technician") {
+                && $location.path() !== "/technician" && $location.path() !== "/technician/setup" && $location.path() !== "/technician/manage" && $location.path() !== "/technician/send") {
                 event.preventDefault();
                 $location.path("/");
             }
