@@ -12,6 +12,7 @@ define([
         $scope.loading = false;
         $scope.registered = false;
         $scope.failed = false;
+        $rootScope.child = false;
 
         $scope.register = function($user) {
             $scope.registered = false;

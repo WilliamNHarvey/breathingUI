@@ -12,6 +12,21 @@ define([
         $scope.loggedIn = $rootScope.loggedIn;
         $scope.loggedOut = $rootScope.loggedOut;
         $scope.loggingOut = false;
+        $scope.child = $rootScope.child;
+        if($scope.child) {
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js";
+            s.dataset.main = "/js/childmain.js";
+            $("head").append(s);
+        }
+        else {
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js";
+            s.dataset.main = "/js/main.js";
+            $("head").append(s);
+        }
         /*userService.checkSession().then(function(res) {
             if(!res) {
                 console.log('err');

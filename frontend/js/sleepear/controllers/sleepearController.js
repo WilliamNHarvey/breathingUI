@@ -7,7 +7,7 @@ define([
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
-
+      $rootScope.child = false;
       /*userService.checkSession().then(function(res) {
           if(!res) {
               $location.path("/");
@@ -494,7 +494,7 @@ define([
   })
   .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile, userService) {
       $scope.switchPage = $rootScope.switchPage;
-
+      $rootScope.child = false;
       /*userService.checkSession().then(function(res) {
           if(!res) {
               $location.path("/");

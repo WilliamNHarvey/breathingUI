@@ -7,7 +7,7 @@ define([
       window.ondragstart = function() { return false; };
       $scope.switchPage = $rootScope.switchPage;
       $scope.location = /[^/]*$/.exec($location.path())[0];
-
+      $rootScope.child = false;
       /*userService.checkSession().then(function(res) {
           if(!res) {
               $location.path("/");
@@ -30,7 +30,7 @@ define([
           window.ondragstart = function() { return false; };
           $scope.switchPage = $rootScope.switchPage;
           $scope.location = /[^/]*$/.exec($location.path())[0];
-
+          $rootScope.child = true;
           /*userService.checkSession().then(function(res) {
            if(!res) {
            $location.path("/");
@@ -53,7 +53,7 @@ define([
           window.ondragstart = function() { return false; };
           $scope.switchPage = $rootScope.switchPage;
           $scope.location = /[^/]*$/.exec($location.path())[0];
-            console.log($scope.location);
+          $rootScope.child = true;
           /*userService.checkSession().then(function(res) {
            if(!res) {
            $location.path("/");
