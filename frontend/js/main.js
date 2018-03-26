@@ -1,5 +1,5 @@
 require.config({
-    baseUrl : 'js',
+    baseUrl : 'frontend',
     paths : {
         // AngularJS
         'angular'               : '//ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular',
@@ -9,18 +9,18 @@ require.config({
         'angular.pt-br'       : '//cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.15/angular-locale_pt-br',
 
         // AngularAMD
-        'angularAMD'          : '/frontend/lib/angularAMD/angularAMD.min',
-        'ngload'              : '/frontend/lib/angularAMD/ngload.min',
+        'angularAMD'          : 'lib/angularAMD/angularAMD.min',
+        'ngload'              : 'lib/angularAMD/ngload.min',
 
         // Other libs
-        'ngProgress'          : '/frontend/lib/ngprogress/build/ngProgress.min',
+        'ngProgress'          : 'lib/ngprogress/build/ngProgress.min',
         'ngCookies'           : '//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies',
-        'angular-ui-router'   : '/frontend/lib/angular-ui-router/release/angular-ui-router.min',
-        'checklist-model'     : '/frontend/lib/checklist-model/checklist-model',
-        'angular-flash'       : '/frontend/lib/angular-flash/dist/angular-flash.min',
-        'd3'                  : '/frontend/lib/d3/d3.min',
-        'nvd3'                : '/frontend/lib/nvd3/build/nv.d3',
-        'angular-nvd3'        : '/frontend/lib/angular-nvd3/dist/angular-nvd3.min',
+        'angular-ui-router'   : 'lib/angular-ui-router/release/angular-ui-router.min',
+        'checklist-model'     : 'lib/checklist-model/checklist-model',
+        'angular-flash'       : 'lib/angular-flash/dist/angular-flash.min',
+        'd3'                  : 'lib/d3/d3.min',
+        'nvd3'                : 'lib/nvd3/build/nv.d3',
+        'angular-nvd3'        : 'lib/angular-nvd3/dist/angular-nvd3.min',
 
         // jQuery
         'jquery'              : '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
