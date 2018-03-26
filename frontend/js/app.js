@@ -125,7 +125,7 @@ define([
                 $location.path("/");
             }
             else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== ""
-                && $location.path() !== "/clinician") {
+                && $location.path() !== "/clinician" && $location.path() !== "/clinician/send" && $location.path() !== "/clinician/report") {
                 event.preventDefault();
                 $location.path("/");
             }
@@ -166,7 +166,6 @@ define([
                     $rootScope.loggedIn = false;
                 }
 
-                console.log($location.path());
                 if(!$rootScope.loggedIn) {
                     if($location.path() !== "/" && $location.path() !== "") {
                         event.preventDefault();
@@ -179,12 +178,12 @@ define([
                     $location.path("/");
                 }
                 else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== ""
-                    && $location.path() !== "/clinician") {
-                    console.log('here');
+                    && $location.path() !== "/clinician" && $location.path() !== "/clinician/send" && $location.path() !== "/clinician/report") {
                     event.preventDefault();
                     $location.path("/");
                 }
-                else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== "") {
+                else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== ""
+                    && $location.path() !== "/technician" && $location.path() !== "/technician/setup" && $location.path() !== "/technician/manage" && $location.path() !== "/technician/send") {
                     event.preventDefault();
                     $location.path("/");
                 }
