@@ -5,10 +5,11 @@ var Schema       = mongoose.Schema;
 var UserSchema   = new Schema({
     email       : { type: String , unique: true, required: true, dropDups: true },
     password    : { type: String , required: true },
-    status      : { type: Boolean, default: true},
+    status      : { type: Boolean, default: true },
     name        : { type: String, required: true },
-    job         : { type:  String , required: true, enum: ['patient', 'doctor', 'technician', 'visitor'] },
-    session     : { type: String }
+    job         : { type: String , required: true, enum: ['patient', 'doctor', 'technician', 'visitor'] },
+    session     : { type: String },
+    connectedTo : { type: String, default: null }
 });
 
 UserSchema.plugin(uniqueValidator, {message: 'e-mail taken.'});
