@@ -53,7 +53,7 @@ define([
           window.ondragstart = function() { return false; };
           $scope.switchPage = $rootScope.switchPage;
           $scope.location = /[^/]*$/.exec($location.path())[0];
-
+            console.log($scope.location);
           /*userService.checkSession().then(function(res) {
            if(!res) {
            $location.path("/");

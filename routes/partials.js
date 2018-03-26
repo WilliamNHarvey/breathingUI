@@ -8,7 +8,7 @@ router.get('/:name', function(req, res) {
 
 router.get('/:module/:name', function(req, res) {
   var module = req.params.module,
-      name = req.params.name
+      name = req.params.name;
   res.render('partials/' + module + '/' + name);
 });
 
