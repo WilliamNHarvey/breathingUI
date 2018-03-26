@@ -62,7 +62,7 @@ define([
               })
           )
           .state('clinicianSubmitting', angularAMD.route({
-                  url: '/clinician/send',
+                  url: '/clinicianSend',
                   templateUrl: 'partials/clinician/send.html',
                   controller: 'clinicianSubmittingController',
                   data: {
@@ -72,7 +72,7 @@ define([
               })
           )
           .state('clinicianReport', angularAMD.route({
-                  url: '/clinician/report',
+                  url: '/clinicianReport',
                   templateUrl: 'partials/clinician/report.html',
                   controller: 'clinicianReportController',
                   data: {
@@ -92,7 +92,7 @@ define([
               })
           )
           .state('technicianSetup', angularAMD.route({
-                  url: '/technician/setup',
+                  url: '/technicianSetup',
                   templateUrl: 'partials/technician/setup.html',
                   controller: 'technicianSetupController',
                   data: {
@@ -102,7 +102,7 @@ define([
               })
           )
           .state('technicianManage', angularAMD.route({
-                  url: '/technician/manage',
+                  url: '/technicianManage',
                   templateUrl: 'partials/technician/manage.html',
                   controller: 'technicianManageController',
                   data: {
@@ -112,7 +112,7 @@ define([
               })
           )
           .state('technicianSend', angularAMD.route({
-                  url: '/technician/send',
+                  url: '/technicianSend',
                   templateUrl: 'partials/technician/send.html',
                   controller: 'technicianSendController',
                   data: {

@@ -125,12 +125,12 @@ define([
                 $location.path("/");
             }
             else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== ""
-                && $location.path() !== "/clinician" && $location.path() !== "/clinician/send" && $location.path() !== "/clinician/report") {
+                && $location.path() !== "/clinician" && $location.path() !== "/clinicianSend" && $location.path() !== "/clinicianReport") {
                 event.preventDefault();
                 $location.path("/");
             }
             else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== ""
-                && $location.path() !== "/technician" && $location.path() !== "/technician/setup" && $location.path() !== "/technician/manage" && $location.path() !== "/technician/send") {
+                && $location.path() !== "/technician" && $location.path() !== "/technicianSetup" && $location.path() !== "/technicianManage" && $location.path() !== "/technicianSend") {
                 event.preventDefault();
                 $location.path("/");
             }
@@ -178,12 +178,12 @@ define([
                     $location.path("/");
                 }
                 else if($rootScope.user.job === "doctor" && $location.path() !== "/" && $location.path() !== ""
-                    && $location.path() !== "/clinician" && $location.path() !== "/clinician/send" && $location.path() !== "/clinician/report") {
+                    && $location.path() !== "/clinician" && $location.path() !== "/clinicianSend" && $location.path() !== "/clinicianReport") {
                     event.preventDefault();
                     $location.path("/");
                 }
                 else if($rootScope.user.job === "technician" && $location.path() !== "/" && $location.path() !== ""
-                    && $location.path() !== "/technician" && $location.path() !== "/technician/setup" && $location.path() !== "/technician/manage" && $location.path() !== "/technician/send") {
+                    && $location.path() !== "/technician" && $location.path() !== "/technicianSetup" && $location.path() !== "/technicianManage" && $location.path() !== "/technicianSend") {
                     event.preventDefault();
                     $location.path("/");
                 }
