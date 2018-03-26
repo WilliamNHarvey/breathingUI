@@ -165,7 +165,7 @@ define([
                     $rootScope.loggedOut = true;
                     $rootScope.loggedIn = false;
                 }
-
+                console.log($location.path());
                 if(!$rootScope.loggedIn) {
                     if($location.path() !== "/" && $location.path() !== "") {
                         event.preventDefault();
