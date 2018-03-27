@@ -307,7 +307,7 @@ define([
                   .interpolate("linear");
 
               $dataSet.children(".data-eeg-modal").empty();
-              
+
               var svg = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
                   .attr("width", width + margin.left + margin.right)
                   .attr("height", height + margin.top + margin.bottom)

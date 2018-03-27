@@ -107,11 +107,6 @@
       top: -10px;
     }
   }
-  .data-eeg-modal {
-    width: 100%;
-    text-align: center;
-    overflow-x: auto;
-  }
   .data-body {
     position: inherit;
     min-height: 32vw;
@@ -192,4 +187,9 @@
       }
     }
   }
+}
+.data-eeg-modal {
+  width: 100%;
+  text-align: center;
+  overflow-x: auto;
 }
