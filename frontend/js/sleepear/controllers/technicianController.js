@@ -279,8 +279,8 @@ define([
                       bottom: 50,
                       left: 50
                   },
-                  heightDot = 370 - margin.top - margin.bottom,
-                  widthDot = 700 + data.length/248 - margin.left - margin.right;
+                  heightDot = 370 - marginDot.top - marginDot.bottom,
+                  widthDot = 700 + data.length/248 - marginDot.left - marginDot.right;
 
               var x = d3.time.scale()
                   .domain(d3.extent(data, function(d) {
@@ -314,10 +314,10 @@ define([
               $dataSet.children(".data-eeg-modal").empty();
 
               var svg = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
-                  .attr("width", widthDot + margin.left + margin.right)
-                  .attr("height", heightDot + margin.top + margin.bottom)
+                  .attr("width", widthDot + marginDot.left + marginDot.right)
+                  .attr("height", heightDot + marginDot.top + marginDot.bottom)
                   .append("g")
-                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                  .attr("transform", "translate(" + marginDot.left + "," + marginDot.top + ")");
 
               svg.append("g")
                   .attr("class", "x axis")
@@ -354,14 +354,14 @@ define([
               svg.append("text")
                   .attr("transform",
                       "translate(" + (width/2) + " ," +
-                      (heightDot + margin.top + 20) + ")")
+                      (heightDot + marginDot.top + 20) + ")")
                   .style("text-anchor", "middle")
                   .text("Time (m:s)");
 
               //y
               svg.append("text")
                   .attr("transform", "rotate(-90)")
-                  .attr("y", 0 - margin.left)
+                  .attr("y", 0 - marginDot.left)
                   .attr("x",0 - (heightDot / 2))
                   .attr("dy", "1em")
                   .style("text-anchor", "middle")
