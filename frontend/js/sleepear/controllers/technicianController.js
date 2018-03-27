@@ -173,7 +173,7 @@ define([
 
               var margin = {
                       top: 20,
-                      right: 50,
+                      right: 20,
                       bottom: 50,
                       left: 50
                   },
@@ -275,11 +275,11 @@ define([
 
               var margin = {
                       top: 20,
-                      right: 20,
+                      right: 50,
                       bottom: 50,
                       left: 50
                   },
-                  height = 200 - margin.top - margin.bottom,
+                  height = 370 - margin.top - margin.bottom,
                   width = 700 + data.length/248 - margin.left - margin.right;
 
               var x = d3.time.scale()
