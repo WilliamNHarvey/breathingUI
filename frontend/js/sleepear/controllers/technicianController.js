@@ -269,7 +269,7 @@ define([
           $(".data-eeg").click(function(e) {
               var id = parseInt($(this).parent().attr('id'));
               var dataDot = $scope.datasets[id].eeg;
-              console.log(dataDot);
+              console.log(dataDot.length);
 
 
               //var data = val.eeg;
@@ -283,6 +283,7 @@ define([
                   },
                   heightDot = 370 - marginDot.top - marginDot.bottom,
                   widthDot = 700 + dataDot.length/248 - marginDot.left - marginDot.right;
+              console.log(widthDot);
 
               var x = d3.time.scale()
                   .domain(d3.extent(dataDot, function(d) {
