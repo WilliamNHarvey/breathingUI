@@ -269,7 +269,7 @@ define([
           $(".data-eeg").click(function(e) {
               var id = parseInt($(this).parent().attr('id'));
               var dataDot = $scope.datasets[id].eeg;
-              console.log(data);
+              console.log(dataDot);
 
 
               //var data = val.eeg;
