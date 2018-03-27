@@ -109,6 +109,17 @@ define([
                     console.log('reason', reason);
                     return $q.when({status: false});
                 });
+            },
+
+            connect: function(req) {
+                return $http({
+                    method : 'POST',
+                    url : '/api/user/connect',
+                    data : req
+                }).catch(function(reason){
+                    console.log('reason', reason);
+                    return $q.when({status: false});
+                });
             }
         };
 

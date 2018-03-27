@@ -32,14 +32,27 @@ define([
           $scope.location = /[^/]*$/.exec($location.path())[0];
           $rootScope.child = true;
           $scope.error = false;
-          $scope.loading = true;
+          $scope.loadingUsers = true;
+          $scope.loadingConnect = false;
+          $scope.patients = [];
+          $scope.clinicians = [];
           userService.getAll().then(function(res) {
               console.log(res);
-              $scope.loading = false;
+              $scope.loadingUsers = false;
               if(!res) {
                   $scope.error = true;
               }
               else if(res.status === 200) {
+                  $.each(res.data.users, function(n, v) {
+                      if(v.job === "patient") {
+                          $scope.patients.push({email: v.email, name: v.name});
+                      }
+                      else if(v.job === "doctor") {
+                          $scope.clinicians.push({email: v.email, name: v.name});
+                      }
+                  });
+                  $scope.selectedPatient = $scope.patients[0].email;
+                  $scope.selectedClinician = $scope.clinicians[0].email;
                   /*$.each(res.message.users, function(n, v) {
 
                   });
@@ -55,6 +68,15 @@ define([
                   $scope.error = true;
               }
           });
+
+          $scope.connect = function() {
+              if(!$scope.selectedPatient || !$scope.selectedClinician) {
+                  return;
+              }
+
+              $scope.loadingConnect = true;
+              userService.connect({email: $scope.selectedPatient, connectee: $scope.selectedClinician});
+          }
 
       })
       .controller('technicianManageController', function($rootScope, $scope, $location, $window, $compile, LS, userService) {

@@ -5,15 +5,21 @@
             <h1 class="noselect">Set Up Patients</h1>
             <div class="col-md-12">
                 <span>Patient: </span>
-                <select ng-model="selectedPatient" ng-options="item.email as item.name for item in patients">
+                <!--<select ng-model="selectedPatient" ng-options="item.email as item.name for item in patients">
                     <option value="">Select Account</option>
+                </select>-->
+                <select ng-model="selectedPatient">
+                    <option ng-repeat="item in patients" value="item.email">{{item.name}}</option>
                 </select>
             </div>
             <div class="col-md-12">
                 <span>Clinician: </span>
-                <select ng-model="selectedClinician" ng-options="item.email as item.name for item in clinicians">
-                    <option value="">Select Account</option>
+                <select ng-model="selectedClinician">
+                    <option ng-repeat="item in clinicians" value="item.email">{{item.name}}</option>
                 </select>
+                <!--<select ng-model="selectedClinician" ng-options="item.email as item.name for item in clinicians">
+                    <option value="">Select Account</option>
+                </select>-->
             </div>
             <div class="row">
                 <div class="col-md-12">
