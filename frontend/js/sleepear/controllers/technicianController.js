@@ -321,7 +321,7 @@ define([
 
               svg.append("g")
                   .attr("class", "x axis")
-                  .attr("clipPath", "url(#innerGraph)")
+                  .attr("clipPath", "url(#innerGraphDot)")
                   .attr("transform", "translate(0," + heightDot + ")")
                   .call(xAxis);
 
@@ -336,7 +336,7 @@ define([
 
               var holder = svg.append("defs");
               holder.append("svg:clipPath")
-                  .attr("id", "innerGraph")
+                  .attr("id", "innerGraphDot")
                   .append("svg:rect")
                   .attr("x", 0)
                   .attr("y", 0)
@@ -345,7 +345,7 @@ define([
                   .attr("width", widthDot);
 
               svg.append("g")
-                  .attr("clip-path", "url(#innerGraph)")
+                  .attr("clip-path", "url(#innerGraphDot)")
                   .append("svg:path")
                   .attr("class", "line")
                   .attr("d", line(data));
