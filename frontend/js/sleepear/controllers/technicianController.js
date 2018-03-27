@@ -398,8 +398,7 @@ define([
               }
               function addpoint(xPoint, yPoint) {
                   var newDot = svgDot.append("g")
-                      .attr("class", "focus")
-                      .style("display", "none");
+                      .attr("class", "focus");
 
                   newDot.append("circle")
                       .attr("r", 4.5);
