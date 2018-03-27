@@ -159,10 +159,10 @@ define([
               //    $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="checkmark"></div></div></div>')($scope));
               //}
               //else {
-              $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
+              $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="datasets['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
               //}
               $section = $('<section></section>').append($dataSet);
-              $report.append($section);
+              $("#report").append($dataSet);
 
               var data = val.eeg;
 
@@ -260,7 +260,7 @@ define([
                   .text("Voltage (mv)");
           });
 
-          $("#report").append($report);
+          //$("#report").append($report);
           /*userService.checkSession().then(function(res) {
            if(!res) {
            $location.path("/");
