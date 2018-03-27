@@ -3,7 +3,7 @@
         <section class="title-section ng-cloak">
             <div class="back-arrow" ng-click="switchPage('/technician')"></div>
             <h1 class="noselect">Set Up Patients</h1>
-            <div class="col-md-12">
+            <div class="col-md-12 select-boxes">
                 <span>Patient: </span>
                 <!--<select ng-model="selectedPatient" ng-options="item.email as item.name for item in patients">
                     <option value="">Select Account</option>
@@ -12,7 +12,7 @@
                     <option ng-repeat="item in patients" value="item.email">{{item.name}}</option>
                 </select>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 select-boxes">
                 <span>Clinician: </span>
                 <select ng-model="selectedClinician">
                     <option ng-repeat="item in clinicians" value="item.email">{{item.name}}</option>
