@@ -365,7 +365,8 @@ define([
 
           });
 
-          $(".modal-background").click(function(e) {
+          $("#eeg-modal-background").click(function(e) {
+              console.log("click");
               $("#eegModal").hide();
               //$("#barModal").hide();
           });
