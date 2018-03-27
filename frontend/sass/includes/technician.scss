@@ -141,11 +141,13 @@
       width: 50%;
       margin-left: 10%;
       overflow-x: auto;
+      cursor: pointer;
     }
 
     .data-bar {
       width: 30%;
       display: inline-block;
+      cursor: pointer;
     }
 
     .data-send {
