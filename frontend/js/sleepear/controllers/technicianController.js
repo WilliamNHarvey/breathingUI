@@ -274,8 +274,8 @@ define([
                       bottom: 50,
                       left: 50
                   },
-                  height = 500 - margin.top - margin.bottom,
-                  width = 1000 + data.length/248 - margin.left - margin.right;
+                  height = 170 - margin.top - margin.bottom,
+                  width = 650 + data.length/248 - margin.left - margin.right;
 
               var x = d3.time.scale()
                   .domain(d3.extent(data, function(d) {
@@ -306,7 +306,8 @@ define([
                   })
                   .interpolate("linear");
 
-
+              $dataSet.children(".data-eeg-modal").empty();
+              
               var svg = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
                   .attr("width", width + margin.left + margin.right)
                   .attr("height", height + margin.top + margin.bottom)
