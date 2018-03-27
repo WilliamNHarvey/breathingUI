@@ -365,7 +365,7 @@ define([
 
           });
 
-          $("document").click(function(e) {
+          $(".modal-background").click(function(e) {
               $("#eegModal").hide();
               //$("#barModal").hide();
           });
