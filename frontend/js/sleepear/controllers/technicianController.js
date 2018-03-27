@@ -268,7 +268,7 @@ define([
 
           $(".data-eeg").click(function(e) {
               var id = parseInt($(this).parent().attr('id'));
-              var data = $scope.datasets[id].eeg;
+              var dataDot = $scope.datasets[id].eeg;
               console.log(data);
 
 
@@ -282,10 +282,10 @@ define([
                       left: 50
                   },
                   heightDot = 370 - marginDot.top - marginDot.bottom,
-                  widthDot = 700 + data.length/248 - marginDot.left - marginDot.right;
+                  widthDot = 700 + dataDot.length/248 - marginDot.left - marginDot.right;
 
               var x = d3.time.scale()
-                  .domain(d3.extent(data, function(d) {
+                  .domain(d3.extent(dataDot, function(d) {
                       return d[0];
                   }))
                   .range([0, widthDot]);
@@ -350,7 +350,7 @@ define([
                   .attr("clip-path", "url(#innerGraphDot)")
                   .append("svg:path")
                   .attr("class", "line")
-                  .attr("d", line(data));
+                  .attr("d", line(dataDot));
 
               //x
               svg.append("text")
@@ -384,14 +384,14 @@ define([
                   .attr("height", heightDot)
                   .on("mouseover", function() { focus.style("display", null); })
                   .on("mouseout", function() { focus.style("display", "none"); })
-                  .on("mousemove", mousemove);
-                  //.on("click", mouseclick);
+                  .on("mousemove", mousemove)
+                  .on("click", mouseclick);
 
               function mousemove() {
                   var x0 = x.invert(d3.mouse(this)[0]),
-                      i = bisectDate(data, x0, 1),
-                      d0 = data[i - 1],
-                      d1 = data[i],
+                      i = bisectDate(dataDot, x0, 1),
+                      d0 = dataDot[i - 1],
+                      d1 = dataDot[i],
                       d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
 
                   //console.log(i);
@@ -416,9 +416,9 @@ define([
               }
               function mouseclick() {
                   var x0 = x.invert(d3.mouse(this)[0]),
-                      i = bisectDate(data, x0, 1),
-                      d0 = data[i - 1],
-                      d1 = data[i],
+                      i = bisectDate(dataDot, x0, 1),
+                      d0 = dataDot[i - 1],
+                      d1 = dataDot[i],
                       d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
 
                   //console.log(i);
