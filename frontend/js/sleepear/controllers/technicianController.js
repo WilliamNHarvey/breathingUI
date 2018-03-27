@@ -377,13 +377,6 @@ define([
                   .attr("x", 9)
                   .attr("dy", ".35em");
 
-              svg.append("rect")
-                  .attr("class", "overlay")
-                  .attr("width", widthDot)
-                  .attr("height", heightDot)
-                  .on("mouseover", function() { focus.style("display", null); })
-                  .on("mouseout", function() { focus.style("display", "none"); })
-                  .on("mousemove", mousemove);
 
               function mousemove() {
                   var x0 = x.invert(d3.mouse(this)[0]),
@@ -397,6 +390,54 @@ define([
                   focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
                   focus.select("text").text(formatCurrency(d[1]));
               }
+              function addpoint(x, y) {
+                  var newDot = svg.append("g")
+                      .attr("class", "focus")
+                      .style("display", "none");
+
+                  newDot.append("circle")
+                      .attr("r", 4.5);
+
+                  newDot.append("text")
+                      .attr("x", 9)
+                      .attr("dy", ".35em");
+
+                  newDot.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
+                  newDot.select("text").text(formatCurrency(d[1]));
+              }
+              function mouseclick() {
+                  var x0 = x.invert(d3.mouse(this)[0]),
+                      i = bisectDate(data, x0, 1),
+                      d0 = data[i - 1],
+                      d1 = data[i],
+                      d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
+
+                  //console.log(i);
+
+                  addpoint(d[0], d[1]);
+
+                  if(!$scope.datasets[id].points) {
+                      $scope.datasets[id].points = [[d[0], d[1]]];
+                  }
+                  else {
+                      $scope.datasets[id].points.push([d[0], d[1]]);
+                  }
+                  LS.setData("storedData", JSON.stringify($scope.datasets));
+              }
+
+              svg.append("rect")
+                  .attr("class", "overlay")
+                  .attr("width", widthDot)
+                  .attr("height", heightDot)
+                  .on("mouseover", function() { focus.style("display", null); })
+                  .on("mouseout", function() { focus.style("display", "none"); })
+                  .on("mousemove", mousemove)
+                  .on("click", mouseclick);
+
+              $.each($scope.datasets[id].points, function(n,v) {
+                  addpoint(v[0], v[1]);
+              });
+
 
               $("#eegModal").show();
 
