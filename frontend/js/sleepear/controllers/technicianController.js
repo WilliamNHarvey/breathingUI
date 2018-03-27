@@ -177,7 +177,7 @@ define([
                       bottom: 50,
                       left: 50
                   },
-                  height = 370 - margin.top - margin.bottom,
+                  height = 170 - margin.top - margin.bottom,
                   width = 650 + data.length/248 - margin.left - margin.right;
 
               var x = d3.time.scale()
@@ -273,24 +273,24 @@ define([
               //var data = val.eeg;
               var $dataSet = $("#eegModalBody");
 
-              var margin = {
+              var marginDot = {
                       top: 20,
                       right: 50,
                       bottom: 50,
                       left: 50
                   },
-                  height = 370 - margin.top - margin.bottom,
-                  width = 700 + data.length/248 - margin.left - margin.right;
+                  heightDot = 370 - margin.top - margin.bottom,
+                  widthDot = 700 + data.length/248 - margin.left - margin.right;
 
               var x = d3.time.scale()
                   .domain(d3.extent(data, function(d) {
                       return d[0];
                   }))
-                  .range([0, width]);
+                  .range([0, widthDot]);
 
               var y = d3.scale.linear()
                   .domain([-2, 5])
-                  .range([height, 0]);
+                  .range([heightDot, 0]);
 
               var xAxis = d3.svg.axis()
                   .scale(x)
@@ -314,15 +314,15 @@ define([
               $dataSet.children(".data-eeg-modal").empty();
 
               var svg = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
-                  .attr("width", width + margin.left + margin.right)
-                  .attr("height", height + margin.top + margin.bottom)
+                  .attr("width", widthDot + margin.left + margin.right)
+                  .attr("height", heightDot + margin.top + margin.bottom)
                   .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
               svg.append("g")
                   .attr("class", "x axis")
                   .attr("clipPath", "url(#innerGraph)")
-                  .attr("transform", "translate(0," + height + ")")
+                  .attr("transform", "translate(0," + heightDot + ")")
                   .call(xAxis);
 
               svg.append("g")
@@ -341,8 +341,8 @@ define([
                   .attr("x", 0)
                   .attr("y", 0)
                   .style("fill", "gray")
-                  .attr("height", height)
-                  .attr("width", width);
+                  .attr("height", heightDot)
+                  .attr("width", widthDot);
 
               svg.append("g")
                   .attr("clip-path", "url(#innerGraph)")
@@ -354,7 +354,7 @@ define([
               svg.append("text")
                   .attr("transform",
                       "translate(" + (width/2) + " ," +
-                      (height + margin.top + 20) + ")")
+                      (heightDot + margin.top + 20) + ")")
                   .style("text-anchor", "middle")
                   .text("Time (m:s)");
 
@@ -362,7 +362,7 @@ define([
               svg.append("text")
                   .attr("transform", "rotate(-90)")
                   .attr("y", 0 - margin.left)
-                  .attr("x",0 - (height / 2))
+                  .attr("x",0 - (heightDot / 2))
                   .attr("dy", "1em")
                   .style("text-anchor", "middle")
                   .text("Voltage (mv)");
@@ -379,8 +379,8 @@ define([
 
               svg.append("rect")
                   .attr("class", "overlay")
-                  .attr("width", width)
-                  .attr("height", height)
+                  .attr("width", widthDot)
+                  .attr("height", heightDot)
                   .on("mouseover", function() { focus.style("display", null); })
                   .on("mouseout", function() { focus.style("display", "none"); })
                   .on("mousemove", mousemove);
@@ -392,7 +392,7 @@ define([
                       d1 = data[i],
                       d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
 
-                  console.log(i);
+                  //console.log(i);
 
                   focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
                   focus.select("text").text(formatCurrency(d[1]));
