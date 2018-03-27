@@ -7,7 +7,8 @@ modal {
     position: fixed;
     top: 40px;
     right: 40px;
-    bottom: 40px;
+    //bottom: 40px;
+    height: fit-content;
     left: 40px;
     display: block;
     z-index: 1000;
