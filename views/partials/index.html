@@ -2,8 +2,8 @@
   <div class="index">
     <section class="title-section ng-cloak">
       <h1 class="noselect">SleepEar</h1>
-      
-      <div class="row" ng-show="loggedOut || !user.job">
+
+      <div class="row" ng-show="loggedOut && !user.job">
         <div class="col-sm-12 col-md-6">
           <div class="button register" ng-click="switchPage('/register')">Register</div>
         </div>
