@@ -170,6 +170,8 @@ define([
               $("#report").append($dataSet);
 
               var data = val.eeg;
+              console.log(data);
+              //var data = $scope.datasets[id].eeg;
 
               var margin = {
                       top: 20,
@@ -434,7 +436,7 @@ define([
                   .on("mousemove", mousemove)
                   .on("click", mouseclick);
 
-              $.each($scope.datasets[id].points, function(n,v) {
+              angular.each($scope.datasets[id].points, function(v,n) {
                   addpoint(v[0], v[1]);
               });
 
