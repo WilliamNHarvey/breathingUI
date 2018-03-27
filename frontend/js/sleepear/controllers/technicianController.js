@@ -260,7 +260,7 @@ define([
                   .text("Voltage (mv)");
           });
 
-          $(".data-eeg").onclick(function(e) {
+          $(".data-eeg").click(function(e) {
               var id = parseInt($(this).parent().attr('id'));
               var data = $scope.datasets[id].eeg;
 
@@ -364,7 +364,7 @@ define([
 
           });
 
-          $("document").onclick(function(e) {
+          $("document").click(function(e) {
               $("#eegModal").hide();
               //$("#barModal").hide();
           });
