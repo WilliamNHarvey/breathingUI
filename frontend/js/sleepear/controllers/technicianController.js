@@ -378,7 +378,14 @@ define([
               focus.append("text")
                   .attr("x", 9)
                   .attr("dy", ".35em");
-
+              svg.append("rect")
+                  .attr("class", "overlay")
+                  .attr("width", widthDot)
+                  .attr("height", heightDot)
+                  .on("mouseover", function() { focus.style("display", null); })
+                  .on("mouseout", function() { focus.style("display", "none"); })
+                  .on("mousemove", mousemove);
+                  //.on("click", mouseclick);
 
               function mousemove() {
                   var x0 = x.invert(d3.mouse(this)[0]),
@@ -426,15 +433,6 @@ define([
                   }
                   LS.setData("storedData", JSON.stringify($scope.datasets));
               }
-
-              svg.append("rect")
-                  .attr("class", "overlay")
-                  .attr("width", widthDot)
-                  .attr("height", heightDot)
-                  .on("mouseover", function() { focus.style("display", null); })
-                  .on("mouseout", function() { focus.style("display", "none"); })
-                  .on("mousemove", mousemove)
-                  .on("click", mouseclick);
 
               $.each($scope.datasets[id].points, function(n,v) {
                   addpoint(v[0], v[1]);
