@@ -153,16 +153,6 @@ define([
               formatValue = d3.format(",.2f"),
               formatCurrency = function(d) { return "$" + formatValue(d); };
 
-          function mousemove() {
-              var x0 = x.invert(d3.mouse(this)[0]),
-                  i = bisectDate(data, x0, 1),
-                  d0 = data[i - 1],
-                  d1 = data[i],
-                  d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-              focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-              focus.select("text").text(formatCurrency(d.close));
-          }
-
           $scope.barApi = [];
 
           var $report = $('<div></div>');
@@ -394,6 +384,16 @@ define([
                   .on("mouseover", function() { focus.style("display", null); })
                   .on("mouseout", function() { focus.style("display", "none"); })
                   .on("mousemove", mousemove);
+
+              function mousemove() {
+                  var x0 = x.invert(d3.mouse(this)[0]),
+                      i = bisectDate(data, x0, 1),
+                      d0 = data[i - 1],
+                      d1 = data[i],
+                      d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+                  focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
+                  focus.select("text").text(formatCurrency(d.close));
+              }
 
               $("#eegModal").show();
 
