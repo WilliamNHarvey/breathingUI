@@ -423,12 +423,15 @@ define([
 
                   addpoint(d[0], d[1]);
 
+                  console.log($scope.datasets);
+                  console.log(id);
                   if(!$scope.datasets[id].points) {
                       $scope.datasets[id].points = [[d[0], d[1]]];
                   }
                   else {
                       $scope.datasets[id].points.push([d[0], d[1]]);
                   }
+                  console.log($scope.datasets);
                   LS.setData("storedData", JSON.stringify($scope.datasets));
               }
 
