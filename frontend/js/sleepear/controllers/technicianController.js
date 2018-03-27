@@ -170,7 +170,6 @@ define([
               $("#report").append($dataSet);
 
               var data = val.eeg;
-              console.log(data);
               //var data = $scope.datasets[id].eeg;
 
               var margin = {
@@ -270,6 +269,7 @@ define([
           $(".data-eeg").click(function(e) {
               var id = parseInt($(this).parent().attr('id'));
               var data = $scope.datasets[id].eeg;
+              console.log(data);
 
 
               //var data = val.eeg;
