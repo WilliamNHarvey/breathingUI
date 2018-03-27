@@ -312,19 +312,19 @@ define([
 
               $dataSet.children(".data-eeg-modal").empty();
 
-              var svg = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
+              var svgDot = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
                   .attr("width", widthDot + marginDot.left + marginDot.right)
                   .attr("height", heightDot + marginDot.top + marginDot.bottom)
                   .append("g")
                   .attr("transform", "translate(" + marginDot.left + "," + marginDot.top + ")");
 
-              svg.append("g")
+              svgDot.append("g")
                   .attr("class", "x axis")
                   .attr("clipPath", "url(#innerGraphDot)")
                   .attr("transform", "translate(0," + heightDot + ")")
                   .call(xAxis);
 
-              svg.append("g")
+              svgDot.append("g")
                   .attr("class", "y axis")
                   .call(yAxis)
                   .append("text")
@@ -333,7 +333,7 @@ define([
                   .attr("dy", ".71em")
                   .style("text-anchor", "end");
 
-              var holder = svg.append("defs");
+              var holder = svgDot.append("defs");
               holder.append("svg:clipPath")
                   .attr("id", "innerGraphDot")
                   .append("svg:rect")
@@ -343,14 +343,14 @@ define([
                   .attr("height", heightDot)
                   .attr("width", widthDot);
 
-              svg.append("g")
+              svgDot.append("g")
                   .attr("clip-path", "url(#innerGraphDot)")
                   .append("svg:path")
                   .attr("class", "line")
                   .attr("d", line(dataDot));
 
               //x
-              svg.append("text")
+              svgDot.append("text")
                   .attr("transform",
                       "translate(" + (widthDot/2) + " ," +
                       (heightDot + marginDot.top + 20) + ")")
@@ -358,7 +358,7 @@ define([
                   .text("Time (m:s)");
 
               //y
-              svg.append("text")
+              svgDot.append("text")
                   .attr("transform", "rotate(-90)")
                   .attr("y", 0 - marginDot.left)
                   .attr("x",0 - (heightDot / 2))
@@ -375,7 +375,7 @@ define([
               focus.append("text")
                   .attr("x", 9)
                   .attr("dy", ".35em");
-              svg.append("rect")
+              svgDot.append("rect")
                   .attr("class", "overlay")
                   .attr("width", widthDot)
                   .attr("height", heightDot)
@@ -397,7 +397,7 @@ define([
                   focus.select("text").text(formatCurrency(d[1]));
               }
               function addpoint(xPoint, yPoint) {
-                  var newDot = svg.append("g")
+                  var newDot = svgDot.append("g")
                       .attr("class", "focus")
                       .style("display", "none");
 
