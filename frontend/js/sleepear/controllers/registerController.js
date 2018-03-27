@@ -30,6 +30,12 @@ define([
                         case 'patient':
                             $location.path('/breaths');
                             break;
+                        case 'doctor':
+                            $location.path('/clinician');
+                            break;
+                        case 'technician':
+                            $location.path('/technician');
+                            break;
                         default:
                             $location.path('/');
                     }
