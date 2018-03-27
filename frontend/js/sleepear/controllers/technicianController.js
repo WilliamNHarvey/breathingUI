@@ -386,6 +386,7 @@ define([
                   .on("mousemove", mousemove);
 
               function mousemove() {
+                  console.log(this);
                   var x0 = x.invert(d3.mouse(this)[0]),
                       i = bisectDate(data, x0, 1),
                       d0 = data[i - 1],
