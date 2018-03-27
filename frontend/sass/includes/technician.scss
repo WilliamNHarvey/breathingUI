@@ -19,6 +19,8 @@
     font-weight: 600;
     width: 500px;
     margin: auto;
+    display: inline-block;
+    margin-left: calc(50% - 250px);
   }
   .select-boxes {
     text-align: center;
@@ -32,7 +34,7 @@
     border-top: 10px solid #3498db;
     width: 60px;
     height: 60px;
-    margin-left: 40px;
+    margin-left: 120px;
     margin-bottom: -20px;
     -webkit-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
@@ -51,8 +53,8 @@
 
   .checkmark{
     display: inline-block;
-    margin-left: 50px;
     margin-bottom: -20px;
+    margin-left: 20px;
     width: 30px;
     height: 60px;
     border: solid #00c961;
@@ -76,6 +78,7 @@
   .failed {
     position: relative;
     display: inline-block;
+    right: 110px;
 
     .x-top {
       position: absolute;
