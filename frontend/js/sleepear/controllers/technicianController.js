@@ -150,8 +150,8 @@ define([
 
           var parseDate = d3.time.format("%d-%b-%y").parse,
               bisectDate = d3.bisector(function(d) { return d.date; }).left,
-              formatValue = d3.format(",.2f"),
-              formatCurrency = function(d) { return "$" + formatValue(d); };
+              formatValue = d3.format(",.2f");
+          var formatCurrency = function(d) { return "$" + formatValue(d); };
 
           $scope.barApi = [];
 
@@ -386,14 +386,16 @@ define([
                   .on("mousemove", mousemove);
 
               function mousemove() {
-                  console.log(this);
                   var x0 = x.invert(d3.mouse(this)[0]),
                       i = bisectDate(data, x0, 1),
                       d0 = data[i - 1],
                       d1 = data[i],
-                      d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-                  focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-                  focus.select("text").text(formatCurrency(d.close));
+                      d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
+                  console.log(d0);
+                  console.log(d1);
+                  console.log(d);
+                  focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
+                  focus.select("text").text(formatCurrency(d[1]));
               }
 
               $("#eegModal").show();
