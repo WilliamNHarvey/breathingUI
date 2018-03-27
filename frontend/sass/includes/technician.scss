@@ -192,4 +192,14 @@
   width: 100%;
   text-align: center;
   overflow-x: auto;
+
+  .overlay {
+    fill: none;
+    pointer-events: all;
+  }
+
+  .focus circle {
+    fill: none;
+    stroke: steelblue;
+  }
 }

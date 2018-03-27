@@ -371,11 +371,11 @@ define([
                   .style("display", "none");
 
               focus.append("circle")
-                  .attr("r", 1);
+                  .attr("r", 4.5);
 
               focus.append("text")
-                  .attr("x", 1)
-                  .attr("dy", 1);
+                  .attr("x", 9)
+                  .attr("dy", ".35em");
 
               svg.append("rect")
                   .attr("class", "overlay")
@@ -391,9 +391,8 @@ define([
                       d0 = data[i - 1],
                       d1 = data[i],
                       d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
-                  console.log(d0);
-                  console.log(d1);
-                  console.log(d);
+
+
                   focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
                   focus.select("text").text(formatCurrency(d[1]));
               }
