@@ -150,8 +150,8 @@ define([
 
           var parseDate = d3.time.format("%d-%b-%y").parse,
               bisectDate = d3.bisector(function(d) { return d[0]; }).left,
-              formatValue = d3.format(",.2f");
-          var formatCurrency = function(d) { return "$" + formatValue(d); };
+              formatValue = d3.format(",.2f"),
+              formatCurrency = function(d) { return formatValue(d); };
 
           $scope.barApi = [];
 
@@ -173,12 +173,12 @@ define([
 
               var margin = {
                       top: 20,
-                      right: 20,
+                      right: 50,
                       bottom: 50,
                       left: 50
                   },
-                  height = 170 - margin.top - margin.bottom,
-                  width = 650 + data.length/248 - margin.left - margin.right;
+                  height = 250 - margin.top - margin.bottom,
+                  width = 700 + data.length/248 - margin.left - margin.right;
 
               var x = d3.time.scale()
                   .domain(d3.extent(data, function(d) {
