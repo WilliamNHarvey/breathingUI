@@ -9,7 +9,7 @@ var UserSchema   = new Schema({
     name        : { type: String, required: true },
     job         : { type: String , required: true, enum: ['patient', 'doctor', 'technician', 'visitor'] },
     session     : { type: String },
-    connectedTo : { type: String, default: null }
+    connectedTo : { type: String, default: "" }
 });
 
 UserSchema.plugin(uniqueValidator, {message: 'e-mail taken.'});
