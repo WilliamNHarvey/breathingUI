@@ -7,7 +7,7 @@
           <div class="loader"></div>
         </div>
       </div>
-      <div class="row" ng-show="loggedOut">
+      <div class="row" ng-show="loggedOut && !user.job">
         <div class="col-sm-12 col-md-6">
           <div class="button register" ng-click="switchPage('/register')">Register</div>
         </div>
@@ -15,7 +15,7 @@
           <div class="button login" ng-click="switchPage('/login')">Login</div>
         </div>
       </div>
-      <div class="row" ng-show="loggedIn">
+      <div class="row" ng-show="loggedIn && user.job">
         <div class="col-md-12" style="position: relative">
           <div class="button logout" ng-click="logout()">Logout</div>
           <div class="loader" ng-show="loggingOut"></div>
