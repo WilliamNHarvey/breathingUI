@@ -392,6 +392,7 @@ define([
                       d1 = data[i],
                       d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
 
+                  console.log(i);
 
                   focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
                   focus.select("text").text(formatCurrency(d[1]));
