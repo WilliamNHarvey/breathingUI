@@ -1,11 +1,12 @@
 <div class="page">
     <div class="background">
-        <div class="back-arrow" ng-click="switchPage('/clinician')"></div>
+        <div class="back-arrow" ng-click="switchPage('/technician')"></div>
         <div class="title">
-            <span>Final Report</span>
+            <span>Manage Datasets</span>
         </div>
         <div id="report">
-            <section id="probability-section">
+            <section ng-repeat="(key, value) in datasets">
+
                 <div class="probability">
                     <span class="section-title">Probability of CSA</span>
                     <span class="section-amount">90%</span>
