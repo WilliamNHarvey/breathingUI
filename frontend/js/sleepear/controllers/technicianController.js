@@ -267,7 +267,6 @@ define([
           $(".data-eeg").click(function(e) {
               var id = parseInt($(this).parent().attr('id'));
               var dataDot = $scope.datasets[id].eeg;
-              console.log(dataDot.length);
 
 
               //var data = val.eeg;
@@ -281,7 +280,6 @@ define([
                   },
                   heightDot = 370 - marginDot.top - marginDot.bottom,
                   widthDot = 700 + dataDot.length/248 - marginDot.left - marginDot.right;
-              console.log(widthDot);
 
               var x = d3.time.scale()
                   .domain(d3.extent(dataDot, function(d) {
@@ -414,13 +412,14 @@ define([
                   newDot.select("text").text(formatCurrency(yPoint));
               }
               function mouseclick() {
+
                   var x0 = x.invert(d3.mouse(this)[0]),
                       i = bisectDate(dataDot, x0, 1),
                       d0 = dataDot[i - 1],
                       d1 = dataDot[i],
                       d = x0 - d0[0] > d1[0] - x0 ? d1 : d0;
 
-                  //console.log(i);
+                  console.log(i);
 
                   addpoint(d[0], d[1]);
 
