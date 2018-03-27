@@ -131,8 +131,13 @@ router.route('/user/connect')
                         res.json({message: "Connectee has been deactivated. Please contact SleepEar."})
                     } else {
                         User.update({_id: user._id}, {'connectedTo': connectee.email}, function(err, numAffected) {
-                            res.status(200);
-                            res.json({ message: "Connection Successful", user: { name: user.name, email: user.email, job: user.job }, connectee: { name: connecteeU.name, email: connecteeU.email, job: connecteeU.job } });
+                            if (err) {
+                                res.send(err);
+                            }
+                            else {
+                                res.status(200);
+                                res.json({ message: "Connection Successful", user: { name: user.name, email: user.email, job: user.job }, connectee: { name: connecteeU.name, email: connecteeU.email, job: connecteeU.job } });
+                            }
                         });
                     }
                 });
