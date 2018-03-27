@@ -78,6 +78,7 @@ define([
 
               $scope.loadingConnect = true;
               userService.connect({email: $scope.selectedPatient, connectee: $scope.selectedClinician}).then(function(res) {
+                  console.log(res);
                   $scope.loadingConnect = false;
                   if(res.status === 200) {
                       $scope.connected = true;
