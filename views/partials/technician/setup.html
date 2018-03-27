@@ -1,5 +1,5 @@
 <div class="page">
-    <div class="index technician-index">
+    <div class="index technician-index setup">
         <section class="title-section ng-cloak">
             <div class="back-arrow" ng-click="switchPage('/technician')"></div>
             <h1 class="noselect">Set Up Patients</h1>
@@ -9,13 +9,13 @@
                     <option value="">Select Account</option>
                 </select>-->
                 <select ng-model="selectedPatient">
-                    <option ng-repeat="item in patients" value="item.email">{{item.name}}</option>
+                    <option ng-repeat="item in patients" value="{{item.email}}">{{item.name}}</option>
                 </select>
             </div>
             <div class="col-md-12 select-boxes">
                 <span>Clinician: </span>
                 <select ng-model="selectedClinician">
-                    <option ng-repeat="item in clinicians" value="item.email">{{item.name}}</option>
+                    <option ng-repeat="item in clinicians" value="{{item.email}}">{{item.name}}</option>
                 </select>
                 <!--<select ng-model="selectedClinician" ng-options="item.email as item.name for item in clinicians">
                     <option value="">Select Account</option>
@@ -24,6 +24,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="button login" ng-click="connect()">Connect patient to clinician</div>
+                    <div class="loader ng-cloak" ng-show="loadingConnect"></div>
+                    <div class="checkmark ng-cloak" ng-show="connected"></div>
+                    <div class="failed ng-cloak" ng-show="failed">
+                        <div class="x-top"></div>
+                        <div class="x-bottom"></div>
+                    </div>
                 </div>
             </div>
         </section>

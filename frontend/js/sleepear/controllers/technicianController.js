@@ -34,6 +34,8 @@ define([
           $scope.error = false;
           $scope.loadingUsers = true;
           $scope.loadingConnect = false;
+          $scope.connected = false;
+          $scope.failed = false;
           $scope.patients = [];
           $scope.clinicians = [];
           userService.getAll().then(function(res) {
@@ -44,7 +46,7 @@ define([
               }
               else if(res.status === 200) {
                   $.each(res.data.users, function(n, v) {
-                      if(v.job === "patient") {
+                      if(v.job === "patient" && !v.connected) {
                           $scope.patients.push({email: v.email, name: v.name});
                       }
                       else if(v.job === "doctor") {
@@ -75,7 +77,15 @@ define([
               }
 
               $scope.loadingConnect = true;
-              userService.connect({email: $scope.selectedPatient, connectee: $scope.selectedClinician});
+              userService.connect({email: $scope.selectedPatient, connectee: $scope.selectedClinician}).then(function(res) {
+                  $scope.loadingConnect = false;
+                  if(res.status === 200) {
+                      $scope.connected = true;
+                  }
+                  else {
+                      $scope.failed = true;
+                  }
+              });
           }
 
       })
