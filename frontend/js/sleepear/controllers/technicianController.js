@@ -171,7 +171,6 @@ define([
 
               var data = val.eeg;
               //var data = $scope.datasets[id].eeg;
-              console.log(".,.");
               var margin = {
                       top: 20,
                       right: 20,
@@ -180,7 +179,6 @@ define([
                   },
                   height = 170 - margin.top - margin.bottom,
                   width = 650 + data.length/248 - margin.left - margin.right;
-              console.log(".,.=.,.");
               var x = d3.time.scale()
                   .domain(d3.extent(data, function(d) {
                       return d[0];
@@ -435,9 +433,12 @@ define([
                   LS.setData("storedData", JSON.stringify($scope.datasets));
               }
 
-              /*$.each($scope.datasets[id].points, function(n,v) {
-                  addpoint(v[0], v[1]);
-              });*/
+              if($scope.datasets[id].points) {
+                  $.each($scope.datasets[id].points, function(n,v) {
+                      addpoint(v[0], v[1]);
+                  });
+              }
+
 
 
               $("#eegModal").show();
