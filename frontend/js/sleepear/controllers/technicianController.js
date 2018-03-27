@@ -436,7 +436,7 @@ define([
                   .on("mousemove", mousemove)
                   .on("click", mouseclick);
 
-              angular.each($scope.datasets[id].points, function(v,n) {
+              $.each($scope.datasets[id].points, function(n,v) {
                   addpoint(v[0], v[1]);
               });
 
