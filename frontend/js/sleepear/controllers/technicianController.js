@@ -392,7 +392,7 @@ define([
                   focus.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
                   focus.select("text").text(formatCurrency(d[1]));
               }
-              function addpoint(x, y) {
+              function addpoint(xPoint, yPoint) {
                   var newDot = svg.append("g")
                       .attr("class", "focus")
                       .style("display", "none");
@@ -404,8 +404,8 @@ define([
                       .attr("x", 9)
                       .attr("dy", ".35em");
 
-                  newDot.attr("transform", "translate(" + x(d[0]) + "," + y(d[1]) + ")");
-                  newDot.select("text").text(formatCurrency(d[1]));
+                  newDot.attr("transform", "translate(" + x(xPoint) + "," + y(yPoint) + ")");
+                  newDot.select("text").text(formatCurrency(yPoint));
               }
               function mouseclick() {
                   var x0 = x.invert(d3.mouse(this)[0]),
