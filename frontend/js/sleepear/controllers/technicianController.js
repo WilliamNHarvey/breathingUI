@@ -353,7 +353,7 @@ define([
               //x
               svg.append("text")
                   .attr("transform",
-                      "translate(" + (width/2) + " ," +
+                      "translate(" + (widthDot/2) + " ," +
                       (heightDot + marginDot.top + 20) + ")")
                   .style("text-anchor", "middle")
                   .text("Time (m:s)");
