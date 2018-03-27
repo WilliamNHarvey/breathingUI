@@ -260,6 +260,114 @@ define([
                   .text("Voltage (mv)");
           });
 
+          $(".data-eeg").onclick(function(e) {
+              var id = parseInt($(this).parent().attr('id'));
+              var data = $scope.datasets[id].eeg;
+
+
+              //var data = val.eeg;
+
+              var margin = {
+                      top: 20,
+                      right: 20,
+                      bottom: 50,
+                      left: 50
+                  },
+                  height = 170 - margin.top - margin.bottom,
+                  width = 650 + data.length/248 - margin.left - margin.right;
+
+              var x = d3.time.scale()
+                  .domain(d3.extent(data, function(d) {
+                      return d[0];
+                  }))
+                  .range([0, width]);
+
+              var y = d3.scale.linear()
+                  .domain([-2, 5])
+                  .range([height, 0]);
+
+              var xAxis = d3.svg.axis()
+                  .scale(x)
+                  .ticks(d3.time.seconds, 2)
+                  .tickFormat(formatter)
+                  .orient("bottom");
+
+              var yAxis = d3.svg.axis()
+                  .scale(y)
+                  .orient("left");
+
+              var line = d3.svg.line()
+                  .x(function(d) {
+                      return x(d[0]);
+                  })
+                  .y(function(d) {
+                      return y(d[1]);
+                  })
+                  .interpolate("linear");
+
+
+              var svg = d3.select($dataSet.children(".data-eeg-modal").get(0)).append("svg")
+                  .attr("width", width + margin.left + margin.right)
+                  .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+              svg.append("g")
+                  .attr("class", "x axis")
+                  .attr("clipPath", "url(#innerGraph)")
+                  .attr("transform", "translate(0," + height + ")")
+                  .call(xAxis);
+
+              svg.append("g")
+                  .attr("class", "y axis")
+                  .call(yAxis)
+                  .append("text")
+                  .attr("transform", "rotate(-90)")
+                  .attr("y", 6)
+                  .attr("dy", ".71em")
+                  .style("text-anchor", "end");
+
+              var holder = svg.append("defs");
+              holder.append("svg:clipPath")
+                  .attr("id", "innerGraph")
+                  .append("svg:rect")
+                  .attr("x", 0)
+                  .attr("y", 0)
+                  .style("fill", "gray")
+                  .attr("height", height)
+                  .attr("width", width);
+
+              svg.append("g")
+                  .attr("clip-path", "url(#innerGraph)")
+                  .append("svg:path")
+                  .attr("class", "line")
+                  .attr("d", line(data));
+
+              //x
+              svg.append("text")
+                  .attr("transform",
+                      "translate(" + (width/2) + " ," +
+                      (height + margin.top + 20) + ")")
+                  .style("text-anchor", "middle")
+                  .text("Time (m:s)");
+
+              //y
+              svg.append("text")
+                  .attr("transform", "rotate(-90)")
+                  .attr("y", 0 - margin.left)
+                  .attr("x",0 - (height / 2))
+                  .attr("dy", "1em")
+                  .style("text-anchor", "middle")
+                  .text("Voltage (mv)");
+
+              $("#eegModal").show();
+
+          });
+
+          $("document").onclick(function(e) {
+              $("#eegModal").hide();
+              //$("#barModal").hide();
+          });
           //$("#report").append($report);
           /*userService.checkSession().then(function(res) {
            if(!res) {
