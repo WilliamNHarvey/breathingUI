@@ -371,11 +371,11 @@ define([
                   .style("display", "none");
 
               focus.append("circle")
-                  .attr("r", 4.5);
+                  .attr("r", 1);
 
               focus.append("text")
-                  .attr("x", 9)
-                  .attr("dy", ".35em");
+                  .attr("x", 1)
+                  .attr("dy", 1);
 
               svg.append("rect")
                   .attr("class", "overlay")
