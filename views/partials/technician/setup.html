@@ -1,25 +1,25 @@
 <div class="page">
-    <div class="background">
-        <div class="back-arrow" ng-click="switchPage('/technician')"></div>
-        <div class="title">
-            <span>Set Up Patients</span>
-        </div>
-        <div>
-            <span>Patient: </span>
-            <select ng-model="selectedPatient" ng-options="item.email as item.name for item in patients">
-                <option value="">Select Account</option>
-            </select>
-        </div>
-        <div>
-            <span>Clinician: </span>
-            <select ng-model="selectedClinician" ng-options="item.email as item.name for item in clinicians">
-                <option value="">Select Account</option>
-            </select>
-        </div>
-        <div class="row">
+    <div class="index technician-index">
+        <section class="title-section ng-cloak">
+            <div class="back-arrow" ng-click="switchPage('/technician')"></div>
+            <h1 class="noselect">Set Up Patients</h1>
             <div class="col-md-12">
-                <div class="button login" ng-click="connect()">Connect patient to clinician</div>
+                <span>Patient: </span>
+                <select ng-model="selectedPatient" ng-options="item.email as item.name for item in patients">
+                    <option value="">Select Account</option>
+                </select>
             </div>
-        </div>
+            <div class="col-md-12">
+                <span>Clinician: </span>
+                <select ng-model="selectedClinician" ng-options="item.email as item.name for item in clinicians">
+                    <option value="">Select Account</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="button login" ng-click="connect()">Connect patient to clinician</div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
