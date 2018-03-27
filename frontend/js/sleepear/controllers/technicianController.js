@@ -149,7 +149,7 @@ define([
           }
 
           var parseDate = d3.time.format("%d-%b-%y").parse,
-              bisectDate = d3.bisector(function(d) { return d.date; }).left,
+              bisectDate = d3.bisector(function(d) { return d[0]; }).left,
               formatValue = d3.format(",.2f");
           var formatCurrency = function(d) { return "$" + formatValue(d); };
 
