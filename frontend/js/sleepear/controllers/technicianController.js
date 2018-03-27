@@ -365,7 +365,7 @@ define([
                   .attr("dy", "1em")
                   .style("text-anchor", "middle")
                   .text("Voltage (mv)");
-              var focus = svg.append("g")
+              var focus = svgDot.append("g")
                   .attr("class", "focus")
                   .style("display", "none");
 
