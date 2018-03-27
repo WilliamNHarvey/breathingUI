@@ -266,6 +266,7 @@ define([
 
 
               //var data = val.eeg;
+              var $dataSet = $(this);
 
               var margin = {
                       top: 20,
