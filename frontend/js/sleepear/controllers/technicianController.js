@@ -266,7 +266,7 @@ define([
 
 
               //var data = val.eeg;
-              var $dataSet = $(this);
+              var $dataSet = $("#eegModalBody");
 
               var margin = {
                       top: 20,
