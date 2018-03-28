@@ -179,7 +179,10 @@ define([
       var barInterval;
       var pressureInterval;
       pressureInterval = setInterval(changePressure, 3000);
+      var started = false;
+      //var stopped = true;
       function start() {
+          started = true;
           t = 0;
           intervalId = setInterval(increaseSize, 30);
       }
@@ -187,6 +190,7 @@ define([
           barInterval = setInterval(increaseOxygen, 700);
       }
       function stop() {
+          started = false;
           clearInterval(intervalId);
 
       }
@@ -296,20 +300,25 @@ define([
               }
 
               var newNumber;
+              var increase = Math.random() > 0.8;
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 2 - 1;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 0.5 && !$window.down) {
+                  if (lastProducedValue > 0.5 && !($window.down || increase)) {
                       lastProducedValue -= Math.random() * 2;
-                  } else if (lastProducedValue > 4 && $window.down) {
+                      if(started) stop();
+                  } else if (lastProducedValue > 4 && ($window.down || increase)) {
                       lastProducedValue -= Math.random() * 1;
-                  } else if (lastProducedValue > 3 && $window.down) {
+                      if(!started) start();
+                  } else if (lastProducedValue > 3 && ($window.down || increase)) {
                       lastProducedValue += Math.random() * 1;
+                      if(!started) start();
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
-                      if($window.down) {
+                      if(($window.down || increase) && $scope.recording) {
                           lastProducedValue += Math.random() * 2;
+                          if(!started) start();
                       }
                       else {
                           lastProducedValue += Math.random() * 3 - 1.5;
