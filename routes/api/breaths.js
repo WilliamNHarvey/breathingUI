@@ -77,4 +77,13 @@ router.route('/breaths/:breath_id')
     });
   });
 
+router.route('/breaths/test')
+    .post(function(req, res){
+        var breath = {};
+        breath.name = req.body.name;
+        breath.signal = req.body.signal;
+        res.status(200);
+        res.json({ message: 'i got it thanks', data: {thename: breath.name, thesignal: breath.signal}});
+    });
+
 module.exports = router;
