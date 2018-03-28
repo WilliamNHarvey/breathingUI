@@ -298,20 +298,17 @@ define([
 
       $scope.increase = false;
       var waiting = false;
-      var holding = false;
 
       var setIncrease = function() {
-          if(($scope.increase || !$scope.recording) && !holding) {
+          if($scope.increase || !$scope.recording) {
               $scope.increase = false;
               waiting = true;
           }
           else if(!waiting){
               $scope.increase = Math.random() > 0.15;
-              holding = true;
           }
           else {
               waiting = false;
-              holding = false;
           }
 
           if($scope.increase && !started) {
@@ -338,7 +335,7 @@ define([
           }
       }
 
-      var increaseInterval = setInterval(setIncrease, 2000);
+      var increaseInterval = setInterval(setIncrease, 2500);
 
       var restData = (function() {
           var data = [];
