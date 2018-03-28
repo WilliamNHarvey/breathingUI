@@ -316,6 +316,7 @@ define([
                   if (lastProducedValue > 0.5 && !($window.down || $scope.increase)) {
                       lastProducedValue -= Math.random() * 2;
                       if(started) stop();
+                      console.log(started);
                   } else if (lastProducedValue > 4 && ($window.down || $scope.increase)) {
                       lastProducedValue -= Math.random() * 1;
                       if(!started) start();
@@ -331,10 +332,9 @@ define([
                       }
                       else {
                           lastProducedValue += Math.random() * 3 - 1.5;
-                          if(started) stop();
+                          //if(started) stop();
                       }
                   }
-
               }
 
               if($scope.recording) {
