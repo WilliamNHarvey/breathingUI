@@ -297,13 +297,18 @@ define([
       });
 
       $scope.increase = false;
+      var waiting = false;
 
       var setIncrease = function() {
           if($scope.increase) {
               $scope.increase = false;
+              waiting = true;
+          }
+          else if(!waiting){
+              $scope.increase = Math.random() > 0.8;
           }
           else {
-              $scope.increase = Math.random() > 0.75;
+              waiting = false;
           }
 
           if($scope.increase && !started) {
@@ -364,7 +369,7 @@ define([
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
-                      if(($window.down || $scope.increase) && $scope.recording) {
+                      if($window.down || $scope.increase) {
                           lastProducedValue += Math.random() * 2;
                       }
                       else {
