@@ -331,6 +331,7 @@ define([
                       }
                       else {
                           lastProducedValue += Math.random() * 3 - 1.5;
+                          if(started) stop();
                       }
                   }
 
