@@ -299,7 +299,13 @@ define([
       $scope.increase = false;
 
       var setIncrease = function() {
-          $scope.increase = Math.random() > 0.7;
+          if($scope.increase) {
+              $scope.increase = false;
+          }
+          else {
+              $scope.increase = Math.random() > 0.6;
+          }
+
           if($scope.increase && !started) {
               start();
           }
@@ -309,7 +315,7 @@ define([
                   if(!bouncing) {
                       bounce();
                   }
-              });
+              });*/
               $('#circle-2').animate({
                   'opacity' : 0,
                   'width': newSize,
@@ -320,7 +326,7 @@ define([
                       'width': 0,
                       'height': 0
                   })
-              });*/
+              });
           }
       }
 
