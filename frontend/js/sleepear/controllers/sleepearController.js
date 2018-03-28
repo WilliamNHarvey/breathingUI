@@ -521,6 +521,7 @@ define([
           .text("Voltage (mv)");
 
       function update() {
+          if(!$scope.recording) return;
           data = restData.getData();
           //var svg = d3.select("svg");
 
