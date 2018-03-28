@@ -52,7 +52,7 @@ define([
                    }
                    else if(res.status === 200) {
                        $.each(res.data.users, function(n, v) {
-                           if(v.job === "patient" && v.connected === $scope.user.email ) {
+                           if(v.job === "patient" && v.connectedTo === $scope.user.email ) {
                                $scope.patients.push({email: v.email, name: v.name});
                            }
                            else if (v.job === "technician") {
