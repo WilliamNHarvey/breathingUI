@@ -96,6 +96,11 @@
     }
 
     #charts {
+      .data-eeg {
+        position: inherit;
+        width: unset;
+        min-height: 170px;
+      }
       .row {
         padding: 20px 0px;
         .border-top {
