@@ -138,6 +138,14 @@ define([
           $('#circle-1').width(newSize);
           t++;
       };
+      var decreaseSize = function() {
+          //newSize = $('#circle-1').height() * 1.01 + 1;
+          newSize = max*(1-1*Math.pow(1.015,(-t))) + 26;
+          if(newSize < 25) newSize = 25;
+          else t--;
+          $('#circle-1').height(newSize);
+          $('#circle-1').width(newSize);
+      };
       var increaseOxygen = function() {
           if($scope.barData[0].values[0].value < 100 && $scope.barData[0].values[1].value > 0) {
               $scope.barData[0].values[0].value++;
@@ -176,6 +184,7 @@ define([
           cycle++;
       };
       var intervalId;
+      var stopInterval
       var barInterval;
       var pressureInterval;
       pressureInterval = setInterval(changePressure, 3000);
@@ -184,6 +193,7 @@ define([
       function start() {
           started = true;
           t = 0;
+          clearInterval(stopInterval);
           intervalId = setInterval(increaseSize, 30);
       }
       function startBar() {
@@ -192,6 +202,11 @@ define([
       function stop() {
           started = false;
           clearInterval(intervalId);
+      }
+      function stopSlow() {
+          started = false;
+          clearInterval(intervalId);
+          stopInterval = setInterval(decreaseSize, 30);
       }
       function stopBar() {
           clearInterval(barInterval);
@@ -289,8 +304,8 @@ define([
               start();
           }
           else if(!$scope.increase && started) {
-              stop();
-              $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
+              stopSlow();
+              /*$('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
                   if(!bouncing) {
                       bounce();
                   }
@@ -305,7 +320,7 @@ define([
                       'width': 0,
                       'height': 0
                   })
-              });
+              });*/
           }
       }
 
