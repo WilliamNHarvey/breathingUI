@@ -254,7 +254,6 @@ define([
                                        })
                                    });
                                }
-                               var $parent = $(this).parent();
 
                                $parent.animate({
                                    opacity: 0
