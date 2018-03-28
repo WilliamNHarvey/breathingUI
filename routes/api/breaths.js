@@ -81,9 +81,9 @@ router.route('/breaths/:breath_id')
 router.route('/breaths/test')
     .post(function(req, res){
         var breath = {};
-        var body = JSON.parse(req.body);
-        breath.name = body.name;//.name;
-        console.log(body);
+        //var body = JSON.parse(req.body);
+        breath.name = req.body.name;//.name;
+        console.log(req.body);
         //breath.signal = req.body.signal;
         res.status(200);
         res.json({ message: 'i got it thanks', data: breath.name});//{thename: breath.name, thesignal: breath.signal}});
