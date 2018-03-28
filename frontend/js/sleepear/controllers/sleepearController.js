@@ -285,7 +285,6 @@ define([
 
       var setIncrease = function() {
           $scope.increase = Math.random() > 0.7;
-          console.log(increase);
           if($scope.increase && !started) {
               start();
           }
