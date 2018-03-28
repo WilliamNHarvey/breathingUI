@@ -289,11 +289,11 @@ define([
                                $parent.remove();
                                var counter = 0;
                                $.each($(".data-set"), function() {
-                                   if(counter === id) {
+                                   if(counter === id + 1) {
                                        $(this).css({marginTop: "205px"}).animate({marginTop: "5px"}, 300);
                                    }
-                                   $(this).attr("id",counter);
-                                   counter++;
+                                   //$(this).attr("id",counter);
+                                   //counter++;
                                });
 
                            });
