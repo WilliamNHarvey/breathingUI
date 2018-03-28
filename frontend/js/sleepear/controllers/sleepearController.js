@@ -141,8 +141,12 @@ define([
       var decreaseSize = function() {
           //newSize = $('#circle-1').height() * 1.01 + 1;
           newSize = max*(1-1*Math.pow(1.015,(-t))) + 26;
-          if(newSize < 25) newSize = 25;
-          else t--;
+          if(newSize < 25) {
+              newSize = 25;
+          }
+          else {
+              t--;
+          }
           $('#circle-1').height(newSize);
           $('#circle-1').width(newSize);
       };
@@ -540,7 +544,9 @@ define([
           .text("Voltage (mv)");
 
       function update() {
-          if(!$scope.recording) return;
+          if(!$scope.recording) {
+              return;
+          }
           data = restData.getData();
           //var svg = d3.select("svg");
 
