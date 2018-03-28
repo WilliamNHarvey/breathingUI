@@ -41,7 +41,7 @@ define([
            }
            else if(res.status === 200) {
                 $scope.user = res.data.user;
-                if($scope.user.job !== "clinician") {
+                if($scope.user.job !== "doctor") {
                     $location.path("/");
                 }
                userService.getAll().then(function(res) {

@@ -61,7 +61,6 @@ router.route('/breaths/:breath_id')
 
         res.json({ message: 'breath updated!' });
       });
-
     });
   })
 
