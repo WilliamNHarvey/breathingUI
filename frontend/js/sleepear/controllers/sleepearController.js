@@ -282,6 +282,14 @@ define([
           }
       });
 
+      var increase = Math.random() > 0.8;
+
+      var setIncrease = function() {
+          increase = Math.random() > 0.8;
+      }
+
+      var increaseInterval = setInterval(setIncrease, 5000);
+
       var restData = (function() {
           var data = [];
 
@@ -300,7 +308,7 @@ define([
               }
 
               var newNumber;
-              var increase = Math.random() > 0.8;
+
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 2 - 1;//Math.random() * 10;
               } else {
