@@ -83,11 +83,9 @@ router.route('/breaths/test')
         var breath = {};
         //var body = JSON.parse(req.body);
         breath.name = req.body.name;//.name;
-        console.log(req.body);
-        console.log(req.body.name);
-        //breath.signal = req.body.signal;
+        breath.signal = req.body.signal;
         res.status(200);
-        res.json({ message: 'i got it thanks', data: breath.name});//{thename: breath.name, thesignal: breath.signal}});
+        res.json({ message: 'i got it thanks', data: {thename: breath.name, thesignal: breath.signal}});
     });
 
 module.exports = router;
