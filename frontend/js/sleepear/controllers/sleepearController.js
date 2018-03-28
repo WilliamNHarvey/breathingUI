@@ -305,7 +305,7 @@ define([
               waiting = true;
           }
           else if(!waiting){
-              $scope.increase = Math.random() > 0.5;
+              $scope.increase = Math.random() > 0.15;
           }
           else {
               waiting = false;
