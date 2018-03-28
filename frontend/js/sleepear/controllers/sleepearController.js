@@ -300,7 +300,7 @@ define([
       var waiting = false;
 
       var setIncrease = function() {
-          if($scope.increase) {
+          if($scope.increase || !$scope.recording) {
               $scope.increase = false;
               waiting = true;
           }
