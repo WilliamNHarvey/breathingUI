@@ -122,6 +122,14 @@
             top: 0;
             left: 0;
           }
+          .data-eeg {
+            position: relative;
+            display: block;
+            width: 100%;
+            min-height: 170px;
+            height: 100%;
+            overflow-x: auto;
+          }
           .section-text {
             width: 100%;
             margin: 0;

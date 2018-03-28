@@ -446,7 +446,7 @@ define([
                           .interpolate("linear");
 
 
-                      var svg = d3.select($dataSet.children(".data-eeg").get(0)).append("svg")
+                      var svg = d3.select($dataSet.get(0)).append("svg")
                           .attr("width", width + margin.left + margin.right)
                           .attr("height", height + margin.top + margin.bottom)
                           .append("g")
