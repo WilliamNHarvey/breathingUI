@@ -495,7 +495,7 @@ define([
   .controller('submitController', function($rootScope, $scope, $location, $window, LS, $compile, userService) {
       $scope.switchPage = $rootScope.switchPage;
 
-      /*userService.checkSession().then(function(res) {
+      userService.checkSession().then(function(res) {
           if(!res) {
               $location.path("/");
           }
@@ -508,7 +508,7 @@ define([
           else {
               $location.path("/");
           }
-      });*/
+      });
 
       var d3 = $window.d3;
 
@@ -673,6 +673,7 @@ define([
               var $parent = $this.parent().parent();
               var id = parseInt($parent.attr('id'));
               $scope.data[id].sent = true;
+              $scope.data[id].patient = $scope.user.email;
               LS.setData("storedData", JSON.stringify($scope.data));
               if($this.hasClass("arrow")) {
                   $this.animate({

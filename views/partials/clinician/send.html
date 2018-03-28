@@ -1,120 +1,18 @@
 <div class="page">
-    <div class="background">
-        <div class="back-arrow" ng-click="switchPage('/')"></div>
+    <div class="background clinician-index setup">
+        <div class="back-arrow" ng-click="switchPage('/clinician')"></div>
         <div class="title">
-            <span>Final Report</span>
+            <span>Send Patient Data</span>
         </div>
-        <div id="report">
-            <section id="probability-section">
-                <div class="probability">
-                    <span class="section-title">Probability of CSA</span>
-                    <span class="section-amount">90%</span>
-                </div>
-                <div class="index">
-                    <span class="section-amount">
-                        <span>93</span>
-                    </span>
-                    <span class="section-title">Reliability Index</span>
-                </div>
-                <div class="index">
-                    <span class="section-amount">
-                        <span>82</span>
-                    </span>
-                    <span class="section-title">Accuracy Index</span>
-                </div>
-            </section>
-            <section id="summary" class="border-top">
-                <div class="section-title">Summary</div>
-                <table style="width:100%">
-                    <tr>
-                        <th>Event</th>
-                        <th>Wakes</th>
-                        <th>Low O2</th>
-                        <th>Shakes</th>
-                        <th>Gasps</th>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold">Count</td>
-                        <td>5</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>6</td>
-                    </tr>
-                </table>
-            </section>
-            <section id="charts" class="border-top">
-                <div class="section-title">Charts</div>
-                <div class="row">
-                    <div class="text col-md-3">
-                        <div class="section-title">O2 Saturation</div>
-                        <div class="section-text">stuff and things and stuff and things and stuff</div>
-                    </div>
-                    <div class="chart col-md-9">
-                        <div class="section-chart"></div>
-                        <div class="section-text">Time</div>
-                    </div>
-                </div>
-                <div class="row border-top">
-                    <div class="text col-md-3">
-                        <div class="section-title">Metric</div>
-                        <div class="section-text">stuff and things and stuff and things and stuff</div>
-                    </div>
-                    <div class="chart col-md-9">
-                        <div class="section-chart"></div>
-                        <div class="section-text">Time</div>
-                    </div>
-                </div>
-            </section>
-            <section id="patient-scores" class="border-top">
-                <div class="section-title">Patient scores</div>
-                <div class="row">
-                    <div class="text col-md-6">
-                        <div class="section-chart"></div>
-                    </div>
-                    <div class="list col-md-6">
-                        <ul>
-                            <li>O2</li>
-                            <li>Blood pressure</li>
-                            <li>Wakes</li>
-                            <li>Shakes</li>
-                            <li>Gasps</li>
-                            <li>Full sleeps</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section id="population-comparison" class="border-top">
-                <div class="section-title">Population comparison</div>
-                <div class="row">
-                    <div class="text col-md-4">
-                        <div class="section-title">O2 Saturation</div>
-                    </div>
-                    <div class="patient col-md-4">
-                        <div class="section-text">Patient</div>
-                        <div class="section-chart"></div>
-                    </div>
-                    <div class="population col-md-4">
-                        <div class="section-text">Population</div>
-                        <div class="section-chart"></div>
-                    </div>
-                </div>
-                <div class="row border-top">
-                    <div class="text col-md-4">
-                        <div class="section-title"># of Waking Events</div>
-                    </div>
-                    <div class="patient col-md-4">
-                        <div class="section-text">Patient</div>
-                        <div class="section-chart"></div>
-                    </div>
-                    <div class="population col-md-4">
-                        <div class="section-text">Population</div>
-                        <div class="section-chart"></div>
-                    </div>
-                </div>
-            </section>
-            <section id="similar-cases" class="border-top">
-                <div class="section-title">Similar cases</div>
-            </section>
+        <div class="col-md-12 select-boxes">
+            <span>Technician: </span>
+            <!--<select ng-model="selectedPatient" ng-options="item.email as item.name for item in patients">
+                <option value="">Select Account</option>
+            </select>-->
+            <select ng-model="selectedTechnician">
+                <option ng-repeat="item in technician" value="{{item.email}}">{{item.name}}</option>
+            </select>
         </div>
+        <div id="report" class="data-body"></div>
     </div>
 </div>

@@ -74,6 +74,7 @@ router.route('/breaths/:breath_id')
         res.send(err);
 
       res.json({ message: 'breath deleted' });
+
     });
   });
 
