@@ -285,11 +285,28 @@ define([
 
       var setIncrease = function() {
           $scope.increase = Math.random() > 0.7;
+          console.log(increase);
           if($scope.increase && !started) {
               start();
           }
-          else if(!$scope.increase) {
+          else if(!$scope.increase && started) {
               stop();
+              $('#circle-1').animate({'width':'25px', 'height':'25px'}, 150, function() {
+                  if(!bouncing) {
+                      bounce();
+                  }
+              });
+              $('#circle-2').animate({
+                  'opacity' : 0,
+                  'width': newSize,
+                  'height': newSize
+              }, 300, function() {
+                  $('#circle-2').css({
+                      'opacity' : 1,
+                      'width': 0,
+                      'height': 0
+                  })
+              });
           }
       }
 
