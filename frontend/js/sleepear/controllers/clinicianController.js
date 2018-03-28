@@ -67,6 +67,7 @@ define([
                            });
                        });
 
+                       $scope.selectedTechnician = $scope.technicians[0].email;
                        console.log($scope.patients);
                        console.log($scope.technicians);
                        console.log($scope.data);
