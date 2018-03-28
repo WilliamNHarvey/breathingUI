@@ -303,7 +303,7 @@ define([
               $scope.increase = false;
           }
           else {
-              $scope.increase = Math.random() > 0.6;
+              $scope.increase = Math.random() > 0.75;
           }
 
           if($scope.increase && !started) {
