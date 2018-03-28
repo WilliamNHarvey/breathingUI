@@ -282,10 +282,10 @@ define([
           }
       });
 
-      var increase = Math.random() > 0.8;
+      $scope.increase = Math.random() > 0.8;
 
       var setIncrease = function() {
-          increase = Math.random() > 0.8;
+          $scope.increase = Math.random() > 0.8;
       }
 
       var increaseInterval = setInterval(setIncrease, 5000);
@@ -309,22 +309,23 @@ define([
 
               var newNumber;
 
+              console.log($scope.increase);
               if (!lastProducedValue) {
                   lastProducedValue = Math.random() * 2 - 1;//Math.random() * 10;
               } else {
-                  if (lastProducedValue > 0.5 && !($window.down || increase)) {
+                  if (lastProducedValue > 0.5 && !($window.down || $scope.increase)) {
                       lastProducedValue -= Math.random() * 2;
                       if(started) stop();
-                  } else if (lastProducedValue > 4 && ($window.down || increase)) {
+                  } else if (lastProducedValue > 4 && ($window.down || $scope.increase)) {
                       lastProducedValue -= Math.random() * 1;
                       if(!started) start();
-                  } else if (lastProducedValue > 3 && ($window.down || increase)) {
+                  } else if (lastProducedValue > 3 && ($window.down || $scope.increase)) {
                       lastProducedValue += Math.random() * 1;
                       if(!started) start();
                   } else if (lastProducedValue < -0.5) {
                       lastProducedValue += Math.random() * 2;
                   } else {
-                      if(($window.down || increase) && $scope.recording) {
+                      if(($window.down || $scope.increase) && $scope.recording) {
                           lastProducedValue += Math.random() * 2;
                           if(!started) start();
                       }
