@@ -192,7 +192,6 @@ define([
       function stop() {
           started = false;
           clearInterval(intervalId);
-
       }
       function stopBar() {
           clearInterval(barInterval);
@@ -282,19 +281,19 @@ define([
           }
       });
 
-      $scope.increase = Math.random() > 0.7;
+      $scope.increase = false;
 
       var setIncrease = function() {
           $scope.increase = Math.random() > 0.7;
           if($scope.increase && !started) {
               start();
           }
-          else if(!$scope.increase && started) {
+          else if(!$scope.increase) {
               stop();
           }
       }
 
-      var increaseInterval = setInterval(setIncrease, 5000);
+      var increaseInterval = setInterval(setIncrease, 4000);
 
       var restData = (function() {
           var data = [];
