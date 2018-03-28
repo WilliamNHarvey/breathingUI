@@ -67,6 +67,9 @@ define([
                            });
                        });
 
+                       console.log($scope.patients);
+                       console.log($scope.technicians);
+                       console.log($scope.data);
                        var d3 = $window.d3;
 
                        //$scope.data = JSON.parse(LS.getData("storedData"));
