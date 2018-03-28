@@ -84,6 +84,7 @@ router.route('/breaths/test')
         //var body = JSON.parse(req.body);
         breath.name = req.body.name;//.name;
         console.log(req.body);
+        console.log(req.body.name);
         //breath.signal = req.body.signal;
         res.status(200);
         res.json({ message: 'i got it thanks', data: breath.name});//{thename: breath.name, thesignal: breath.signal}});
