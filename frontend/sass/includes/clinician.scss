@@ -370,5 +370,14 @@
       }
     }
   }
+  .send {
+    .data-eeg {
+      display: inline-block;
+      width: 50%;
+      margin-left: 0;
+      overflow-x: auto;
+      cursor: pointer;
+    }
+  }
 }
 
