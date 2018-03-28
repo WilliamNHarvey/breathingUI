@@ -61,16 +61,13 @@ define([
                        });
                        $.each($scope.patients, function(pn, pv) {
                            $.each(storedData, function(n, v) {
-                               if(pv.email === v.patient) {
+                               if(pv.email === v.patient && !v.tech) {
                                    $scope.data.push(v);
                                }
                            });
                        });
 
                        $scope.selectedTechnician = $scope.technicians[0].email;
-                       console.log($scope.patients);
-                       console.log($scope.technicians);
-                       console.log($scope.data);
                        var d3 = $window.d3;
 
                        //$scope.data = JSON.parse(LS.getData("storedData"));
@@ -122,12 +119,12 @@ define([
 
                        angular.forEach($scope.data, function(val, key) {
                            var $dataSet;
-                           if(val.sent) {
-                               $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="checkmark"></div></div></div>')($scope));
-                           }
-                           else {
+                           //if(val.sent) {
+                               //$dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="checkmark"></div></div></div>')($scope));
+                           //}
+                           //else {
                                $dataSet = $($compile('<div id="'+key+'" class="data-set"><div class="data-delete noselect">✖</div><div class="data-eeg"></div><div class="data-bar with-3d-shadow with-transitions" style="overflow-x:auto;"><nvd3 data="data['+key+'].bar" options="barOptions" api="barApi['+key+']"></nvd3></div><div class="data-send"><div class="arrow"></div></div></div>')($scope));
-                           }
+                           //}
                            $("#report").append($dataSet);
 
                            var data = val.eeg;
@@ -233,8 +230,8 @@ define([
                                var $this = $(this);
                                var $parent = $this.parent().parent();
                                var id = parseInt($parent.attr('id'));
-                               $scope.data[id].sent = true;
-                               $scope.data[id].patient = $scope.user.email;
+                               //$scope.data[id].sent = true;
+                               $scope.data[id].tech = $scope.selectedTechnician;
                                LS.setData("storedData", JSON.stringify($scope.data));
                                if($this.hasClass("arrow")) {
                                    $this.animate({
@@ -257,6 +254,22 @@ define([
                                        })
                                    });
                                }
+                               var $parent = $(this).parent();
+
+                               $parent.animate({
+                                   opacity: 0
+                               }, 500, function() {
+                                   $parent.remove();
+                                   var counter = 0;
+                                   $.each($(".data-set"), function() {
+                                       if(counter === id) {
+                                           $(this).css({marginTop: "205px"}).animate({marginTop: "5px"}, 300);
+                                       }
+                                       $(this).attr("id",counter);
+                                       counter++;
+                                   });
+
+                               });
                                /*else if($this.hasClass("checkmark")) {
                                 $this.addClass("arrow").removeClass("checkmark");
                                 }*/
